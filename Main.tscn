@@ -1,0 +1,304 @@
+[gd_scene load_steps=10 format=3 uid="uid://ba44lsu0bbjfn"]
+
+[ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://asssets/board/Tablero.png" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://cbd5udw3u88st" path="res://board.gd" id="1_uu6xs"]
+[ext_resource type="Script" uid="uid://tqw0npxrewnt" path="res://card_manager.gd" id="3_fos0i"]
+[ext_resource type="PackedScene" uid="uid://cy85phnfv01c6" path="res://Violeta.tscn" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://cuan60e3fu1dw" path="res://Ruby.tscn" id="3_trn2v"]
+[ext_resource type="PackedScene" uid="uid://ckkr2747vbdor" path="res://Celeste.tscn" id="4_03owx"]
+[ext_resource type="Script" uid="uid://bo6cf8tk45q6r" path="res://game_manager.gd" id="5_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://4k4772is40ma" path="res://Marino.tscn" id="5_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://i1h6aln7vtss" path="res://TurnScreen.tscn" id="9_03owx"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("5_3dxm6")
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Violeta" parent="Players" instance=ExtResource("3_r0du0")]
+z_index = 10
+position = Vector2(1, 0)
+
+[node name="Ruby" parent="Players" instance=ExtResource("3_trn2v")]
+z_index = 10
+position = Vector2(0, 1)
+
+[node name="Celeste" parent="Players" instance=ExtResource("4_03owx")]
+z_index = 10
+
+[node name="Marino" parent="Players" instance=ExtResource("5_wkp8b")]
+z_index = 10
+
+[node name="CardManager" type="Node" parent="."]
+script = ExtResource("3_fos0i")
+
+[node name="Board" type="Node2D" parent="."]
+script = ExtResource("1_uu6xs")
+metadata/_edit_lock_ = true
+
+[node name="Board" type="Sprite2D" parent="Board"]
+position = Vector2(960.00006, 540.5)
+scale = Vector2(0.76953906, 0.9014202)
+texture = ExtResource("1_glv2v")
+metadata/_edit_lock_ = true
+
+[node name="Tiles" type="Node2D" parent="Board"]
+metadata/_edit_lock_ = true
+
+[node name="Tile_00" type="Node2D" parent="Board/Tiles"]
+position = Vector2(121, 282)
+metadata/_edit_lock_ = true
+
+[node name="Tile_01" type="Node2D" parent="Board/Tiles"]
+position = Vector2(227, 209)
+metadata/_edit_lock_ = true
+
+[node name="Tile_02" type="Node2D" parent="Board/Tiles"]
+position = Vector2(351, 132)
+metadata/_edit_lock_ = true
+
+[node name="Tile_03" type="Node2D" parent="Board/Tiles"]
+position = Vector2(471, 53)
+metadata/_edit_lock_ = true
+
+[node name="Tile_04" type="Node2D" parent="Board/Tiles"]
+position = Vector2(586, 130)
+metadata/_edit_lock_ = true
+
+[node name="Tile_05" type="Node2D" parent="Board/Tiles"]
+position = Vector2(685, 215)
+metadata/_edit_lock_ = true
+
+[node name="Tile_06" type="Node2D" parent="Board/Tiles"]
+position = Vector2(592, 292)
+metadata/_edit_lock_ = true
+
+[node name="Tile_07" type="Node2D" parent="Board/Tiles"]
+position = Vector2(460, 377)
+metadata/_edit_lock_ = true
+
+[node name="Tile_08" type="Node2D" parent="Board/Tiles"]
+position = Vector2(343, 459)
+metadata/_edit_lock_ = true
+
+[node name="Tile_09" type="Node2D" parent="Board/Tiles"]
+position = Vector2(229, 540)
+metadata/_edit_lock_ = true
+
+[node name="Tile_10" type="Node2D" parent="Board/Tiles"]
+position = Vector2(346, 619)
+metadata/_edit_lock_ = true
+
+[node name="Tile_11" type="Node2D" parent="Board/Tiles"]
+position = Vector2(472, 684)
+metadata/_edit_lock_ = true
+
+[node name="Tile_12" type="Node2D" parent="Board/Tiles"]
+position = Vector2(597, 624)
+metadata/_edit_lock_ = true
+
+[node name="Tile_13" type="Node2D" parent="Board/Tiles"]
+position = Vector2(710, 543)
+metadata/_edit_lock_ = true
+
+[node name="Tile_14" type="Node2D" parent="Board/Tiles"]
+position = Vector2(798, 483)
+metadata/_edit_lock_ = true
+
+[node name="Tile_15" type="Node2D" parent="Board/Tiles"]
+position = Vector2(953, 591)
+metadata/_edit_lock_ = true
+
+[node name="Tile_16" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1346, 117)
+metadata/_edit_lock_ = true
+
+[node name="Tile_17" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1438, 42)
+metadata/_edit_lock_ = true
+
+[node name="Tile_18" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1559, 136)
+metadata/_edit_lock_ = true
+
+[node name="Tile_19" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1685, 212)
+metadata/_edit_lock_ = true
+
+[node name="Tile_20" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1561, 297)
+metadata/_edit_lock_ = true
+
+[node name="Tile_21" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1449, 357)
+metadata/_edit_lock_ = true
+
+[node name="Tile_22" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1325, 298)
+metadata/_edit_lock_ = true
+
+[node name="Tile_23" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1186, 214)
+metadata/_edit_lock_ = true
+
+[node name="Tile_24" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1071, 137)
+metadata/_edit_lock_ = true
+
+[node name="Tile_25" type="Node2D" parent="Board/Tiles"]
+position = Vector2(957, 58)
+metadata/_edit_lock_ = true
+
+[node name="Tile_26" type="Node2D" parent="Board/Tiles"]
+position = Vector2(828, 135)
+metadata/_edit_lock_ = true
+
+[node name="Tile_27" type="Node2D" parent="Board/Tiles"]
+position = Vector2(745, 213)
+metadata/_edit_lock_ = true
+
+[node name="Tile_28" type="Node2D" parent="Board/Tiles"]
+position = Vector2(850, 305)
+metadata/_edit_lock_ = true
+
+[node name="Tile_29" type="Node2D" parent="Board/Tiles"]
+position = Vector2(942, 374)
+metadata/_edit_lock_ = true
+
+[node name="Tile_30" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1047, 437)
+metadata/_edit_lock_ = true
+
+[node name="Tile_31" type="Node2D" parent="Board/Tiles"]
+position = Vector2(981, 573)
+metadata/_edit_lock_ = true
+
+[node name="Tile_32" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1775, 815)
+metadata/_edit_lock_ = true
+
+[node name="Tile_33" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1685, 871)
+metadata/_edit_lock_ = true
+
+[node name="Tile_34" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1553, 957)
+metadata/_edit_lock_ = true
+
+[node name="Tile_35" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1439, 1041)
+metadata/_edit_lock_ = true
+
+[node name="Tile_36" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1322, 952)
+metadata/_edit_lock_ = true
+
+[node name="Tile_37" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1238, 872)
+metadata/_edit_lock_ = true
+
+[node name="Tile_38" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1323, 789)
+metadata/_edit_lock_ = true
+
+[node name="Tile_39" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1449, 705)
+metadata/_edit_lock_ = true
+
+[node name="Tile_40" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1567, 628)
+metadata/_edit_lock_ = true
+
+[node name="Tile_41" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1689, 547)
+metadata/_edit_lock_ = true
+
+[node name="Tile_42" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1565, 462)
+metadata/_edit_lock_ = true
+
+[node name="Tile_43" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1443, 404)
+metadata/_edit_lock_ = true
+
+[node name="Tile_44" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1322, 462)
+metadata/_edit_lock_ = true
+
+[node name="Tile_45" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1202, 543)
+metadata/_edit_lock_ = true
+
+[node name="Tile_46" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1126, 595)
+metadata/_edit_lock_ = true
+
+[node name="Tile_47" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1014, 552)
+metadata/_edit_lock_ = true
+
+[node name="Tile_48" type="Node2D" parent="Board/Tiles"]
+position = Vector2(569, 974)
+metadata/_edit_lock_ = true
+
+[node name="Tile_49" type="Node2D" parent="Board/Tiles"]
+position = Vector2(487, 1026)
+metadata/_edit_lock_ = true
+
+[node name="Tile_50" type="Node2D" parent="Board/Tiles"]
+position = Vector2(362, 956)
+metadata/_edit_lock_ = true
+
+[node name="Tile_51" type="Node2D" parent="Board/Tiles"]
+position = Vector2(228, 871)
+metadata/_edit_lock_ = true
+
+[node name="Tile_52" type="Node2D" parent="Board/Tiles"]
+position = Vector2(344, 792)
+metadata/_edit_lock_ = true
+
+[node name="Tile_53" type="Node2D" parent="Board/Tiles"]
+position = Vector2(476, 733)
+metadata/_edit_lock_ = true
+
+[node name="Tile_54" type="Node2D" parent="Board/Tiles"]
+position = Vector2(593, 791)
+metadata/_edit_lock_ = true
+
+[node name="Tile_55" type="Node2D" parent="Board/Tiles"]
+position = Vector2(710, 874)
+metadata/_edit_lock_ = true
+
+[node name="Tile_56" type="Node2D" parent="Board/Tiles"]
+position = Vector2(837, 954)
+metadata/_edit_lock_ = true
+
+[node name="Tile_57" type="Node2D" parent="Board/Tiles"]
+position = Vector2(954, 1037)
+metadata/_edit_lock_ = true
+
+[node name="Tile_58" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1073, 955)
+metadata/_edit_lock_ = true
+
+[node name="Tile_59" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1163, 873)
+metadata/_edit_lock_ = true
+
+[node name="Tile_60" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1081, 792)
+metadata/_edit_lock_ = true
+
+[node name="Tile_61" type="Node2D" parent="Board/Tiles"]
+position = Vector2(956, 715)
+metadata/_edit_lock_ = true
+
+[node name="Tile_62" type="Node2D" parent="Board/Tiles"]
+position = Vector2(872, 654)
+metadata/_edit_lock_ = true
+
+[node name="Tile_63" type="Node2D" parent="Board/Tiles"]
+position = Vector2(1043, 533)
+metadata/_edit_lock_ = true
+
+[node name="TurnScreen" parent="." instance=ExtResource("9_03owx")]

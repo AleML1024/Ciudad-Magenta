@@ -1,0 +1,211 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba44lsu0bbjfn"]
+
+[ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://asssets/board/Tablero.png" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://cbd5udw3u88st" path="res://board.gd" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://cy85phnfv01c6" path="res://Player.tscn" id="3_r0du0"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_uu6xs")
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(960.00006, 540.5)
+scale = Vector2(0.76953906, 0.9014202)
+texture = ExtResource("1_glv2v")
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Tile_00" type="Node2D" parent="Tiles"]
+position = Vector2(121, 282)
+
+[node name="Tile_01" type="Node2D" parent="Tiles"]
+position = Vector2(227, 209)
+
+[node name="Tile_02" type="Node2D" parent="Tiles"]
+position = Vector2(351, 132)
+
+[node name="Tile_03" type="Node2D" parent="Tiles"]
+position = Vector2(471, 53)
+
+[node name="Tile_04" type="Node2D" parent="Tiles"]
+position = Vector2(586, 130)
+
+[node name="Tile_05" type="Node2D" parent="Tiles"]
+position = Vector2(685, 215)
+
+[node name="Tile_06" type="Node2D" parent="Tiles"]
+position = Vector2(592, 292)
+
+[node name="Tile_07" type="Node2D" parent="Tiles"]
+position = Vector2(460, 377)
+
+[node name="Tile_08" type="Node2D" parent="Tiles"]
+position = Vector2(343, 459)
+
+[node name="Tile_09" type="Node2D" parent="Tiles"]
+position = Vector2(229, 540)
+
+[node name="Tile_10" type="Node2D" parent="Tiles"]
+position = Vector2(346, 619)
+
+[node name="Tile_11" type="Node2D" parent="Tiles"]
+position = Vector2(472, 684)
+
+[node name="Tile_12" type="Node2D" parent="Tiles"]
+position = Vector2(597, 624)
+
+[node name="Tile_13" type="Node2D" parent="Tiles"]
+position = Vector2(710, 543)
+
+[node name="Tile_14" type="Node2D" parent="Tiles"]
+position = Vector2(798, 483)
+
+[node name="Tile_15" type="Node2D" parent="Tiles"]
+position = Vector2(953, 591)
+
+[node name="Tile_16" type="Node2D" parent="Tiles"]
+position = Vector2(1346, 117)
+
+[node name="Tile_17" type="Node2D" parent="Tiles"]
+position = Vector2(1438, 42)
+
+[node name="Tile_18" type="Node2D" parent="Tiles"]
+position = Vector2(1559, 136)
+
+[node name="Tile_19" type="Node2D" parent="Tiles"]
+position = Vector2(1685, 212)
+
+[node name="Tile_20" type="Node2D" parent="Tiles"]
+position = Vector2(1561, 297)
+
+[node name="Tile_21" type="Node2D" parent="Tiles"]
+position = Vector2(1449, 357)
+
+[node name="Tile_22" type="Node2D" parent="Tiles"]
+position = Vector2(1325, 298)
+
+[node name="Tile_23" type="Node2D" parent="Tiles"]
+position = Vector2(1186, 214)
+
+[node name="Tile_24" type="Node2D" parent="Tiles"]
+position = Vector2(1071, 137)
+
+[node name="Tile_25" type="Node2D" parent="Tiles"]
+position = Vector2(957, 58)
+
+[node name="Tile_26" type="Node2D" parent="Tiles"]
+position = Vector2(828, 135)
+
+[node name="Tile_27" type="Node2D" parent="Tiles"]
+position = Vector2(745, 213)
+
+[node name="Tile_28" type="Node2D" parent="Tiles"]
+position = Vector2(850, 305)
+
+[node name="Tile_29" type="Node2D" parent="Tiles"]
+position = Vector2(942, 374)
+
+[node name="Tile_30" type="Node2D" parent="Tiles"]
+position = Vector2(1047, 437)
+
+[node name="Tile_31" type="Node2D" parent="Tiles"]
+position = Vector2(981, 573)
+
+[node name="Tile_32" type="Node2D" parent="Tiles"]
+position = Vector2(1775, 815)
+
+[node name="Tile_33" type="Node2D" parent="Tiles"]
+position = Vector2(1685, 871)
+
+[node name="Tile_34" type="Node2D" parent="Tiles"]
+position = Vector2(1553, 957)
+
+[node name="Tile_35" type="Node2D" parent="Tiles"]
+position = Vector2(1439, 1041)
+
+[node name="Tile_36" type="Node2D" parent="Tiles"]
+position = Vector2(1322, 952)
+
+[node name="Tile_37" type="Node2D" parent="Tiles"]
+position = Vector2(1238, 872)
+
+[node name="Tile_38" type="Node2D" parent="Tiles"]
+position = Vector2(1323, 789)
+
+[node name="Tile_39" type="Node2D" parent="Tiles"]
+position = Vector2(1449, 705)
+
+[node name="Tile_40" type="Node2D" parent="Tiles"]
+position = Vector2(1567, 628)
+
+[node name="Tile_41" type="Node2D" parent="Tiles"]
+position = Vector2(1689, 547)
+
+[node name="Tile_42" type="Node2D" parent="Tiles"]
+position = Vector2(1565, 462)
+
+[node name="Tile_43" type="Node2D" parent="Tiles"]
+position = Vector2(1443, 404)
+
+[node name="Tile_44" type="Node2D" parent="Tiles"]
+position = Vector2(1322, 462)
+
+[node name="Tile_45" type="Node2D" parent="Tiles"]
+position = Vector2(1202, 543)
+
+[node name="Tile_46" type="Node2D" parent="Tiles"]
+position = Vector2(1126, 595)
+
+[node name="Tile_47" type="Node2D" parent="Tiles"]
+position = Vector2(1014, 552)
+
+[node name="Tile_48" type="Node2D" parent="Tiles"]
+position = Vector2(569, 974)
+
+[node name="Tile_49" type="Node2D" parent="Tiles"]
+position = Vector2(487, 1026)
+
+[node name="Tile_50" type="Node2D" parent="Tiles"]
+position = Vector2(362, 956)
+
+[node name="Tile_51" type="Node2D" parent="Tiles"]
+position = Vector2(228, 871)
+
+[node name="Tile_52" type="Node2D" parent="Tiles"]
+position = Vector2(344, 792)
+
+[node name="Tile_53" type="Node2D" parent="Tiles"]
+position = Vector2(476, 733)
+
+[node name="Tile_54" type="Node2D" parent="Tiles"]
+position = Vector2(593, 791)
+
+[node name="Tile_55" type="Node2D" parent="Tiles"]
+position = Vector2(710, 874)
+
+[node name="Tile_56" type="Node2D" parent="Tiles"]
+position = Vector2(837, 954)
+
+[node name="Tile_57" type="Node2D" parent="Tiles"]
+position = Vector2(954, 1037)
+
+[node name="Tile_58" type="Node2D" parent="Tiles"]
+position = Vector2(1073, 955)
+
+[node name="Tile_59" type="Node2D" parent="Tiles"]
+position = Vector2(1163, 873)
+
+[node name="Tile_60" type="Node2D" parent="Tiles"]
+position = Vector2(1081, 792)
+
+[node name="Tile_61" type="Node2D" parent="Tiles"]
+position = Vector2(956, 715)
+
+[node name="Tile_62" type="Node2D" parent="Tiles"]
+position = Vector2(872, 654)
+
+[node name="Tile_63" type="Node2D" parent="Tiles"]
+position = Vector2(1043, 533)
+
+[node name="Player" parent="." instance=ExtResource("3_r0du0")]
+position = Vector2(147.00002, 269.00003)
+scale = Vector2(24.71, 24.71)

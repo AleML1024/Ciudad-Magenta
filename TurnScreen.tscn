@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://i1h6aln7vtss"]
+
+[ext_resource type="Script" uid="uid://dma8nrhpxsjd7" path="res://turn_screen.gd" id="1_cr3fw"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_txmjl"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="2_101ee"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="3_toems"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="5_e526w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toems"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[node name="TurnScreen" type="CanvasLayer"]
+script = ExtResource("1_cr3fw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 124.0
+offset_right = 1639.0
+offset_bottom = 253.0
+text = "¡Ahora es el turno de Violeta!"
+label_settings = ExtResource("2_101ee")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 798.0
+offset_right = 1104.0
+offset_bottom = 858.0
+theme_override_fonts/font = ExtResource("1_txmjl")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_toems")
+theme_override_styles/hover = ExtResource("3_toems")
+
+[node name="Label" type="Label" parent="Panel/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0500001
+offset_right = 1.0
+text = "Continuar"
+label_settings = ExtResource("5_e526w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 431.0
+offset_right = 1088.0
+offset_bottom = 643.0
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
