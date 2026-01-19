@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4mtdhle5vpac"]
+[gd_scene load_steps=9 format=3 uid="uid://c4mtdhle5vpac"]
 
 [ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="1_c27dv"]
+[ext_resource type="Script" uid="uid://djnerlqpxjsn1" path="res://decision_screen.gd" id="1_vc7h8"]
 [ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="2_vc7h8"]
 [ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="3_txni7"]
 [ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="4_4xosr"]
@@ -23,9 +24,20 @@ font_size = 40
 font_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 3)
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="DecisionScreen" type="CanvasLayer"]
+script = ExtResource("1_vc7h8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Root" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Root"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,31 +45,45 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
 
-[node name="Panel" type="Panel" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="Panel" type="Panel" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 178.0
-offset_top = 58.0
-offset_right = 1797.0
-offset_bottom = 187.0
+[node name="Label" type="Label" parent="Root/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.093
+anchor_top = 0.054
+anchor_right = 0.93600005
+anchor_bottom = 0.17300001
+offset_left = -0.55999756
+offset_top = -0.3199997
+offset_right = -0.12011719
+offset_bottom = 0.1599884
 text = "Te haz encontrado con un problema..."
 label_settings = ExtResource("1_c27dv")
 
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 834.0
-offset_top = 913.0
-offset_right = 1090.0
-offset_bottom = 973.0
+[node name="Button" type="Button" parent="Root/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_top = 0.845
+anchor_right = 0.568
+anchor_bottom = 0.901
+offset_left = 0.7199707
+offset_top = 0.39996338
+offset_right = -0.5600586
+offset_bottom = -0.08001709
 theme_override_fonts/font = ExtResource("2_vc7h8")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ykr1f")
 theme_override_styles/hover = ExtResource("3_txni7")
 
-[node name="Label" type="Label" parent="Panel/Button"]
+[node name="Label" type="Label" parent="Root/Panel/Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -70,14 +96,19 @@ label_settings = ExtResource("4_4xosr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Panel"]
-layout_mode = 0
-offset_left = 189.0
-offset_top = 333.0
-offset_right = 1820.0
-offset_bottom = 682.0
+[node name="ColorRect" type="ColorRect" parent="Root/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098000005
+anchor_top = 0.30800003
+anchor_right = 0.9480001
+anchor_bottom = 0.63100004
+offset_left = 0.83999634
+offset_top = 0.35995483
+offset_right = -0.16015625
+offset_bottom = 0.5199585
 
-[node name="Label" type="Label" parent="Panel/ColorRect"]
+[node name="Label" type="Label" parent="Root/Panel/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.9990001

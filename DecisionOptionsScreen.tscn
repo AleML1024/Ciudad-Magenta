@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnx6vffe807h7"]
+[gd_scene load_steps=12 format=3 uid="uid://bnx6vffe807h7"]
 
+[ext_resource type="Script" uid="uid://psy1r832r2fi" path="res://decision_options_screen.gd" id="1_g1q53"]
 [ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="1_u6cu4"]
 [ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="2_dcdkl"]
 [ext_resource type="StyleBox" uid="uid://df2y5562fkbgd" path="res://asssets/ui/decision_button.tres" id="3_x4nl8"]
@@ -12,6 +13,9 @@ shadow_size = 0
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(1, 9.225)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4nl8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="FontVariation" id="FontVariation_tux8b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x4nl8"]
@@ -20,9 +24,26 @@ font_size = 30
 font_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 3)
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1q53"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv5j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="DecisionOptionsScreen" type="CanvasLayer"]
+script = ExtResource("1_g1q53")
+
+[node name="Root" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Root"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,7 +51,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="Root"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -39,11 +61,11 @@ offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Timer" type="Timer" parent="Panel"]
+[node name="Timer" type="Timer" parent="Root/Panel"]
 wait_time = 60.0
 autostart = true
 
-[node name="Label" type="Label" parent="Panel/Timer"]
+[node name="Label" type="Label" parent="Root/Panel/Timer"]
 anchors_preset = -1
 anchor_left = 0.47500002
 anchor_top = 0.041
@@ -56,23 +78,37 @@ offset_bottom = 8.799995
 text = "60"
 label_settings = SubResource("LabelSettings_dcdkl")
 
-[node name="Decision1" type="Node" parent="Panel"]
+[node name="Option1" type="Node" parent="Root/Panel"]
 
-[node name="ColorRect" type="ColorRect" parent="Panel/Decision1"]
-offset_left = 91.0
-offset_top = 630.0
-offset_right = 593.0
-offset_bottom = 797.0
+[node name="ColorRect" type="ColorRect" parent="Root/Panel/Option1"]
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = 0.583
+anchor_right = 0.30900002
+anchor_bottom = 0.73800004
+offset_left = 0.7599945
+offset_top = 0.35998535
+offset_right = -0.2800293
+offset_bottom = -0.040039063
 
-[node name="Label" type="Label" parent="Panel/Decision1/ColorRect"]
+[node name="Panel" type="Panel" parent="Root/Panel/Option1/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4nl8")
+
+[node name="Label" type="Label" parent="Root/Panel/Option1/ColorRect/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.9990001
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 44.0
-offset_right = -2.5100403
-offset_bottom = 54.0
+offset_left = 2.0
+offset_right = 0.5019531
+offset_bottom = 9.0
 text = "Seguir por ese camino aunque esté oscuro
 
 "
@@ -81,7 +117,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/Decision1"]
+[node name="Panel" type="Panel" parent="Root/Panel/Option1"]
 anchors_preset = -1
 anchor_left = 0.128
 anchor_top = 0.42600003
@@ -93,7 +129,7 @@ offset_right = 0.07998657
 offset_bottom = -9.680054
 theme_override_styles/panel = ExtResource("2_dcdkl")
 
-[node name="Button2" type="Button" parent="Panel/Decision1/Panel"]
+[node name="Button1" type="Button" parent="Root/Panel/Option1/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.13100001
@@ -107,23 +143,36 @@ offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
 
-[node name="Decision2" type="Node" parent="Panel"]
+[node name="Option2" type="Node" parent="Root/Panel"]
 
-[node name="ColorRect" type="ColorRect" parent="Panel/Decision2"]
-offset_left = 716.0
-offset_top = 630.0
-offset_right = 1218.0
-offset_bottom = 797.0
+[node name="ColorRect" type="ColorRect" parent="Root/Panel/Option2"]
+anchors_preset = -1
+anchor_left = 0.37300003
+anchor_top = 0.583
+anchor_right = 0.634
+anchor_bottom = 0.73800004
+offset_left = -0.16003418
+offset_top = 0.35998535
+offset_right = 0.7199707
+offset_bottom = -0.040039063
 
-[node name="Label" type="Label" parent="Panel/Decision2/ColorRect"]
+[node name="Panel" type="Panel" parent="Root/Panel/Option2/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.008
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -3.0160217
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1q53")
+
+[node name="Label" type="Label" parent="Root/Panel/Option2/ColorRect/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.9990001
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 44.0
-offset_right = -2.5100403
-offset_bottom = 54.0
+offset_top = 1.0
+offset_right = -1.4980469
+offset_bottom = -2.0
 text = "Irse por el camino más largo
 
 "
@@ -132,7 +181,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/Decision2"]
+[node name="Panel" type="Panel" parent="Root/Panel/Option2"]
 anchors_preset = -1
 anchor_left = 0.14600001
 anchor_top = 0.39800003
@@ -144,7 +193,7 @@ offset_right = 625.07996
 offset_bottom = -208.40002
 theme_override_styles/panel = ExtResource("2_dcdkl")
 
-[node name="Button2" type="Button" parent="Panel/Decision2/Panel"]
+[node name="Button2" type="Button" parent="Root/Panel/Option2/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.13100001
@@ -158,32 +207,38 @@ offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
 
-[node name="Decision3" type="Node" parent="Panel"]
+[node name="Option3" type="Node" parent="Root/Panel"]
 
-[node name="ColorRect" type="ColorRect" parent="Panel/Decision3"]
+[node name="ColorRect" type="ColorRect" parent="Root/Panel/Option3"]
 offset_left = 1335.0
 offset_top = 630.0
 offset_right = 1837.0
 offset_bottom = 797.0
 
-[node name="Label" type="Label" parent="Panel/Decision3/ColorRect"]
+[node name="Panel" type="Panel" parent="Root/Panel/Option3/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.9990001
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 44.0
-offset_right = -2.5100403
-offset_bottom = 54.0
-text = "Irse por el camino más largo
+anchor_right = 1.0
+anchor_bottom = 1.006
+offset_bottom = -0.0020141602
+theme_override_styles/panel = SubResource("StyleBoxFlat_brv5j")
 
+[node name="Label" type="Label" parent="Root/Panel/Option3/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 11.0
+text = "Reportar el fallo en el tendido eléctrico y la municipalidad lo soluciona.
 "
 label_settings = SubResource("LabelSettings_x4nl8")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/Decision3"]
+[node name="Panel" type="Panel" parent="Root/Panel/Option3"]
 anchors_preset = -1
 anchor_left = 0.128
 anchor_top = 0.609
@@ -195,7 +250,7 @@ offset_right = 1246.08
 offset_bottom = -208.40002
 theme_override_styles/panel = ExtResource("2_dcdkl")
 
-[node name="Button2" type="Button" parent="Panel/Decision3/Panel"]
+[node name="Button3" type="Button" parent="Root/Panel/Option3/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.13100001

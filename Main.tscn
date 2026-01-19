@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba44lsu0bbjfn"]
+[gd_scene load_steps=12 format=3 uid="uid://ba44lsu0bbjfn"]
 
 [ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://asssets/board/Tablero.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cbd5udw3u88st" path="res://board.gd" id="1_uu6xs"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://bo6cf8tk45q6r" path="res://game_manager.gd" id="5_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://4k4772is40ma" path="res://Marino.tscn" id="5_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://i1h6aln7vtss" path="res://TurnScreen.tscn" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://c4mtdhle5vpac" path="res://DecisionScreen.tscn" id="10_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://bnx6vffe807h7" path="res://DecisionOptionsScreen.tscn" id="11_20pc6"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("5_3dxm6")
@@ -302,3 +304,9 @@ position = Vector2(1043, 533)
 metadata/_edit_lock_ = true
 
 [node name="TurnScreen" parent="." instance=ExtResource("9_03owx")]
+
+[node name="DecisionScreen" parent="." instance=ExtResource("10_wkp8b")]
+visible = false
+
+[node name="DecisionOptionsScreen" parent="." instance=ExtResource("11_20pc6")]
+visible = false

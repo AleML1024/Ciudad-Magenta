@@ -61,12 +61,13 @@ func resolve_tile():
 			finish_turn()
 
 		board.tile_type.DECISION:
-			if game_manager.ignore_decisions:
-				finish_turn()
-			else:		
-				has_pending_decision = true
-				# aquí NO se termina el turno
-				return
+			has_pending_decision = true
+			pending_decision_card = game_manager.card_manager.draw_card(
+				character_type,
+				"decision"
+			)
+			game_manager.start_decision(self)
+			return
 
 		board.tile_type.ADVANCE:
 			move_steps(tile["value"])

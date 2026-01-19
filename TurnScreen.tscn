@@ -28,24 +28,37 @@ grow_vertical = 2
 color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 382.0
-offset_top = 124.0
-offset_right = 1639.0
-offset_bottom = 253.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19900002
+anchor_top = 0.115
+anchor_right = 0.85400003
+anchor_bottom = 0.23400001
+offset_left = -0.08001709
+offset_top = -0.20000458
+offset_right = -0.6800537
+offset_bottom = 0.27998352
 text = "¡Ahora es el turno de Violeta!"
 label_settings = ExtResource("2_101ee")
 
 [node name="Button" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 848.0
-offset_top = 798.0
-offset_right = 1104.0
-offset_bottom = 858.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44200003
+anchor_top = 0.739
+anchor_right = 0.57500005
+anchor_bottom = 0.794
+offset_left = -0.6400757
+offset_top = -0.11999512
+offset_right = -0.00012207031
+offset_bottom = 0.47998047
 theme_override_fonts/font = ExtResource("1_txmjl")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_toems")
@@ -63,10 +76,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Panel"]
-layout_mode = 0
-offset_left = 866.0
-offset_top = 431.0
-offset_right = 1088.0
-offset_bottom = 643.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45100003
+anchor_top = 0.39900002
+anchor_right = 0.56700003
+anchor_bottom = 0.595
+offset_left = 0.079956055
+offset_top = 0.07998657
+offset_right = -0.64001465
+offset_bottom = 0.39996338
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
