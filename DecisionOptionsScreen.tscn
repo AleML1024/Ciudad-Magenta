@@ -1,0 +1,210 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnx6vffe807h7"]
+
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="1_u6cu4"]
+[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="2_dcdkl"]
+[ext_resource type="StyleBox" uid="uid://df2y5562fkbgd" path="res://asssets/ui/decision_button.tres" id="3_x4nl8"]
+[ext_resource type="StyleBox" uid="uid://drbujgv3ivu41" path="res://asssets/ui/decision_button_hover.tres" id="4_g1q53"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dcdkl"]
+font = ExtResource("1_u6cu4")
+font_size = 64
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 9.225)
+
+[sub_resource type="FontVariation" id="FontVariation_tux8b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4nl8"]
+font = SubResource("FontVariation_tux8b")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 3)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="Panel"]
+wait_time = 60.0
+autostart = true
+
+[node name="Label" type="Label" parent="Panel/Timer"]
+anchors_preset = -1
+anchor_left = 0.47500002
+anchor_top = 0.041
+anchor_right = 0.54200006
+anchor_bottom = 0.115
+offset_left = -6.1035156e-05
+offset_top = -0.2800026
+offset_right = 3.3598633
+offset_bottom = 8.799995
+text = "60"
+label_settings = SubResource("LabelSettings_dcdkl")
+
+[node name="Decision1" type="Node" parent="Panel"]
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Decision1"]
+offset_left = 91.0
+offset_top = 630.0
+offset_right = 593.0
+offset_bottom = 797.0
+
+[node name="Label" type="Label" parent="Panel/Decision1/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 44.0
+offset_right = -2.5100403
+offset_bottom = 54.0
+text = "Seguir por ese camino aunque esté oscuro
+
+"
+label_settings = SubResource("LabelSettings_x4nl8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/Decision1"]
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.42600003
+anchor_right = 0.22600001
+anchor_bottom = 0.521
+offset_left = 0.23999023
+offset_top = -10.080017
+offset_right = 0.07998657
+offset_bottom = -9.680054
+theme_override_styles/panel = ExtResource("2_dcdkl")
+
+[node name="Button2" type="Button" parent="Panel/Decision1/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = -0.252
+anchor_right = 0.869
+anchor_bottom = 0.393
+offset_left = 1.3719826
+offset_top = 1.9560242
+offset_right = 1.2221222
+offset_bottom = 1.9409981
+theme_override_styles/normal = ExtResource("3_x4nl8")
+theme_override_styles/hover = ExtResource("4_g1q53")
+
+[node name="Decision2" type="Node" parent="Panel"]
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Decision2"]
+offset_left = 716.0
+offset_top = 630.0
+offset_right = 1218.0
+offset_bottom = 797.0
+
+[node name="Label" type="Label" parent="Panel/Decision2/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 44.0
+offset_right = -2.5100403
+offset_bottom = 54.0
+text = "Irse por el camino más largo
+
+"
+label_settings = SubResource("LabelSettings_x4nl8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/Decision2"]
+anchors_preset = -1
+anchor_left = 0.14600001
+anchor_top = 0.39800003
+anchor_right = 0.22600001
+anchor_bottom = 0.70500004
+offset_left = 590.67993
+offset_top = 20.159973
+offset_right = 625.07996
+offset_bottom = -208.40002
+theme_override_styles/panel = ExtResource("2_dcdkl")
+
+[node name="Button2" type="Button" parent="Panel/Decision2/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = -0.252
+anchor_right = 0.869
+anchor_bottom = 0.393
+offset_left = 1.3719826
+offset_top = 1.9560242
+offset_right = 1.2221222
+offset_bottom = 1.9409981
+theme_override_styles/normal = ExtResource("3_x4nl8")
+theme_override_styles/hover = ExtResource("4_g1q53")
+
+[node name="Decision3" type="Node" parent="Panel"]
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Decision3"]
+offset_left = 1335.0
+offset_top = 630.0
+offset_right = 1837.0
+offset_bottom = 797.0
+
+[node name="Label" type="Label" parent="Panel/Decision3/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 44.0
+offset_right = -2.5100403
+offset_bottom = 54.0
+text = "Irse por el camino más largo
+
+"
+label_settings = SubResource("LabelSettings_x4nl8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/Decision3"]
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.609
+anchor_right = 0.22600001
+anchor_bottom = 0.70500004
+offset_left = 1246.24
+offset_top = -207.72003
+offset_right = 1246.08
+offset_bottom = -208.40002
+theme_override_styles/panel = ExtResource("2_dcdkl")
+
+[node name="Button2" type="Button" parent="Panel/Decision3/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13100001
+anchor_top = -0.252
+anchor_right = 0.869
+anchor_bottom = 0.393
+offset_left = 1.3719826
+offset_top = 1.9560242
+offset_right = 1.2221222
+offset_bottom = 1.9409981
+theme_override_styles/normal = ExtResource("3_x4nl8")
+theme_override_styles/hover = ExtResource("4_g1q53")

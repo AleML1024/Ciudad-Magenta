@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4mtdhle5vpac"]
+
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="1_c27dv"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="2_vc7h8"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="3_txni7"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="4_4xosr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykr1f"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="FontVariation" id="FontVariation_tux8b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bamy4"]
+font = SubResource("FontVariation_tux8b")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 3)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 58.0
+offset_right = 1797.0
+offset_bottom = 187.0
+text = "Te haz encontrado con un problema..."
+label_settings = ExtResource("1_c27dv")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 913.0
+offset_right = 1090.0
+offset_bottom = 973.0
+theme_override_fonts/font = ExtResource("2_vc7h8")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ykr1f")
+theme_override_styles/hover = ExtResource("3_txni7")
+
+[node name="Label" type="Label" parent="Panel/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0500001
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0000038
+text = "Continuar"
+label_settings = ExtResource("4_4xosr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 333.0
+offset_right = 1820.0
+offset_bottom = 682.0
+
+[node name="Label" type="Label" parent="Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_right = -37.36914
+text = "Rubí debe pasar aceras que están descuidadas y rotas o bien caminar por la cuneta del lado contrario, para poder pasar, ya que por ese trayecto hay una curva peligrosa y no permite ver los carros que vienen en sentido contrario. 
+
+A continuación deberás de tomar una decisión en un máximo de 60 segundos.
+"
+label_settings = SubResource("LabelSettings_bamy4")
+autowrap_mode = 2
