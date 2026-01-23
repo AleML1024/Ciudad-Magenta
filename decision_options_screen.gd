@@ -42,7 +42,7 @@ func _on_option_pressed(index: int):
 	var result = decision_data["options"][index]["result"]
 	emit_signal("option_selected", result)
 	visible = false
-	timer_label.visible = true
+	timer_label.visible = false
 	
 func _process(delta):
 	if not visible:

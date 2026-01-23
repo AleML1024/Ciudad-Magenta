@@ -60,16 +60,21 @@ func start_turn():
 		
 func _on_turn_continue():
 	turn_screen.visible = false
-
 	var player = players[current_player_index]
+	print("Primer turno:", player.is_first_turn, "Tile:", player.tile_index)
+	
+	if player.has_pending_decision:
+		start_decision(player)
+		return
 
 	if player.is_first_turn:
 		player.is_first_turn = false
 		player.move_steps(1)
 	else:
-		start_turn()
+		player.move_steps(1)
 
 func end_turn():
+	print("FIN TURNO:", players[current_player_index].name)
 	turn_in_progress = false
 	current_player_index = (current_player_index + 1) % players.size()
 	start_turn()
@@ -140,7 +145,7 @@ func _on_decision_resolved(result: Dictionary):
 		player.add_coins(result["coins"])
 		
 	if result.has("move"):
-		player.move_steps(result["move"])
+		await player.move_steps(result["move"])
 	else:
 		end_turn()
 
@@ -160,3 +165,6 @@ func _on_problem_continue():
 	
 	var player = players[current_player_index]
 	decision_options_ui.show_decision(player.pending_decision_card)
+
+func on_tile_resolved(_player):
+	end_turn()

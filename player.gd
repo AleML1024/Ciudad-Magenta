@@ -43,7 +43,6 @@ func move_steps(steps: int):
 			0.3
 		)
 		await tween.finished
-		
 	resolve_tile()
 
 func resolve_tile():
@@ -52,31 +51,29 @@ func resolve_tile():
 	match tile["type"]:
 		board.tile_type.POSITIVE:
 			# aplicar carta
-			move_steps(1)
-			finish_turn()
-
+			game_manager.on_tile_resolved(self)
+			
 		board.tile_type.NEGATIVE:
 			# aplicar carta
-			move_steps(1)
-			finish_turn()
+			game_manager.on_tile_resolved(self)
 
 		board.tile_type.DECISION:
+			if has_pending_decision:
+				return
+
 			has_pending_decision = true
 			pending_decision_card = game_manager.card_manager.draw_card(
 				character_type,
 				"decision"
 			)
+
 			game_manager.start_decision(self)
 			return
 
 		board.tile_type.ADVANCE:
 			move_steps(tile["value"])
-			finish_turn()
 
 func add_coins(amount: int):
 	coins += amount
 	coins = max(coins, 0)
 	print(name, "monedas:", coins)
-	
-func finish_turn():
-	game_manager.end_turn()
