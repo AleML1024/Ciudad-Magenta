@@ -1,27 +1,32 @@
-extends CanvasLayer
+extends Control
 
 signal option_selected(result: Dictionary)
 signal time_out
 
-@onready var root = $Root
-@onready var timer_label = $Root/Panel/Timer/Label
+@onready var timer_label = $Timer/Label
 @onready var buttons = [
-	$Root/Panel/Option1/Panel/Button1,
-	$Root/Panel/Option2/Panel/Button2,
-	$Root/Panel/Option3/Panel/Button3
+	$Panel/Option1/Panel/Button1,
+	$Panel/Option2/Panel/Button1,
+	$Panel/Option3/Panel/Button1
+]
+@onready var options_labels = [
+	$Panel/Option1/ColorRect/Panel/Label,
+	$Panel/Option2/ColorRect/Panel/Label,
+	$Panel/Option3/ColorRect/Panel/Label
 ]
 
 var time_left = 60
 var decision_data := {}
 
 func show_decision(data: Dictionary):
-	root.visible = true
+	visible = true
+	timer_label.visible = true
 	decision_data = data
 	time_left = 60
 	
-	for i in range(buttons.size()):
+	for i in range(options_labels.size()):
 		var option = data["options"][i]
-		buttons[i].text = option["text"]
+		options_labels[i].text = option["text"]
 		buttons[i].disabled = false
 		
 func _ready():
@@ -34,9 +39,10 @@ func _on_option_pressed(index: int):
 	for b in buttons:
 		b.disabled = true
 		
-	var result = decision_data["data"][index]["result"]
+	var result = decision_data["options"][index]["result"]
 	emit_signal("option_selected", result)
-	root.visible = false
+	visible = false
+	timer_label.visible = true
 	
 func _process(delta):
 	if not visible:

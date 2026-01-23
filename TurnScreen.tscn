@@ -16,25 +16,35 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 1
 shadow_offset = Vector2(0, 3)
 
-[node name="TurnScreen" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_cr3fw")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
-
-[node name="Panel" type="Panel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5029865, 0.4884135, 0.4758913, 0.61960787)
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.19900002
@@ -48,7 +58,7 @@ offset_bottom = 0.27998352
 text = "¡Ahora es el turno de Violeta!"
 label_settings = ExtResource("2_101ee")
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="Button" type="Button" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.44200003
@@ -64,7 +74,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_toems")
 theme_override_styles/hover = ExtResource("3_toems")
 
-[node name="Label" type="Label" parent="Panel/Button"]
+[node name="Label" type="Label" parent="Control/Panel/Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -75,7 +85,7 @@ label_settings = ExtResource("5_e526w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Panel"]
+[node name="ColorRect" type="ColorRect" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.45100003
@@ -87,4 +97,4 @@ offset_top = 0.07998657
 offset_right = -0.64001465
 offset_bottom = 0.39996338
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel/Button" to="." method="_on_button_pressed"]

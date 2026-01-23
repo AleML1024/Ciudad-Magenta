@@ -4,8 +4,8 @@ extends Node
 @onready var card_manager = $CardManager
 @onready var players = $Players.get_children()
 @onready var turn_screen = $TurnScreen
-@onready var decision_options_ui = $DecisionOptionsScreen
-@onready var decision_screen = $DecisionScreen
+@onready var decision_options_ui = $DecisionOptionsScreen/Control
+@onready var decision_screen = $DecisionScreen/Control
 var turn_in_progress := false
 var ignore_decisions := true
 
@@ -23,8 +23,8 @@ func _ready():
 		player.has_pending_decision = false
 		player.pending_decision_card = {}
 	
-	decision_screen.visible = false
-	decision_options_ui.visible = false
+	$DecisionScreen.visible = false
+	$DecisionOptionsScreen.visible = false
 	
 	decision_screen.continue_pressed.connect(_on_problem_continue)
 	decision_options_ui.option_selected.connect(_on_decision_resolved)
@@ -100,9 +100,10 @@ func apply_decision_option(player, option: Dictionary):
 		end_turn()
 		
 func start_decision(player):
+	print("decision")
 	waiting_for_decision = true
-	decision_screen.visible = true
-	decision_options_ui.visible = false
+	$DecisionScreen.visible = true
+	$DecisionOptionsScreen.visible = false
 	
 	var card = player.pending_decision_card
 	decision_screen.show_problem(card["text"])
@@ -131,7 +132,7 @@ func start_mock_minigame(player):
 func _on_decision_resolved(result: Dictionary):
 	var player = players[current_player_index]
 	
-	decision_options_ui.visible = false
+	$DecisionOptionsScreen.visible = false
 	waiting_for_decision = false
 	player.has_pending_decision = false
 	
@@ -144,7 +145,7 @@ func _on_decision_resolved(result: Dictionary):
 		end_turn()
 
 func _on_decision_timeout():
-	decision_options_ui.visible = false
+	$DecisionOptionsScreen.visible = false
 	waiting_for_decision = false
 
 	var player = players[current_player_index]
@@ -154,8 +155,8 @@ func _on_decision_timeout():
 	end_turn()
 
 func _on_problem_continue():
-	decision_screen.visible = false
-	decision_options_ui.visible = true
+	$DecisionScreen.visible = false
+	$DecisionOptionsScreen.visible = true
 	
 	var player = players[current_player_index]
 	decision_options_ui.show_decision(player.pending_decision_card)

@@ -24,19 +24,18 @@ font_size = 40
 font_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 3)
 
-[node name="DecisionScreen" type="CanvasLayer"]
-script = ExtResource("1_vc7h8")
+[node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Root" type="Control" parent="."]
-visible = false
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vc7h8")
 
-[node name="ColorRect" type="ColorRect" parent="Root"]
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
 
-[node name="Panel" type="Panel" parent="Root"]
+[node name="Panel" type="Panel" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Root/Panel"]
+[node name="Label" type="Label" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.093
@@ -67,7 +66,7 @@ offset_bottom = 0.1599884
 text = "Te haz encontrado con un problema..."
 label_settings = ExtResource("1_c27dv")
 
-[node name="Button" type="Button" parent="Root/Panel"]
+[node name="Button" type="Button" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.43400002
@@ -83,7 +82,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ykr1f")
 theme_override_styles/hover = ExtResource("3_txni7")
 
-[node name="Label" type="Label" parent="Root/Panel/Button"]
+[node name="Label" type="Label" parent="Control/Panel/Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -96,7 +95,7 @@ label_settings = ExtResource("4_4xosr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Root/Panel"]
+[node name="ColorRect" type="ColorRect" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.098000005
@@ -108,7 +107,7 @@ offset_top = 0.35995483
 offset_right = -0.16015625
 offset_bottom = 0.5199585
 
-[node name="Label" type="Label" parent="Root/Panel/ColorRect"]
+[node name="Label" type="Label" parent="Control/Panel/ColorRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.9990001
@@ -121,3 +120,5 @@ A continuación deberás de tomar una decisión en un máximo de 60 segundos.
 "
 label_settings = SubResource("LabelSettings_bamy4")
 autowrap_mode = 2
+
+[connection signal="pressed" from="Control/Panel/Button" to="Control" method="_on_button_pressed"]

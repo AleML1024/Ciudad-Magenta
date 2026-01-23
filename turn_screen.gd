@@ -2,7 +2,7 @@ extends CanvasLayer
 
 signal continue_pressed
 
-@onready var label = $Panel/Label
+@onready var label = $Control/Panel/Label
 
 func show_turn(player_name: String):
 	label.text = "¡Ahora es el turno de " + player_name + "!"

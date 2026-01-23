@@ -55,9 +55,21 @@ var card_banks = {
 		"decision" : [
 			{
 				"id": "V_D_1",
-				"text": "wip",
-				"effects" : [
-					{ "type": "coins", "target": "self", "value": -3 }
+				"text": "Violeta va a pasar por un callejón, para tomar un atajo y ganar tiempo, pero está oscuro, porque el alumbrado no funciona.
+							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "Seguir por ese camino aunque esté oscuro",
+						"result": { "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Irse por el camino más largo.",
+						"result": { "coins": 0, "move": 1}
+					},
+					{  
+						"text": "Reportar el fallo en el tendido eléctrico y la municipalidad lo soluciona.",
+						"result": { "coins": +3, "move": 1}
+					}
 				]
 			}
 		]
@@ -108,9 +120,21 @@ var card_banks = {
 		"decision" : [
 			{
 				"id": "R_D_1",
-				"text": "wip",
-				"effects" : [
-					{ "type": "coins", "target": "self", "value": -3 }
+				"text": "Rubí pasa por la fábrica que emite gases y polvo.
+						A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "Pasar por la zona donde está la fábrica casi que sin respirar.",
+						"result": { "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Evitar la ruta donde está la fábrica y dar la vuelta.",
+						"result": { "coins": 0, "move": 1}
+					},
+					{  
+						"text": "Reportar a la municipalidad la irregularidad en la emisión de gases y polvo.",
+						"result": { "coins": 0, "move": 1}
+					}
 				]
 			}
 		]
@@ -157,9 +181,21 @@ var card_banks = {
 		"decision" : [
 			{
 				"id": "C_D_1",
-				"text": "wip",
-				"effects" : [
-					{ "type": "coins", "target": "self", "value": -3 }
+				"text": "Celeste puede pasar por una zona en la cual el césped no ha sido podado.
+					A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "Pasar por esa zona en donde el césped no se ha cortado, sin saber si existen sapos, culebras, lodo o huecos.",
+						"result": { "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Dar la vuelta y pasar por otra zona en donde el césped sí haya sido podado.",
+						"result": { "coins": -3, "move": 1}
+					},
+					{  
+						"text": "Tomar fotos y publicar el descuido en redes sociales.",
+						"result": { "coins": +3, "move": 1}
+					}
 				]
 			}
 		]
@@ -207,9 +243,21 @@ var card_banks = {
 		"decision" : [
 			{
 				"id": "M_D_1",
-				"text": "wip",
-				"effects" : [
-					{ "type": "coins", "target": "self", "value": -3 }
+				"text": "Marino puede pasar por una zona en la cual hay unos niños jugando fútbol en la calle porque la ciudad no tiene canchas para jugar.
+					A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "Pasar caminando cuidadosamente por el sector en donde están jugando fútbol.",
+						"result": { "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Irse por otra ruta en la que no estén jugando bola.",
+						"result": { "coins": 0, "move": 1}
+					},
+					{  
+						"text": "",
+						"result": { "coins": 0, "move": 1}
+					}
 				]
 			}
 		]

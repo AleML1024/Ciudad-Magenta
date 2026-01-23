@@ -15,22 +15,6 @@
 [node name="GameManager" type="Node"]
 script = ExtResource("5_3dxm6")
 
-[node name="Players" type="Node" parent="."]
-
-[node name="Violeta" parent="Players" instance=ExtResource("3_r0du0")]
-z_index = 10
-position = Vector2(1, 0)
-
-[node name="Ruby" parent="Players" instance=ExtResource("3_trn2v")]
-z_index = 10
-position = Vector2(0, 1)
-
-[node name="Celeste" parent="Players" instance=ExtResource("4_03owx")]
-z_index = 10
-
-[node name="Marino" parent="Players" instance=ExtResource("5_wkp8b")]
-z_index = 10
-
 [node name="CardManager" type="Node" parent="."]
 script = ExtResource("3_fos0i")
 
@@ -304,9 +288,25 @@ position = Vector2(1043, 533)
 metadata/_edit_lock_ = true
 
 [node name="TurnScreen" parent="." instance=ExtResource("9_03owx")]
+visible = false
 
 [node name="DecisionScreen" parent="." instance=ExtResource("10_wkp8b")]
 visible = false
 
 [node name="DecisionOptionsScreen" parent="." instance=ExtResource("11_20pc6")]
 visible = false
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Violeta" parent="Players" instance=ExtResource("3_r0du0")]
+z_index = 1
+position = Vector2(118, 73)
+
+[node name="Ruby" parent="Players" instance=ExtResource("3_trn2v")]
+position = Vector2(-17, 0)
+
+[node name="Celeste" parent="Players" instance=ExtResource("4_03owx")]
+position = Vector2(-12, 1)
+
+[node name="Marino" parent="Players" instance=ExtResource("5_wkp8b")]
+position = Vector2(-15, 4)
