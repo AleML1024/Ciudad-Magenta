@@ -64,13 +64,11 @@ func _on_turn_continue():
 	print("Primer turno:", player.is_first_turn, "Tile:", player.tile_index)
 	
 	if player.has_pending_decision:
-		start_decision(player)
+		player.resolve_tile()
 		return
 
 	if player.is_first_turn:
 		player.is_first_turn = false
-		player.move_steps(1)
-	else:
 		player.move_steps(1)
 
 func end_turn():
@@ -146,8 +144,6 @@ func _on_decision_resolved(result: Dictionary):
 		
 	if result.has("move"):
 		await player.move_steps(result["move"])
-	else:
-		end_turn()
 
 func _on_decision_timeout():
 	$DecisionOptionsScreen.visible = false

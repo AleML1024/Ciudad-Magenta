@@ -5,6 +5,7 @@ var coins := 20
 var has_pending_decision := false
 var pending_decision_card: Dictionary = {}
 var is_first_turn := true
+var is_first_decision := true
 
 var board: Node = null
 var game_manager: Node =null
@@ -50,25 +51,39 @@ func resolve_tile():
 
 	match tile["type"]:
 		board.tile_type.POSITIVE:
-			# aplicar carta
-			game_manager.on_tile_resolved(self)
+			game_manager.card_manager.draw_card(
+				character_type,
+				"positive"
+			)
+			move_steps(1)
 			
 		board.tile_type.NEGATIVE:
-			# aplicar carta
-			game_manager.on_tile_resolved(self)
-
-		board.tile_type.DECISION:
-			if has_pending_decision:
-				return
-
-			has_pending_decision = true
-			pending_decision_card = game_manager.card_manager.draw_card(
+			game_manager.card_manager.draw_card(
 				character_type,
-				"decision"
+				"negative"
 			)
-
-			game_manager.start_decision(self)
-			return
+			move_steps(1)
+			
+		board.tile_type.DECISION:
+			if is_first_decision:
+				print("es la primera decision que tomo")
+				has_pending_decision = true
+				pending_decision_card = game_manager.card_manager.draw_card(
+					character_type,
+					"decision"
+				)
+				is_first_decision = false
+				game_manager.start_decision(self)
+				
+			else:
+				print("me guardo la decision para mi siguiente turno")
+				has_pending_decision = true
+				pending_decision_card = game_manager.card_manager.draw_card(
+					character_type,
+					"decision"
+				)
+				is_first_decision = true
+				game_manager.on_tile_resolved(self)
 
 		board.tile_type.ADVANCE:
 			move_steps(tile["value"])
