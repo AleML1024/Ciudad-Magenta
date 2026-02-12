@@ -5,7 +5,7 @@ extends Node
 @onready var players = $Players.get_children()
 @onready var turn_screen = $TurnScreen
 @onready var decision_options_ui = $DecisionOptionsScreen/Control
-@onready var decision_screen = $DecisionScreen/Control
+@onready var text_screen = $TextScreen/Control
 var turn_in_progress := false
 var ignore_decisions := true
 
@@ -23,10 +23,11 @@ func _ready():
 		player.has_pending_decision = false
 		player.pending_decision_card = {}
 	
-	$DecisionScreen.visible = false
+	$TextScreen.visible = false
 	$DecisionOptionsScreen.visible = false
 	
-	decision_screen.continue_pressed.connect(_on_problem_continue)
+	text_screen.decision_continue_pressed.connect(_on_problem_continue)
+	text_screen.situation_continue_pressed.connect(_on_situation_continue)
 	decision_options_ui.option_selected.connect(_on_decision_resolved)
 	decision_options_ui.time_out.connect(_on_decision_timeout)
 	
@@ -105,11 +106,12 @@ func apply_decision_option(player, option: Dictionary):
 func start_decision(player):
 	print("decision")
 	waiting_for_decision = true
-	$DecisionScreen.visible = true
+	$TextScreen.visible = true
 	$DecisionOptionsScreen.visible = false
 	
 	var card = player.pending_decision_card
-	decision_screen.show_problem(card["text"])
+	text_screen.show_screen(card["text"], "decision")
+	
 
 func resolve_decision(player, result: Dictionary):
 	waiting_for_decision = false
@@ -122,15 +124,6 @@ func resolve_decision(player, result: Dictionary):
 		player.move_steps(result["move"])
 	else:
 		end_turn()
-		
-func start_mock_minigame(player):
-	await get_tree().create_timer(1.0).timeout
-
-	var result = {
-		"coins": 3,
-		"move": 1
-	}
-	resolve_decision(player, result)
 	
 func _on_decision_resolved(result: Dictionary):
 	var player = players[current_player_index]
@@ -156,11 +149,23 @@ func _on_decision_timeout():
 	end_turn()
 
 func _on_problem_continue():
-	$DecisionScreen.visible = false
+	$TextScreen.visible = false
 	$DecisionOptionsScreen.visible = true
 	
 	var player = players[current_player_index]
 	decision_options_ui.show_decision(player.pending_decision_card)
+
+func _on_situation_continue():
+	$TextScreen.visible = false
+	var player = players[current_player_index]
+	player.move_steps(1)
+
+func show_situation(player):
+	print("situation")
+	$TextScreen.visible = true
+	
+	var card = player.situation_card
+	text_screen.show_screen(card["text"], "situation")
 
 func on_tile_resolved(_player):
 	end_turn()

@@ -4,6 +4,7 @@ var tile_index := 0
 var coins := 20
 var has_pending_decision := false
 var pending_decision_card: Dictionary = {}
+var situation_card: Dictionary = {}
 var is_first_turn := true
 var is_first_decision := true
 
@@ -51,18 +52,18 @@ func resolve_tile():
 
 	match tile["type"]:
 		board.tile_type.POSITIVE:
-			game_manager.card_manager.draw_card(
+			situation_card = game_manager.card_manager.draw_card(
 				character_type,
 				"positive"
 			)
-			move_steps(1)
+			game_manager.show_situation(self)		
 			
 		board.tile_type.NEGATIVE:
-			game_manager.card_manager.draw_card(
+			situation_card = game_manager.card_manager.draw_card(
 				character_type,
 				"negative"
 			)
-			move_steps(1)
+			game_manager.show_situation(self)
 			
 		board.tile_type.DECISION:
 			if is_first_decision:

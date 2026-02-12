@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bo6cf8tk45q6r" path="res://game_manager.gd" id="5_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://4k4772is40ma" path="res://Marino.tscn" id="5_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://i1h6aln7vtss" path="res://TurnScreen.tscn" id="9_03owx"]
-[ext_resource type="PackedScene" uid="uid://c4mtdhle5vpac" path="res://DecisionScreen.tscn" id="10_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://c4mtdhle5vpac" path="res://TextScreen.tscn" id="10_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://bnx6vffe807h7" path="res://DecisionOptionsScreen.tscn" id="11_20pc6"]
 
 [node name="GameManager" type="Node"]
@@ -290,8 +290,7 @@ metadata/_edit_lock_ = true
 [node name="TurnScreen" parent="." instance=ExtResource("9_03owx")]
 visible = false
 
-[node name="DecisionScreen" parent="." instance=ExtResource("10_wkp8b")]
-visible = false
+[node name="TextScreen" parent="." instance=ExtResource("10_wkp8b")]
 
 [node name="DecisionOptionsScreen" parent="." instance=ExtResource("11_20pc6")]
 visible = false
