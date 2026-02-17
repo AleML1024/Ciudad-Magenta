@@ -105,21 +105,30 @@ func start_decision(player):
 	
 func _on_decision_resolved(result: Dictionary):
 	var player = players[current_player_index]
-	
+
 	$DecisionOptionsScreen.visible = false
 	waiting_for_decision = false
-	player.has_pending_decision = false
-	$TextScreen.visible = true
+
+	pending_result = result
+
+	# mostrar pantalla de resultado
 	text_screen.show_screen(result["text"], "result")
-	
-	if result.has("coins"):
-		player.add_coins(result["coins"])
-		
-	if result.has("move"):
-		await player.move_steps(result["move"])	
+	$TextScreen.visible = true
 	
 func _on_result_continue():
 	$TextScreen.visible = false
+
+	var player = players[current_player_index]
+
+	if pending_result.has("coins"):
+		player.add_coins(pending_result["coins"])
+
+	if pending_result.has("move") and pending_result["move"] != 0:
+		await player.move_steps(pending_result["move"])
+	else:
+		end_turn()
+
+	pending_result = {}
 	
 func _on_decision_timeout():
 	$DecisionOptionsScreen.visible = false

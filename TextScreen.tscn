@@ -65,6 +65,7 @@ offset_right = -0.12011719
 offset_bottom = 0.1599884
 text = "Te has encontrado con un problema..."
 label_settings = ExtResource("1_c27dv")
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Control/Panel"]
 layout_mode = 1
