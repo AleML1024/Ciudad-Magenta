@@ -14,6 +14,7 @@ var current_player_index := 0
 var game_time := 20 * 60
 var is_last_round := false
 var waiting_for_decision := false
+var pending_result : Dictionary = {}
 
 func _ready():
 	print("Game started")
@@ -28,6 +29,7 @@ func _ready():
 	
 	text_screen.decision_continue_pressed.connect(_on_problem_continue)
 	text_screen.situation_continue_pressed.connect(_on_situation_continue)
+	text_screen.result_continue_pressed.connect(_on_result_continue)
 	decision_options_ui.option_selected.connect(_on_decision_resolved)
 	decision_options_ui.time_out.connect(_on_decision_timeout)
 	
@@ -77,19 +79,6 @@ func end_turn():
 	turn_in_progress = false
 	current_player_index = (current_player_index + 1) % players.size()
 	start_turn()
-	
-func show_decision(player):
-	var card = player.pending_decision_card
-
-	if card.is_empty():
-		print("DECISIÓN sin carta válida")
-		return
-
-	if not card.has("text"):
-		print("Carta de decisión mal formada:", card)
-		return
-
-	print("DECISIÓN:", card["text"])
 
 func apply_decision_option(player, option: Dictionary):
 	player.has_pending_decision = false
@@ -104,7 +93,8 @@ func apply_decision_option(player, option: Dictionary):
 		end_turn()
 		
 func start_decision(player):
-	print("decision")
+	print("decision " + player.name)
+	
 	waiting_for_decision = true
 	$TextScreen.visible = true
 	$DecisionOptionsScreen.visible = false
@@ -112,18 +102,6 @@ func start_decision(player):
 	var card = player.pending_decision_card
 	text_screen.show_screen(card["text"], "decision")
 	
-
-func resolve_decision(player, result: Dictionary):
-	waiting_for_decision = false
-	player.has_pending_decision = false
-
-	if result.has("coins"):
-		player.add_coins(result["coins"])
-
-	if result.has("move") and result["move"] != 0:
-		player.move_steps(result["move"])
-	else:
-		end_turn()
 	
 func _on_decision_resolved(result: Dictionary):
 	var player = players[current_player_index]
@@ -131,13 +109,18 @@ func _on_decision_resolved(result: Dictionary):
 	$DecisionOptionsScreen.visible = false
 	waiting_for_decision = false
 	player.has_pending_decision = false
+	$TextScreen.visible = true
+	text_screen.show_screen(result["text"], "result")
 	
 	if result.has("coins"):
 		player.add_coins(result["coins"])
 		
 	if result.has("move"):
-		await player.move_steps(result["move"])
-
+		await player.move_steps(result["move"])	
+	
+func _on_result_continue():
+	$TextScreen.visible = false
+	
 func _on_decision_timeout():
 	$DecisionOptionsScreen.visible = false
 	waiting_for_decision = false
@@ -159,7 +142,7 @@ func _on_situation_continue():
 	$TextScreen.visible = false
 	var player = players[current_player_index]
 	player.move_steps(1)
-
+	
 func show_situation(player):
 	print("situation")
 	$TextScreen.visible = true

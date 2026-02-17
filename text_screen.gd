@@ -2,6 +2,7 @@ extends Control
 
 signal decision_continue_pressed
 signal situation_continue_pressed
+signal result_continue_pressed
 
 @onready var body = $Panel/ColorRect/Label
 @onready var title = $Panel/Label
@@ -18,6 +19,8 @@ func show_screen(text: String, type: String):
 		title.text = "Te has encontrado con un problema..."
 	if _type == "situation":
 		title.text = "Te has encontrado con un suceso..."
+	if _type == "result":
+		title.text = "Resultado..."
 	body.text = text
 	visible = true
 
@@ -27,3 +30,5 @@ func _on_continue_button_pressed():
 		emit_signal("decision_continue_pressed")
 	if _type == "situation":
 		emit_signal("situation_continue_pressed")
+	if _type == "result":
+		emit_signal("result_continue_pressed")

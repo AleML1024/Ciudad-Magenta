@@ -60,15 +60,15 @@ var card_banks = {
 				"options" : [
 					{  
 						"text": "Seguir por ese camino aunque esté oscuro",
-						"result": { "coins": -3, "move": 2}
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
 					},
 					{  
 						"text": "Irse por el camino más largo.",
-						"result": { "coins": 0, "move": 1}
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
 					},
 					{  
 						"text": "Reportar el fallo en el tendido eléctrico y la municipalidad lo soluciona.",
-						"result": { "coins": +3, "move": 1}
+						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": +3, "move": 1}
 					}
 				]
 			}
@@ -125,15 +125,15 @@ var card_banks = {
 				"options" : [
 					{  
 						"text": "Pasar por la zona donde está la fábrica casi que sin respirar.",
-						"result": { "coins": -3, "move": 2}
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
 					},
 					{  
 						"text": "Evitar la ruta donde está la fábrica y dar la vuelta.",
-						"result": { "coins": 0, "move": 1}
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
 					},
 					{  
 						"text": "Reportar a la municipalidad la irregularidad en la emisión de gases y polvo.",
-						"result": { "coins": 0, "move": 1}
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
 					}
 				]
 			}
@@ -186,15 +186,15 @@ var card_banks = {
 				"options" : [
 					{  
 						"text": "Pasar por esa zona en donde el césped no se ha cortado, sin saber si existen sapos, culebras, lodo o huecos.",
-						"result": { "coins": -3, "move": 2}
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
 					},
 					{  
 						"text": "Dar la vuelta y pasar por otra zona en donde el césped sí haya sido podado.",
-						"result": { "coins": -3, "move": 1}
+						"result": { "text": "Avanzas 1 casilla y pierdes 3 monedas", "coins": -3, "move": 1}
 					},
 					{  
 						"text": "Tomar fotos y publicar el descuido en redes sociales.",
-						"result": { "coins": +3, "move": 1}
+						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": +3, "move": 1}
 					}
 				]
 			}
@@ -248,11 +248,11 @@ var card_banks = {
 				"options" : [
 					{  
 						"text": "Pasar caminando cuidadosamente por el sector en donde están jugando fútbol.",
-						"result": { "coins": -3, "move": 2}
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
 					},
 					{  
 						"text": "Irse por otra ruta en la que no estén jugando bola.",
-						"result": { "coins": 0, "move": 1}
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
 					},
 					{  
 						"text": "",

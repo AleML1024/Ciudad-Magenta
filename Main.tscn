@@ -303,9 +303,12 @@ position = Vector2(118, 73)
 
 [node name="Ruby" parent="Players" instance=ExtResource("3_trn2v")]
 position = Vector2(-17, 0)
+character_type = 1
 
 [node name="Celeste" parent="Players" instance=ExtResource("4_03owx")]
 position = Vector2(-12, 1)
+character_type = 2
 
 [node name="Marino" parent="Players" instance=ExtResource("5_wkp8b")]
 position = Vector2(-15, 4)
+character_type = 3
