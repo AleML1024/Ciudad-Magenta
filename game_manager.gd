@@ -6,6 +6,12 @@ extends Node
 @onready var turn_screen = $TurnScreen
 @onready var decision_options_ui = $DecisionOptionsScreen/Control
 @onready var text_screen = $TextScreen/Control
+
+@onready var ui_violeta = $PlayersUI/PlayerInfoVioleta
+@onready var ui_ruby = $PlayersUI/PlayerInfoRuby
+@onready var ui_celeste = $PlayersUI/PlayerInfoCeleste
+@onready var ui_marino = $PlayersUI/PlayerInfoMarino
+
 var turn_in_progress := false
 var ignore_decisions := true
 
@@ -47,7 +53,8 @@ func _ready():
 		player.place_on_start()
 
 		player.coins = 20
-
+		
+	setup_player_ui()
 	start_turn()
 
 func start_turn():
@@ -104,8 +111,6 @@ func start_decision(player):
 	
 	
 func _on_decision_resolved(result: Dictionary):
-	var player = players[current_player_index]
-
 	$DecisionOptionsScreen.visible = false
 	waiting_for_decision = false
 
@@ -161,3 +166,16 @@ func show_situation(player):
 
 func on_tile_resolved(_player):
 	end_turn()
+	
+func setup_player_ui():
+
+	var ui_map = {
+		"Violeta": ui_violeta,
+		"Ruby": ui_ruby,
+		"Celeste": ui_celeste,
+		"Marino": ui_marino
+	}
+
+	for player in players:
+		if ui_map.has(player.name):
+			ui_map[player.name].set_player(player)

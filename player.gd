@@ -21,6 +21,8 @@ enum Character_type {
 @export var character_type: Character_type
 @export var start_tile_index := 0
 
+signal coins_changed(new_value)
+
 func place_on_start():
 	tile_index = start_tile_index
 	global_position = board.tiles_positions[tile_index]
@@ -93,3 +95,34 @@ func add_coins(amount: int):
 	coins += amount
 	coins = max(coins, 0)
 	print(name, "monedas:", coins)
+	emit_signal("coins_changed", coins)
+	
+func get_character_name() -> String:
+	match character_type:
+		Character_type.VIOLETA: return "Violeta"
+		Character_type.RUBY: return "Ruby"
+		Character_type.CELESTE: return "Celeste"
+		Character_type.MARINO: return "Marino"
+	return "Jugador"
+
+
+func get_character_color() -> Color:
+	match character_type:
+		Character_type.VIOLETA: return Color("#A259FF")
+		Character_type.RUBY: return Color("#FF4D4D")
+		Character_type.CELESTE: return Color("#4DB8FF")
+		Character_type.MARINO: return Color("#1B3B6F")
+	return Color.WHITE
+
+
+func get_character_portrait() -> Texture2D:
+	match character_type:
+		Character_type.VIOLETA:
+			return preload("res://asssets/characters/VioletaAvatar.PNG")
+		Character_type.RUBY:
+			return preload("res://asssets/characters/RubíAvatar.PNG")
+		Character_type.CELESTE:
+			return preload("res://asssets/characters/CelesteAvatar.PNG")
+		Character_type.MARINO:
+			return preload("res://asssets/characters/MarinoAvatar.PNG")
+	return null

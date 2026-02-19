@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ba44lsu0bbjfn"]
+[gd_scene load_steps=13 format=3 uid="uid://ba44lsu0bbjfn"]
 
 [ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://asssets/board/Tablero.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cbd5udw3u88st" path="res://board.gd" id="1_uu6xs"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://i1h6aln7vtss" path="res://TurnScreen.tscn" id="9_03owx"]
 [ext_resource type="PackedScene" uid="uid://c4mtdhle5vpac" path="res://TextScreen.tscn" id="10_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://bnx6vffe807h7" path="res://DecisionOptionsScreen.tscn" id="11_20pc6"]
+[ext_resource type="PackedScene" uid="uid://dsmx0nmq5snu0" path="res://PlayerInfo.tscn" id="12_5vvyt"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("5_3dxm6")
@@ -291,6 +292,7 @@ metadata/_edit_lock_ = true
 visible = false
 
 [node name="TextScreen" parent="." instance=ExtResource("10_wkp8b")]
+visible = false
 
 [node name="DecisionOptionsScreen" parent="." instance=ExtResource("11_20pc6")]
 visible = false
@@ -299,7 +301,7 @@ visible = false
 
 [node name="Violeta" parent="Players" instance=ExtResource("3_r0du0")]
 z_index = 1
-position = Vector2(118, 73)
+position = Vector2(-18, -2)
 
 [node name="Ruby" parent="Players" instance=ExtResource("3_trn2v")]
 position = Vector2(-17, 0)
@@ -312,3 +314,27 @@ character_type = 2
 [node name="Marino" parent="Players" instance=ExtResource("5_wkp8b")]
 position = Vector2(-15, 4)
 character_type = 3
+
+[node name="PlayersUI" type="Node" parent="."]
+
+[node name="PlayerInfoVioleta" parent="PlayersUI" instance=ExtResource("12_5vvyt")]
+
+[node name="PlayerInfoRuby" parent="PlayersUI" instance=ExtResource("12_5vvyt")]
+layout_direction = 3
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 3.6399841
+offset_bottom = 1.7599792
+
+[node name="PlayerInfoCeleste" parent="PlayersUI" instance=ExtResource("12_5vvyt")]
+layout_direction = 3
+offset_left = -4.0
+offset_top = 902.0
+offset_right = -3.3600159
+offset_bottom = 901.76
+
+[node name="PlayerInfoMarino" parent="PlayersUI" instance=ExtResource("12_5vvyt")]
+offset_left = 1.0
+offset_top = 902.0
+offset_right = 1.6399841
+offset_bottom = 901.76
