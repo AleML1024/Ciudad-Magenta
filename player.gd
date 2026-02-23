@@ -44,7 +44,7 @@ func move_steps(steps: int):
 			self,
 			"global_position",
 			board.tiles_positions[tile_index],
-			0.3
+			0.7
 		)
 		await tween.finished
 	resolve_tile()
@@ -108,10 +108,10 @@ func get_character_name() -> String:
 
 func get_character_color() -> Color:
 	match character_type:
-		Character_type.VIOLETA: return Color("#A259FF")
-		Character_type.RUBY: return Color("#FF4D4D")
-		Character_type.CELESTE: return Color("#4DB8FF")
-		Character_type.MARINO: return Color("#1B3B6F")
+		Character_type.VIOLETA: return Color("a259ffba")
+		Character_type.RUBY: return Color("ff4d4dba")
+		Character_type.CELESTE: return Color("6fc3ffba")
+		Character_type.MARINO: return Color("1b3b6fba")
 	return Color.WHITE
 
 

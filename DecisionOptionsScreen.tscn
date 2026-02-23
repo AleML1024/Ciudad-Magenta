@@ -48,7 +48,6 @@ metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="Control"]
 wait_time = 60.0
-autostart = true
 
 [node name="Label" type="Label" parent="Control/Timer"]
 visible = false

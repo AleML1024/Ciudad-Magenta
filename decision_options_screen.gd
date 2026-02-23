@@ -47,9 +47,9 @@ func _on_option_pressed(index: int):
 func _process(delta):
 	if not visible:
 		return
-		
+	
 	time_left -= delta
-	timer_label.text = str(ceil(time_left))
+	timer_label.text = str(int(time_left))
 	
 	if time_left < 0:
 		_on_time_out()

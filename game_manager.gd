@@ -87,17 +87,7 @@ func end_turn():
 	current_player_index = (current_player_index + 1) % players.size()
 	start_turn()
 
-func apply_decision_option(player, option: Dictionary):
-	player.has_pending_decision = false
-	player.pending_decision_card = {}
 
-	if option.has("coins"):
-		player.add_coins(option["coins"])
-
-	if option.has("move"):
-		player.move_steps(option["move"])
-	else:
-		end_turn()
 		
 func start_decision(player):
 	print("decision " + player.name)
@@ -155,8 +145,50 @@ func _on_problem_continue():
 func _on_situation_continue():
 	$TextScreen.visible = false
 	var player = players[current_player_index]
+	resolve_card(player, player.situation_card)
 	player.move_steps(1)
+
+func apply_effects(player, effects):
+	for effect in effects:
+		apply_single_effect(player, effect)
+
+func apply_single_effect(player, effect):
+	var target = effect.get("target", "self")
+	var value = effect.get("value", 0)
+
+	var target_player = resolve_target(player, target)
+
+	if target_player == null:
+		return
+	target_player.add_coins(value)
+
+func resolve_target(player, target):
+	match target:
+
+		"self":
+			return player
+
+		"other_random":
+			var others = players.filter(func(p): return p != player)
+			return others.pick_random()
+
+		"other_choice":
+			# show_player_selection(player)
+			return null # se aplicará después
+
+	return player
 	
+func resolve_card(player, card):
+	if card.has("effects"):
+		apply_effects(player, card["effects"])
+		
+func apply_decision_result(player, result):
+	if result.has("coins"):
+		player.add_coins(result["coins"])
+
+	if result.has("move"):
+		player.move_steps(result["move"])
+		
 func show_situation(player):
 	print("situation")
 	$TextScreen.visible = true

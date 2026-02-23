@@ -11,8 +11,11 @@ func set_player(player):
 	player_ref = player
 	name_label.text = player.name
 	update_coins(player.coins)
+	
+	portrait.texture = player.get_character_portrait()
 
-	# escuchar cambios futuros
+	color_rect.self_modulate = player.get_character_color()
+	
 	player.coins_changed.connect(update_coins)
 
 func update_coins(value):
