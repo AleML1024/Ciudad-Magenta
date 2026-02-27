@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=3 uid="uid://dl4ykiasnes6o"]
+
+[ext_resource type="Script" uid="uid://c5ayt570m05ti" path="res://selection_screen.gd" id="1_2nccq"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="1_wyhbp"]
+[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="2_obmbp"]
+[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://asssets/characters/RubíAvatar.PNG" id="3_vxeg3"]
+[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="4_h0vve"]
+[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="5_o3sea"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="6_o3sea"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="7_2nccq"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="8_jkv3u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsreh"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2nccq")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49019608, 0.49019608, 0.49019608, 0.61960787)
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.0
+offset_top = 105.0
+offset_right = 490.0
+offset_bottom = 234.0
+grow_horizontal = 2
+text = "Selecciona al jugador..."
+label_settings = ExtResource("1_wyhbp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Players" type="Control" parent="Control/Panel"]
+layout_mode = 1
+anchor_left = 0.109000005
+anchor_top = 0.33
+anchor_right = 0.89000005
+anchor_bottom = 0.624
+offset_left = 0.71998596
+offset_top = -0.4000244
+offset_right = -0.8000488
+offset_bottom = 0.079956055
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/Players"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Violeta" type="TextureButton" parent="Control/Panel/Players/HBoxContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture_normal = ExtResource("2_obmbp")
+stretch_mode = 0
+
+[node name="Ruby" type="TextureButton" parent="Control/Panel/Players/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture_normal = ExtResource("3_vxeg3")
+stretch_mode = 0
+flip_h = true
+
+[node name="Celeste" type="TextureButton" parent="Control/Panel/Players/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture_normal = ExtResource("4_h0vve")
+stretch_mode = 0
+flip_h = true
+
+[node name="Marino" type="TextureButton" parent="Control/Panel/Players/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture_normal = ExtResource("5_o3sea")
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_top = 0.845
+anchor_right = 0.568
+anchor_bottom = 0.901
+offset_left = 0.7199707
+offset_top = 0.39996338
+offset_right = -0.5600586
+offset_bottom = -0.08001709
+theme_override_fonts/font = ExtResource("6_o3sea")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fsreh")
+theme_override_styles/hover = ExtResource("7_2nccq")
+
+[node name="Label" type="Label" parent="Control/Panel/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0500001
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0000038
+text = "Confirmar"
+label_settings = ExtResource("8_jkv3u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/Panel/Button" to="Control" method="_on_button_pressed"]

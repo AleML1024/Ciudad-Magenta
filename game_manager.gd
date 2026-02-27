@@ -6,6 +6,7 @@ extends Node
 @onready var turn_screen = $TurnScreen
 @onready var decision_options_ui = $DecisionOptionsScreen/Control
 @onready var text_screen = $TextScreen/Control
+@onready var selection_screen = $SelectionScreen/Control
 
 @onready var ui_violeta = $PlayersUI/PlayerInfoVioleta
 @onready var ui_ruby = $PlayersUI/PlayerInfoRuby
@@ -14,13 +15,15 @@ extends Node
 
 var turn_in_progress := false
 var ignore_decisions := true
-
+var selection_in_progress := false
 
 var current_player_index := 0
 var game_time := 20 * 60
 var is_last_round := false
 var waiting_for_decision := false
 var pending_result : Dictionary = {}
+var pending_effect_player = null
+var pending_effect_data = null
 
 func _ready():
 	print("Game started")
@@ -32,12 +35,14 @@ func _ready():
 	
 	$TextScreen.visible = false
 	$DecisionOptionsScreen.visible = false
+	$SelectionScreen.visible = false
 	
 	text_screen.decision_continue_pressed.connect(_on_problem_continue)
 	text_screen.situation_continue_pressed.connect(_on_situation_continue)
 	text_screen.result_continue_pressed.connect(_on_result_continue)
 	decision_options_ui.option_selected.connect(_on_decision_resolved)
 	decision_options_ui.time_out.connect(_on_decision_timeout)
+	selection_screen.confirmed.connect(_on_confirm_pressed)
 	
 	turn_screen.visible = false
 	turn_screen.connect("continue_pressed", Callable(self, "_on_turn_continue"))
@@ -146,11 +151,12 @@ func _on_situation_continue():
 	$TextScreen.visible = false
 	var player = players[current_player_index]
 	resolve_card(player, player.situation_card)
-	player.move_steps(1)
-
+	
 func apply_effects(player, effects):
 	for effect in effects:
 		apply_single_effect(player, effect)
+	if selection_in_progress == false:
+		player.move_steps(1)
 
 func apply_single_effect(player, effect):
 	var target = effect.get("target", "self")
@@ -173,10 +179,34 @@ func resolve_target(player, target):
 			return others.pick_random()
 
 		"other_choice":
-			# show_player_selection(player)
-			return null # se aplicará después
+			selection_in_progress = true
+			print("Escogiendo objetivo")
+			pending_effect_player = player
+			pending_effect_data = target
+			show_player_selection(player)
+			return null
 
 	return player
+	
+func show_player_selection(current_player):
+	$SelectionScreen.visible = true
+	selection_screen.setup(current_player)
+	
+func _on_confirm_pressed(player_name):
+	var source = pending_effect_player
+	var target = players.filter(func(p): return p.name == player_name)[0]
+
+	for effect in source.situation_card["effects"]:
+		if effect["target"] == "other_choice":
+			target.add_coins(effect["value"])
+
+	pending_effect_player = null
+	pending_effect_data = null
+	
+	print("Confirmar presionado")
+	$SelectionScreen.visible = false
+	selection_in_progress = false
+	await source.move_steps(1)
 	
 func resolve_card(player, card):
 	if card.has("effects"):
