@@ -184,6 +184,7 @@ func resolve_target(player, target):
 			pending_effect_player = player
 			pending_effect_data = target
 			show_player_selection(player)
+			print("Objetivo seleccionado")
 			return null
 
 	return player

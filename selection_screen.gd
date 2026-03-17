@@ -47,4 +47,3 @@ func _on_player_pressed(player_button):
 func _on_button_pressed() -> void:
 	if selected_player:
 		emit_signal("confirmed", selected_player.name)
-		hide()

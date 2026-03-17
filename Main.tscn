@@ -299,6 +299,7 @@ visible = false
 visible = false
 
 [node name="SelectionScreen" parent="." instance=ExtResource("8_c6i3y")]
+visible = false
 
 [node name="Players" type="Node" parent="."]
 
