@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://i1h6aln7vtss"]
+[gd_scene load_steps=8 format=3 uid="uid://i1h6aln7vtss"]
 
 [ext_resource type="Script" uid="uid://dma8nrhpxsjd7" path="res://turn_screen.gd" id="1_cr3fw"]
 [ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_txmjl"]
 [ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="2_101ee"]
 [ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="3_toems"]
 [ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="5_e526w"]
+[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="6_e526w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toems"]
 bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
@@ -85,16 +86,21 @@ label_settings = ExtResource("5_e526w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/Panel"]
+[node name="ColorRect" type="TextureRect" parent="Control/Panel"]
+custom_minimum_size = Vector2(350, 350)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.45100003
-anchor_top = 0.39900002
-anchor_right = 0.56700003
-anchor_bottom = 0.595
-offset_left = 0.079956055
-offset_top = 0.07998657
-offset_right = -0.64001465
-offset_bottom = 0.39996338
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_e526w")
+expand_mode = 1
 
 [connection signal="pressed" from="Control/Panel/Button" to="." method="_on_button_pressed"]

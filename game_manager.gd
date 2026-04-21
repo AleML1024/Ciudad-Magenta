@@ -18,7 +18,6 @@ var ignore_decisions := true
 var selection_in_progress := false
 
 var current_player_index := 0
-var game_time := 20 * 60
 var is_last_round := false
 var waiting_for_decision := false
 var pending_result : Dictionary = {}
@@ -69,7 +68,7 @@ func start_turn():
 	turn_in_progress = true
 	var player = players[current_player_index]
 
-	turn_screen.show_turn(player.name)
+	turn_screen.show_turn(player)
 	print("Turno de:", player.name)
 		
 		

@@ -253,10 +253,6 @@ var card_banks = {
 					{  
 						"text": "Irse por otra ruta en la que no estén jugando bola.",
 						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
-					},
-					{  
-						"text": "",
-						"result": { "coins": 0, "move": 1}
 					}
 				]
 			}

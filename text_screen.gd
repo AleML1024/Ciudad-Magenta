@@ -4,7 +4,7 @@ signal decision_continue_pressed
 signal situation_continue_pressed
 signal result_continue_pressed
 
-@onready var body = $Panel/ColorRect/Label
+@onready var body = $Panel/PanelContainer/Body
 @onready var title = $Panel/Label
 @onready var continue_button = $Panel/Button
 
