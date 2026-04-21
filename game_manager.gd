@@ -39,6 +39,7 @@ func _ready():
 	text_screen.decision_continue_pressed.connect(_on_problem_continue)
 	text_screen.situation_continue_pressed.connect(_on_situation_continue)
 	text_screen.result_continue_pressed.connect(_on_result_continue)
+	text_screen.timeout_continue_pressed.connect(_on_timeout_continue)
 	decision_options_ui.option_selected.connect(_on_decision_resolved)
 	decision_options_ui.time_out.connect(_on_decision_timeout)
 	selection_screen.confirmed.connect(_on_confirm_pressed)
@@ -131,14 +132,18 @@ func _on_result_continue():
 	
 func _on_decision_timeout():
 	$DecisionOptionsScreen.visible = false
-	waiting_for_decision = false
+	text_screen.show_screen("Pierdes el turno y avanzas 1 casilla.", "timeout")
+	$TextScreen.visible = true
 
+func _on_timeout_continue():
+	$TextScreen.visible = false
+	waiting_for_decision = false
+	
 	var player = players[current_player_index]
 	
 	print("Tiempo agotado, se aplica penalización")
 	player.move_steps(1)
-	end_turn()
-
+	
 func _on_problem_continue():
 	$TextScreen.visible = false
 	$DecisionOptionsScreen.visible = true
