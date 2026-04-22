@@ -22,7 +22,7 @@ signal time_out
 	$Panel/HBoxContainer/Option3/VBoxContainer/PanelContainer/Label
 ]
 
-var time_left = 5
+var time_left = 60
 var decision_data := {}
 var decision_active = false
 		
@@ -30,7 +30,7 @@ func show_decision(data: Dictionary):
 	visible = true
 	timer_label.visible = true
 	decision_data = data
-	time_left = 5
+	time_left = 60
 	decision_active = true
 	var options = data["options"]
 	
