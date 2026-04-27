@@ -1,0 +1,204 @@
+[gd_scene load_steps=7 format=3 uid="uid://be3vrlvwyyx8"]
+
+[ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="1_i26rj"]
+[ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://asssets/fonts/TitleText.tres" id="2_h7a2f"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="3_qoqlk"]
+[ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://button.gd" id="4_qoqlk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7r1g0"]
+font = ExtResource("3_qoqlk")
+font_size = 64
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i26rj")
+
+[node name="StartScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.261
+anchor_top = 0.252
+anchor_right = 0.739
+anchor_bottom = 0.372
+offset_left = 0.37997437
+offset_top = 0.33999634
+offset_right = -0.38000488
+offset_bottom = -0.26000977
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ciudad Magenta"
+label_settings = ExtResource("2_h7a2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -23.0
+offset_right = 480.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Jugar"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rules" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Rules"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Reglas"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Opciones"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Salir"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerSelectionScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ConfirmSelectionScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RulesSCreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OptionsScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
