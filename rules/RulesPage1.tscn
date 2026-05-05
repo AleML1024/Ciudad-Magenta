@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqdq1j8lb46e0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_13lyf"]
+font_size = 35
+font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+
+[node name="RulesPage1" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+text = "Meta:
+Llegar al concierto.
+
+Dos maneras:
+1.  Avanzar esquivando la resolución de problemas, eligiendo soluciones que le  beneficien para llegar rápidamente al concierto. Llegas más rápido pero con menos monedas.
+
+2.  Avanzar eligiendo opciones para solucionar los problemas, de esta forma avanzas más lento pero con más monedas."
+label_settings = SubResource("LabelSettings_13lyf")
+autowrap_mode = 2

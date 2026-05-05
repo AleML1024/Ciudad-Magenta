@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwuwih7rhbutk"]
+
+[ext_resource type="Texture2D" uid="uid://bal28lwx6d5ql" path="res://asssets/board/Negativa.PNG" id="1_kwmew"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0y0g8"]
+font_size = 35
+font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+
+[node name="RulesPage5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "Casillas negativas: 
+Son casillas de color rojo, afectan a los jugadores solo por haber caído en ese tipo de casilla, no pueden decidir entre soluciones. Siempre después de aplicar la consecuencia negativa, el jugador va a avanzar una casilla."
+label_settings = SubResource("LabelSettings_0y0g8")
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_kwmew")
+expand_mode = 1

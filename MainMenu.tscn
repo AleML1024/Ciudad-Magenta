@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://be3vrlvwyyx8"]
+[gd_scene load_steps=13 format=3 uid="uid://be3vrlvwyyx8"]
 
 [ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="1_i26rj"]
 [ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://asssets/fonts/TitleText.tres" id="2_h7a2f"]
 [ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="3_qoqlk"]
 [ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://button.gd" id="4_qoqlk"]
+[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://RulesScreen.gd" id="5_fimr5"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="5_iwfq2"]
+[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="6_e2xy7"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="7_fimr5"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="8_u7cqb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
 
@@ -11,6 +16,20 @@
 font = ExtResource("3_qoqlk")
 font_size = 64
 shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fimr5"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 10
 shadow_offset = Vector2(0, 5)
 
 [node name="MainMenu" type="Control"]
@@ -39,6 +58,7 @@ grow_vertical = 2
 texture = ExtResource("1_i26rj")
 
 [node name="StartScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,14 +211,140 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RulesSCreen" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="RulesScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_fimr5")
+
+[node name="Label" type="Label" parent="RulesScreen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 330.0
+grow_horizontal = 2
+text = "Reglas del juego"
+label_settings = ExtResource("5_iwfq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RulesScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.81500006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = -40.200073
+offset_right = -129.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 75
+
+[node name="Skip" type="Button" parent="RulesScreen/HBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("6_e2xy7")
+theme_override_styles/hover = ExtResource("7_fimr5")
+
+[node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Skip"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Omitir"
+label_settings = ExtResource("8_u7cqb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="RulesScreen/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="Previous" type="Button" parent="RulesScreen/HBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("6_e2xy7")
+theme_override_styles/hover = ExtResource("7_fimr5")
+
+[node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Previous"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Anterior"
+label_settings = ExtResource("8_u7cqb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="Button" parent="RulesScreen/HBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("6_e2xy7")
+theme_override_styles/hover = ExtResource("7_fimr5")
+
+[node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Next"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Siguiente"
+label_settings = ExtResource("8_u7cqb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="RulesScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.4
+anchor_right = 0.933
+anchor_bottom = 0.558
+offset_left = 4.9599915
+offset_top = -167.0
+offset_right = 0.6398926
+offset_bottom = 263.36
+theme_override_styles/panel = SubResource("StyleBoxFlat_fimr5")
+
+[node name="Content" type="Control" parent="RulesScreen/PanelContainer"]
+clip_contents = true
+layout_mode = 2
 
 [node name="OptionsScreen" type="Control" parent="."]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="pressed" from="RulesScreen/HBoxContainer/Previous" to="RulesScreen" method="_on_previous_pressed"]
+[connection signal="pressed" from="RulesScreen/HBoxContainer/Next" to="RulesScreen" method="_on_next_pressed"]
