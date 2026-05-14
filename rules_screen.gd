@@ -61,3 +61,13 @@ func _on_next_pressed() -> void:
 func _on_previous_pressed() -> void:
 	if current_page > 0:
 		show_page(current_page - 1)
+		
+
+func _on_skip_pressed() -> void:
+	print("Reglas terminadas")
+	hide() # o cambiar de escena
+	current_page = pages.size() -1
+
+
+func _on_rules_pressed() -> void:
+	show()

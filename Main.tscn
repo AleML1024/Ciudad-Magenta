@@ -31,6 +31,7 @@ texture = ExtResource("1_glv2v")
 metadata/_edit_lock_ = true
 
 [node name="Tiles" type="Node2D" parent="Board"]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Tile_00" type="Node2D" parent="Board/Tiles"]
@@ -290,7 +291,6 @@ position = Vector2(1043, 533)
 metadata/_edit_lock_ = true
 
 [node name="TurnScreen" parent="." instance=ExtResource("9_03owx")]
-visible = false
 
 [node name="TextScreen" parent="." instance=ExtResource("10_wkp8b")]
 visible = false

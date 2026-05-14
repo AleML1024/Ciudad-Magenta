@@ -1,14 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://be3vrlvwyyx8"]
+[gd_scene load_steps=21 format=3 uid="uid://be3vrlvwyyx8"]
 
+[ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://main_menu.gd" id="1_61cf8"]
 [ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="1_i26rj"]
 [ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://asssets/fonts/TitleText.tres" id="2_h7a2f"]
 [ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="3_qoqlk"]
 [ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://button.gd" id="4_qoqlk"]
-[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://RulesScreen.gd" id="5_fimr5"]
+[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://rules_screen.gd" id="5_fimr5"]
 [ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="5_iwfq2"]
 [ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="6_e2xy7"]
+[ext_resource type="Script" uid="uid://bkpf1thh75fb" path="res://intro_screen.gd" id="6_rnncn"]
+[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="7_afec1"]
 [ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="7_fimr5"]
+[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://asssets/characters/RubíAvatar.PNG" id="8_61cf8"]
 [ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="8_u7cqb"]
+[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="9_rnncn"]
+[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="10_3fnrj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
 
@@ -17,6 +23,22 @@ font = ExtResource("3_qoqlk")
 font_size = 64
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_31qfy"]
+font = ExtResource("3_qoqlk")
+font_size = 70
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m04lp"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fimr5"]
 content_margin_left = 5.0
@@ -39,6 +61,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_61cf8")
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 1
@@ -104,6 +127,7 @@ custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+focus_mode = 0
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_qoqlk")
 theme_override_font_sizes/font_size = 64
@@ -129,6 +153,7 @@ custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+focus_mode = 0
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_qoqlk")
 theme_override_font_sizes/font_size = 64
@@ -154,6 +179,7 @@ custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+focus_mode = 0
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_qoqlk")
 theme_override_font_sizes/font_size = 64
@@ -179,6 +205,7 @@ custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+focus_mode = 0
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_qoqlk")
 theme_override_font_sizes/font_size = 64
@@ -199,19 +226,151 @@ label_settings = SubResource("LabelSettings_7r1g0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerSelectionScreen" type="Control" parent="."]
+[node name="IntroScreen" type="Control" parent="."]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_rnncn")
 
-[node name="ConfirmSelectionScreen" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label" type="Label" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 330.0
+grow_horizontal = 2
+text = "Elige a tu personaje"
+label_settings = ExtResource("5_iwfq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Violeta" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Violeta"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_afec1")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Violeta"]
+layout_mode = 2
+text = "Violeta"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ruby" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Ruby"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("8_61cf8")
+expand_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Ruby"]
+layout_mode = 2
+text = "Ruby"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Celeste" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Celeste"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_rnncn")
+expand_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Celeste"]
+layout_mode = 2
+text = "Celeste"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Marino" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Marino"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_3fnrj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Marino"]
+layout_mode = 2
+text = "Marino"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326
+anchor_top = 0.85200006
+anchor_right = 0.683
+anchor_bottom = 0.90700006
+offset_left = 0.08001709
+offset_top = -0.16003418
+offset_right = 0.6398926
+offset_bottom = 0.4399414
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_m04lp")
+theme_override_styles/hover = ExtResource("7_fimr5")
+
+[node name="Label" type="Label" parent="IntroScreen/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -16.5
+offset_right = 71.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Comenzar"
+label_settings = ExtResource("8_u7cqb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RulesScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,6 +410,7 @@ custom_minimum_size = Vector2(256, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+focus_mode = 0
 theme_override_fonts/font = ExtResource("3_qoqlk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("6_e2xy7")
@@ -280,6 +440,7 @@ custom_minimum_size = Vector2(256, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+focus_mode = 0
 theme_override_fonts/font = ExtResource("3_qoqlk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("6_e2xy7")
@@ -304,6 +465,7 @@ custom_minimum_size = Vector2(256, 60)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+focus_mode = 0
 theme_override_fonts/font = ExtResource("3_qoqlk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("6_e2xy7")
@@ -341,10 +503,16 @@ clip_contents = true
 layout_mode = 2
 
 [node name="OptionsScreen" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
+[connection signal="pressed" from="StartScreen/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Rules" to="RulesScreen" method="_on_rules_pressed"]
+[connection signal="pressed" from="IntroScreen/Button" to="IntroScreen" method="_on_button_pressed"]
+[connection signal="pressed" from="RulesScreen/HBoxContainer/Skip" to="RulesScreen" method="_on_skip_pressed"]
 [connection signal="pressed" from="RulesScreen/HBoxContainer/Previous" to="RulesScreen" method="_on_previous_pressed"]
 [connection signal="pressed" from="RulesScreen/HBoxContainer/Next" to="RulesScreen" method="_on_next_pressed"]
