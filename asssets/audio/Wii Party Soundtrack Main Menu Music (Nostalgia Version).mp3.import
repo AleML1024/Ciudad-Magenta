@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cj78m03xxgd2"
+path="res://.godot/imported/Wii Party Soundtrack Main Menu Music (Nostalgia Version).mp3-14692468b12d43a04f52d2021c137ea1.mp3str"
+
+[deps]
+
+source_file="res://asssets/audio/Wii Party Soundtrack Main Menu Music (Nostalgia Version).mp3"
+dest_files=["res://.godot/imported/Wii Party Soundtrack Main Menu Music (Nostalgia Version).mp3-14692468b12d43a04f52d2021c137ea1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

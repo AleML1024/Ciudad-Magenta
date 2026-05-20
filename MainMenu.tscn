@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://be3vrlvwyyx8"]
+[gd_scene load_steps=33 format=3 uid="uid://be3vrlvwyyx8"]
 
 [ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://main_menu.gd" id="1_61cf8"]
 [ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="1_i26rj"]
@@ -15,6 +15,7 @@
 [ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="8_u7cqb"]
 [ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="9_rnncn"]
 [ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="10_3fnrj"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="16_3fnrj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
 
@@ -45,14 +46,103 @@ content_margin_left = 5.0
 content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(1, 1, 1, 0.2)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 10
 shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1thib"]
+bg_color = Color(0, 0, 0, 0.43137255)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fnrj"]
+font = ExtResource("16_3fnrj")
+font_size = 45
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m04lp"]
+font = ExtResource("16_3fnrj")
+font_size = 50
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1thib"]
+font = ExtResource("16_3fnrj")
+font_size = 50
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iht1c"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_l1t4j"]
+font = ExtResource("16_3fnrj")
+font_size = 45
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1t4j"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl1jy"]
+bg_color = Color(0, 0, 0, 0.60200006)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4010"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fnrj"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 5.0
+expand_margin_top = 8.0
+expand_margin_right = 5.0
+expand_margin_bottom = 8.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iht1c"]
+bg_color = Color(0.41580388, 0.32117268, 0.697882, 1)
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -509,6 +599,265 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsScreen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 240.0
+grow_horizontal = 2
+text = "Opciones"
+label_settings = ExtResource("5_iwfq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="OptionsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.4
+anchor_right = 0.933
+anchor_bottom = 0.558
+offset_left = 4.9599915
+offset_top = -225.0
+offset_right = 0.6398926
+offset_bottom = 313.36
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fimr5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsScreen/PanelContainer"]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="OptionsScreen/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1thib")
+
+[node name="Options" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 55
+
+[node name="Screen" type="Button" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Pantalla"
+label_settings = SubResource("LabelSettings_3fnrj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="Button" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Sonido"
+label_settings = SubResource("LabelSettings_m04lp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Button" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Créditos"
+label_settings = SubResource("LabelSettings_1thib")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Content" type="PanelContainer" parent="OptionsScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iht1c")
+
+[node name="ScreenOptions" type="VBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="ScreenMode" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 200
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
+layout_mode = 2
+text = "Modo de pantalla:"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenModeSelector" type="OptionButton" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("16_3fnrj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_l1t4j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l1t4j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dl1jy")
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Completa"
+popup/item_0/id = 0
+popup/item_1/text = "Ventana"
+popup/item_1/id = 1
+popup/item_2/text = "Ventana sin bordes"
+popup/item_2/id = 2
+
+[node name="ScreenResolution" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 470
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
+layout_mode = 2
+text = "Resolución:"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenResSelector" type="OptionButton" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
+custom_minimum_size = Vector2(556.885, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("16_3fnrj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_y4010")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l1t4j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dl1jy")
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Sound Options" type="VBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Master Volume" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options"]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Master Volume"]
+layout_mode = 2
+text = "General"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Master Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
+value = 50.0
+
+[node name="SFX Volume" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options"]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/SFX Volume"]
+layout_mode = 2
+text = "Efectos"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/SFX Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
+value = 50.0
+
+[node name="Music Volume" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options"]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Music Volume"]
+layout_mode = 2
+text = "Música "
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Music Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
+value = 50.0
 
 [connection signal="pressed" from="StartScreen/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="StartScreen/VBoxContainer/Rules" to="RulesScreen" method="_on_rules_pressed"]
