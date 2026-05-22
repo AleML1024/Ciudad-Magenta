@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://be3vrlvwyyx8"]
+[gd_scene load_steps=34 format=3 uid="uid://be3vrlvwyyx8"]
 
 [ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://main_menu.gd" id="1_61cf8"]
 [ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="1_i26rj"]
@@ -16,12 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="9_rnncn"]
 [ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="10_3fnrj"]
 [ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="16_3fnrj"]
+[ext_resource type="Script" uid="uid://dhwsjp15oma6m" path="res://settings_screen.gd" id="17_m04lp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7r1g0"]
-font = ExtResource("3_qoqlk")
-font_size = 64
+font = ExtResource("16_3fnrj")
+font_size = 45
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 5)
 
@@ -65,12 +66,6 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_m04lp"]
-font = ExtResource("16_3fnrj")
-font_size = 50
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="LabelSettings" id="LabelSettings_1thib"]
 font = ExtResource("16_3fnrj")
 font_size = 50
 shadow_color = Color(0, 0, 0, 1)
@@ -143,6 +138,16 @@ shadow_offset = Vector2(0, 5)
 bg_color = Color(0.41580388, 0.32117268, 0.697882, 1)
 expand_margin_top = 3.0
 expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gjqv"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -264,7 +269,7 @@ label_settings = SubResource("LabelSettings_7r1g0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Options" type="Button" parent="StartScreen/VBoxContainer"]
+[node name="Settings" type="Button" parent="StartScreen/VBoxContainer"]
 custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -277,7 +282,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
 script = ExtResource("4_qoqlk")
 
-[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Options"]
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -285,7 +290,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(225, 40)
-text = "Opciones"
+text = "Ajustes"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("4_qoqlk")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Créditos"
 label_settings = SubResource("LabelSettings_7r1g0")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -592,55 +623,56 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fimr5")
 clip_contents = true
 layout_mode = 2
 
-[node name="OptionsScreen" type="Control" parent="."]
+[node name="SettingsScreen" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("17_m04lp")
 
-[node name="Label" type="Label" parent="OptionsScreen"]
+[node name="Label" type="Label" parent="SettingsScreen"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 1.0
 offset_bottom = 240.0
 grow_horizontal = 2
-text = "Opciones"
+text = "Ajustes"
 label_settings = ExtResource("5_iwfq2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="OptionsScreen"]
+[node name="PanelContainer" type="PanelContainer" parent="SettingsScreen"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.112
 anchor_top = 0.4
 anchor_right = 0.933
 anchor_bottom = 0.558
-offset_left = 4.9599915
-offset_top = -225.0
-offset_right = 0.6398926
-offset_bottom = 313.36
+offset_left = -42.04001
+offset_top = -210.0
+offset_right = -46.360107
+offset_bottom = 328.36
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fimr5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsScreen/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/PanelContainer"]
 layout_mode = 2
 
-[node name="Header" type="PanelContainer" parent="OptionsScreen/PanelContainer/VBoxContainer"]
+[node name="Header" type="PanelContainer" parent="SettingsScreen/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1thib")
 
-[node name="Options" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Header"]
+[node name="Options" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Header"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 55
 
-[node name="Screen" type="Button" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options"]
+[node name="Screen" type="Button" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options"]
 custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -653,7 +685,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
 script = ExtResource("4_qoqlk")
 
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options/Screen"]
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Screen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -666,7 +698,7 @@ label_settings = SubResource("LabelSettings_3fnrj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sound" type="Button" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options"]
+[node name="Sound" type="Button" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options"]
 custom_minimum_size = Vector2(450, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -679,7 +711,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
 script = ExtResource("4_qoqlk")
 
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options/Sound"]
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Sound"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -692,54 +724,28 @@ label_settings = SubResource("LabelSettings_m04lp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Credits" type="Button" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options"]
-custom_minimum_size = Vector2(450, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-focus_mode = 0
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
-flat = true
-script = ExtResource("4_qoqlk")
-
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Header/Options/Credits"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(225, 40)
-text = "Créditos"
-label_settings = SubResource("LabelSettings_1thib")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Content" type="PanelContainer" parent="OptionsScreen/PanelContainer/VBoxContainer"]
+[node name="Content" type="PanelContainer" parent="SettingsScreen/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_iht1c")
 
-[node name="ScreenOptions" type="VBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content"]
+[node name="ScreenOptions" type="VBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="ScreenMode" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
+[node name="ScreenMode" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 200
+theme_override_constants/separation = 110
 
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
 layout_mode = 2
 text = "Modo de pantalla:"
 label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScreenModeSelector" type="OptionButton" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
+[node name="ScreenModeSelector" type="OptionButton" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -759,19 +765,19 @@ popup/item_1/id = 1
 popup/item_2/text = "Ventana sin bordes"
 popup/item_2/id = 2
 
-[node name="ScreenResolution" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
+[node name="ScreenResolution" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 470
+theme_override_constants/separation = 380
 
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
 layout_mode = 2
 text = "Resolución:"
 label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScreenResSelector" type="OptionButton" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
+[node name="ScreenResSelector" type="OptionButton" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
 custom_minimum_size = Vector2(556.885, 0)
 layout_mode = 2
 size_flags_vertical = 8
@@ -791,23 +797,23 @@ popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 
-[node name="Sound Options" type="VBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content"]
+[node name="SoundOptions" type="VBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Master Volume" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options"]
+[node name="Master Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
 layout_mode = 2
 theme_override_constants/separation = 500
 
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Master Volume"]
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume"]
 layout_mode = 2
 text = "General"
 label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Master Volume"]
+[node name="HSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -817,18 +823,18 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
 value = 50.0
 
-[node name="SFX Volume" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options"]
+[node name="SFX Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
 layout_mode = 2
 theme_override_constants/separation = 500
 
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/SFX Volume"]
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume"]
 layout_mode = 2
 text = "Efectos"
 label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/SFX Volume"]
+[node name="HSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -838,18 +844,18 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
 value = 50.0
 
-[node name="Music Volume" type="HBoxContainer" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options"]
+[node name="Music Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
 layout_mode = 2
 theme_override_constants/separation = 500
 
-[node name="Label" type="Label" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Music Volume"]
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume"]
 layout_mode = 2
 text = "Música "
 label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="OptionsScreen/PanelContainer/VBoxContainer/Content/Sound Options/Music Volume"]
+[node name="HSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -859,9 +865,57 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
 value = 50.0
 
+[node name="Confirm" type="Button" parent="SettingsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79700005
+anchor_top = 0.90000004
+anchor_right = 0.91
+anchor_bottom = 0.95600003
+offset_left = -41.240112
+offset_top = -6.1035156e-05
+offset_right = -2.2000732
+offset_bottom = -0.47998047
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gjqv")
+theme_override_styles/hover = ExtResource("7_fimr5")
+
+[node name="Label" type="Label" parent="SettingsScreen/Confirm"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -16.5
+offset_right = 71.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirmar"
+label_settings = ExtResource("8_u7cqb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="StartScreen/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="StartScreen/VBoxContainer/Rules" to="RulesScreen" method="_on_rules_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Rules" to="." method="_on_rules_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="IntroScreen/Button" to="IntroScreen" method="_on_button_pressed"]
 [connection signal="pressed" from="RulesScreen/HBoxContainer/Skip" to="RulesScreen" method="_on_skip_pressed"]
 [connection signal="pressed" from="RulesScreen/HBoxContainer/Previous" to="RulesScreen" method="_on_previous_pressed"]
 [connection signal="pressed" from="RulesScreen/HBoxContainer/Next" to="RulesScreen" method="_on_next_pressed"]
+[connection signal="pressed" from="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Screen" to="SettingsScreen" method="_on_screen_pressed"]
+[connection signal="pressed" from="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Sound" to="SettingsScreen" method="_on_sound_pressed"]
+[connection signal="pressed" from="SettingsScreen/Confirm" to="SettingsScreen" method="_on_confirm_pressed"]

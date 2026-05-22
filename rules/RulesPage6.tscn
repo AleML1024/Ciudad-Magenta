@@ -1,10 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1wvpaj1q6mb0"]
 
 [ext_resource type="Texture2D" uid="uid://bflti2jdqq8wl" path="res://asssets/board/Avanza1.PNG" id="1_bgawx"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_wb4wm"]
-font_size = 35
-font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://asssets/fonts/RulesText.tres" id="1_wb4wm"]
 
 [node name="RulesPage6" type="Control"]
 layout_mode = 3
@@ -30,7 +27,7 @@ text = "Casillas de avance
 Existen dos tipos: 
 Avanza 1
 El jugador avanza a la siguiente casilla."
-label_settings = SubResource("LabelSettings_wb4wm")
+label_settings = ExtResource("1_wb4wm")
 autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]

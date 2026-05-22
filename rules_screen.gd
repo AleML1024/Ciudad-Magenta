@@ -18,6 +18,8 @@ var pages = [
 var current_page := 0
 var current_instance
 
+signal rules_finished
+
 func _ready():
 	show_page(0)
 
@@ -53,9 +55,12 @@ func update_ui():
 func _on_next_pressed() -> void:
 	if current_page < pages.size() - 1:
 		show_page(current_page + 1)
+		if current_page == pages.size() - 1:
+			next_button.get_child(0).text = "Salir"
 	else:
 		print("Reglas terminadas")
-		hide() # o cambiar de escena
+		emit_signal("rules_finished")
+		
 
 
 func _on_previous_pressed() -> void:
@@ -65,9 +70,5 @@ func _on_previous_pressed() -> void:
 
 func _on_skip_pressed() -> void:
 	print("Reglas terminadas")
-	hide() # o cambiar de escena
 	current_page = pages.size() -1
-
-
-func _on_rules_pressed() -> void:
-	show()
+	emit_signal("rules_finished")

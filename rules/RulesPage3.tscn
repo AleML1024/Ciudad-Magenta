@@ -1,10 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bti6iggt6i7j"]
 
 [ext_resource type="Texture2D" uid="uid://0isqb08mla2v" path="res://asssets/board/Decision.png" id="1_rusfu"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_x6pyu"]
-font_size = 35
-font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://asssets/fonts/RulesText.tres" id="1_x6pyu"]
 
 [node name="RulesPage3" type="Control"]
 layout_mode = 3
@@ -27,7 +24,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 text = "Casillas de decisión:
 Son casillas de color turquesa, presentan diversos problemas en los que los jugadores deberán elegir alguna de las soluciones presentadas y recibirán una consecuencia. Tendrás un minuto para tomar una decisión, de lo contrario se perderá el turno y se avanzará una casilla."
-label_settings = SubResource("LabelSettings_x6pyu")
+label_settings = ExtResource("1_x6pyu")
 autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]

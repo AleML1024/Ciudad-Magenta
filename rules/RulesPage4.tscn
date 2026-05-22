@@ -1,10 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhldbiom5qdvn"]
 
+[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://asssets/fonts/RulesText.tres" id="1_7yjjl"]
 [ext_resource type="Texture2D" uid="uid://c5o2dk73bjb50" path="res://asssets/board/Positiva.png" id="1_fct0g"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_54kea"]
-font_size = 35
-font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
 
 [node name="RulesPage4" type="Control"]
 layout_mode = 3
@@ -28,7 +25,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 text = "Casillas positivas:
 Son casillas de color amarillo, benefician a los jugadores solo por haber caído en ese tipo de casilla, no pueden decidir entre soluciones. Siempre después de aplicar la consecuencia positiva, el jugador va a avanzar una casilla."
-label_settings = SubResource("LabelSettings_54kea")
+label_settings = ExtResource("1_7yjjl")
 autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
