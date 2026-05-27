@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dl4ykiasnes6o"]
 
-[ext_resource type="Script" uid="uid://c5ayt570m05ti" path="res://selection_screen.gd" id="1_2nccq"]
+[ext_resource type="Script" uid="uid://c5ayt570m05ti" path="res://scripts/selection_screen.gd" id="1_2nccq"]
 [ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="1_wyhbp"]
 [ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="2_obmbp"]
 [ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://asssets/characters/RubíAvatar.PNG" id="3_vxeg3"]

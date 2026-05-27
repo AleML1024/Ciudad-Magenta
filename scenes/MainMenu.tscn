@@ -1,33 +1,34 @@
-[gd_scene load_steps=34 format=3 uid="uid://be3vrlvwyyx8"]
+[gd_scene load_steps=39 format=3 uid="uid://be3vrlvwyyx8"]
 
-[ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://main_menu.gd" id="1_61cf8"]
-[ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="1_i26rj"]
-[ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://asssets/fonts/TitleText.tres" id="2_h7a2f"]
-[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="3_qoqlk"]
-[ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://button.gd" id="4_qoqlk"]
-[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://rules_screen.gd" id="5_fimr5"]
-[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="5_iwfq2"]
-[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="6_e2xy7"]
-[ext_resource type="Script" uid="uid://bkpf1thh75fb" path="res://intro_screen.gd" id="6_rnncn"]
-[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="7_afec1"]
-[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="7_fimr5"]
-[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://asssets/characters/RubíAvatar.PNG" id="8_61cf8"]
-[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="8_u7cqb"]
-[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="9_rnncn"]
-[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="10_3fnrj"]
-[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="16_3fnrj"]
-[ext_resource type="Script" uid="uid://dhwsjp15oma6m" path="res://settings_screen.gd" id="17_m04lp"]
+[ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://scripts/main_menu.gd" id="1_tdapf"]
+[ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="2_v41fp"]
+[ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://asssets/fonts/TitleText.tres" id="3_7shrw"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="4_viowm"]
+[ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://scripts/button.gd" id="5_1n6yq"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="6_yovvs"]
+[ext_resource type="Script" uid="uid://bkpf1thh75fb" path="res://scripts/intro_screen.gd" id="7_2axsc"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="8_wrgne"]
+[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="9_hm0al"]
+[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://asssets/characters/RubíAvatar.PNG" id="10_i7r3k"]
+[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="11_os5dr"]
+[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="12_duata"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="13_lw0hr"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="14_gnvml"]
+[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://scripts/rules_screen.gd" id="15_d3xvo"]
+[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="16_ynb5t"]
+[ext_resource type="Script" uid="uid://dhwsjp15oma6m" path="res://scripts/settings_screen.gd" id="17_ejntt"]
+[ext_resource type="Script" uid="uid://b6b7p8ckhltdh" path="res://scripts/screen_options.gd" id="18_c3y1w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7r1g0"]
-font = ExtResource("16_3fnrj")
+font = ExtResource("6_yovvs")
 font_size = 45
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_31qfy"]
-font = ExtResource("3_qoqlk")
+font = ExtResource("4_viowm")
 font_size = 70
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(1, 3)
@@ -60,13 +61,13 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_3fnrj"]
-font = ExtResource("16_3fnrj")
+font = ExtResource("6_yovvs")
 font_size = 45
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_m04lp"]
-font = ExtResource("16_3fnrj")
+font = ExtResource("6_yovvs")
 font_size = 50
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 5)
@@ -77,12 +78,12 @@ content_margin_top = 30.0
 content_margin_right = 60.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_l1t4j"]
-font = ExtResource("16_3fnrj")
+font = ExtResource("6_yovvs")
 font_size = 45
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1t4j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3wmj"]
 bg_color = Color(0, 0, 0, 0.768)
 corner_radius_top_left = 7
 corner_radius_top_right = 7
@@ -93,7 +94,18 @@ expand_margin_top = 7.0
 expand_margin_right = 7.0
 expand_margin_bottom = 7.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl1jy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxvoy"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8cnk"]
 bg_color = Color(0, 0, 0, 0.60200006)
 corner_radius_top_left = 7
 corner_radius_top_right = 7
@@ -112,7 +124,40 @@ corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 expand_margin_left = 7.0
 expand_margin_top = 7.0
-expand_margin_right = 7.0
+expand_margin_right = 17.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1t4j"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 17.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl1jy"]
+bg_color = Color(0, 0, 0, 0.60200006)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 17.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig1gi"]
+bg_color = Color(0.47397572, 0.47397572, 0.47397572, 0.76862746)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 17.0
 expand_margin_bottom = 7.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fnrj"]
@@ -156,7 +201,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_61cf8")
+script = ExtResource("1_tdapf")
+metadata/_edit_vertical_guides_ = [1686.0]
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 1
@@ -173,7 +219,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_i26rj")
+texture = ExtResource("2_v41fp")
 
 [node name="StartScreen" type="Control" parent="."]
 visible = false
@@ -198,7 +244,7 @@ offset_bottom = -0.26000977
 grow_horizontal = 2
 grow_vertical = 2
 text = "Ciudad Magenta"
-label_settings = ExtResource("2_h7a2f")
+label_settings = ExtResource("3_7shrw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -224,11 +270,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
-script = ExtResource("4_qoqlk")
+script = ExtResource("5_1n6yq")
 
 [node name="Label" type="Label" parent="StartScreen/VBoxContainer/Play"]
 layout_mode = 1
@@ -250,11 +296,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
-script = ExtResource("4_qoqlk")
+script = ExtResource("5_1n6yq")
 
 [node name="Label" type="Label" parent="StartScreen/VBoxContainer/Rules"]
 layout_mode = 1
@@ -276,11 +322,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
-script = ExtResource("4_qoqlk")
+script = ExtResource("5_1n6yq")
 
 [node name="Label" type="Label" parent="StartScreen/VBoxContainer/Settings"]
 layout_mode = 1
@@ -302,11 +348,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
-script = ExtResource("4_qoqlk")
+script = ExtResource("5_1n6yq")
 
 [node name="Label" type="Label" parent="StartScreen/VBoxContainer/Credits"]
 layout_mode = 1
@@ -328,11 +374,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
-script = ExtResource("4_qoqlk")
+script = ExtResource("5_1n6yq")
 
 [node name="Label" type="Label" parent="StartScreen/VBoxContainer/Exit"]
 layout_mode = 1
@@ -355,7 +401,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_rnncn")
+script = ExtResource("7_2axsc")
 
 [node name="Label" type="Label" parent="IntroScreen"]
 layout_mode = 1
@@ -365,7 +411,7 @@ offset_top = 1.0
 offset_bottom = 330.0
 grow_horizontal = 2
 text = "Elige a tu personaje"
-label_settings = ExtResource("5_iwfq2")
+label_settings = ExtResource("8_wrgne")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -388,7 +434,7 @@ custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("7_afec1")
+texture = ExtResource("9_hm0al")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Violeta"]
@@ -406,7 +452,7 @@ custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("8_61cf8")
+texture = ExtResource("10_i7r3k")
 expand_mode = 1
 flip_h = true
 
@@ -425,7 +471,7 @@ custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_rnncn")
+texture = ExtResource("11_os5dr")
 expand_mode = 1
 flip_h = true
 
@@ -444,7 +490,7 @@ custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("10_3fnrj")
+texture = ExtResource("12_duata")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Marino"]
@@ -467,10 +513,10 @@ offset_right = 0.6398926
 offset_bottom = 0.4399414
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_m04lp")
-theme_override_styles/hover = ExtResource("7_fimr5")
+theme_override_styles/hover = ExtResource("13_lw0hr")
 
 [node name="Label" type="Label" parent="IntroScreen/Button"]
 layout_mode = 1
@@ -486,7 +532,7 @@ offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Comenzar"
-label_settings = ExtResource("8_u7cqb")
+label_settings = ExtResource("14_gnvml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -498,7 +544,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_fimr5")
+script = ExtResource("15_d3xvo")
 
 [node name="Label" type="Label" parent="RulesScreen"]
 layout_mode = 1
@@ -508,7 +554,7 @@ offset_top = 1.0
 offset_bottom = 330.0
 grow_horizontal = 2
 text = "Reglas del juego"
-label_settings = ExtResource("5_iwfq2")
+label_settings = ExtResource("8_wrgne")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -532,10 +578,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("6_e2xy7")
-theme_override_styles/hover = ExtResource("7_fimr5")
+theme_override_styles/normal = ExtResource("16_ynb5t")
+theme_override_styles/hover = ExtResource("13_lw0hr")
 
 [node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Skip"]
 layout_mode = 1
@@ -547,7 +593,7 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Omitir"
-label_settings = ExtResource("8_u7cqb")
+label_settings = ExtResource("14_gnvml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -562,10 +608,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("6_e2xy7")
-theme_override_styles/hover = ExtResource("7_fimr5")
+theme_override_styles/normal = ExtResource("16_ynb5t")
+theme_override_styles/hover = ExtResource("13_lw0hr")
 
 [node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Previous"]
 layout_mode = 1
@@ -577,7 +623,7 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Anterior"
-label_settings = ExtResource("8_u7cqb")
+label_settings = ExtResource("14_gnvml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -587,10 +633,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 focus_mode = 0
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("6_e2xy7")
-theme_override_styles/hover = ExtResource("7_fimr5")
+theme_override_styles/normal = ExtResource("16_ynb5t")
+theme_override_styles/hover = ExtResource("13_lw0hr")
 
 [node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Next"]
 layout_mode = 1
@@ -602,7 +648,7 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Siguiente"
-label_settings = ExtResource("8_u7cqb")
+label_settings = ExtResource("14_gnvml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -630,7 +676,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("17_m04lp")
+script = ExtResource("17_ejntt")
 
 [node name="Label" type="Label" parent="SettingsScreen"]
 layout_mode = 1
@@ -640,7 +686,7 @@ offset_top = 1.0
 offset_bottom = 240.0
 grow_horizontal = 2
 text = "Ajustes"
-label_settings = ExtResource("5_iwfq2")
+label_settings = ExtResource("8_wrgne")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -679,11 +725,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
-script = ExtResource("4_qoqlk")
+script = ExtResource("5_1n6yq")
 
 [node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Screen"]
 layout_mode = 1
@@ -705,11 +751,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
 flat = true
-script = ExtResource("4_qoqlk")
+script = ExtResource("5_1n6yq")
 
 [node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Sound"]
 layout_mode = 1
@@ -732,6 +778,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_iht1c")
 [node name="ScreenOptions" type="VBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content"]
 layout_mode = 2
 theme_override_constants/separation = 50
+script = ExtResource("18_c3y1w")
 
 [node name="ScreenMode" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
 layout_mode = 2
@@ -747,23 +794,22 @@ vertical_alignment = 1
 
 [node name="ScreenModeSelector" type="OptionButton" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("16_3fnrj")
+theme_override_fonts/font = ExtResource("6_yovvs")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_l1t4j")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_l1t4j")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dl1jy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3wmj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xxvoy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t8cnk")
+theme_override_constants/arrow_margin = 12
 alignment = 1
 selected = 0
 allow_reselect = true
-item_count = 3
+item_count = 2
 popup/item_0/text = "Completa"
 popup/item_0/id = 0
 popup/item_1/text = "Ventana"
 popup/item_1/id = 1
-popup/item_2/text = "Ventana sin bordes"
-popup/item_2/id = 2
 
 [node name="ScreenResolution" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
 layout_mode = 2
@@ -781,11 +827,13 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(556.885, 0)
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("16_3fnrj")
+theme_override_constants/h_separation = 4
+theme_override_fonts/font = ExtResource("6_yovvs")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_y4010")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l1t4j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dl1jy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ig1gi")
 alignment = 1
 selected = 0
 allow_reselect = true
@@ -878,10 +926,10 @@ offset_right = -2.2000732
 offset_bottom = -0.47998047
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_qoqlk")
+theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gjqv")
-theme_override_styles/hover = ExtResource("7_fimr5")
+theme_override_styles/hover = ExtResource("13_lw0hr")
 
 [node name="Label" type="Label" parent="SettingsScreen/Confirm"]
 layout_mode = 1
@@ -897,7 +945,7 @@ offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Confirmar"
-label_settings = ExtResource("8_u7cqb")
+label_settings = ExtResource("14_gnvml")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -918,4 +966,6 @@ offset_bottom = 40.0
 [connection signal="pressed" from="RulesScreen/HBoxContainer/Next" to="RulesScreen" method="_on_next_pressed"]
 [connection signal="pressed" from="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Screen" to="SettingsScreen" method="_on_screen_pressed"]
 [connection signal="pressed" from="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Sound" to="SettingsScreen" method="_on_sound_pressed"]
+[connection signal="item_selected" from="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode/ScreenModeSelector" to="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions" method="_on_screen_mode_selected"]
+[connection signal="item_selected" from="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution/ScreenResSelector" to="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions" method="_on_resolution_selected"]
 [connection signal="pressed" from="SettingsScreen/Confirm" to="SettingsScreen" method="_on_confirm_pressed"]

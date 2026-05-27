@@ -6,13 +6,13 @@ extends Control
 # @onready var indicator = $PageIndicator
 
 var pages = [
-	preload("res://rules/RulesPage1.tscn"),
-	preload("res://rules/RulesPage2.tscn"),
-	preload("res://rules/RulesPage3.tscn"),
-	preload("res://rules/RulesPage4.tscn"),
-	preload("res://rules/RulesPage5.tscn"),
-	preload("res://rules/RulesPage6.tscn"),
-	preload("res://rules/RulesPage7.tscn")
+	preload("res://scenes/rules/RulesPage1.tscn"),
+	preload("res://scenes/rules/RulesPage2.tscn"),
+	preload("res://scenes/rules/RulesPage3.tscn"),
+	preload("res://scenes/rules/RulesPage4.tscn"),
+	preload("res://scenes/rules/RulesPage5.tscn"),
+	preload("res://scenes/rules/RulesPage6.tscn"),
+	preload("res://scenes/rules/RulesPage7.tscn")
 ]
 
 var current_page := 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://dsmx0nmq5snu0"]
 
 [ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="1_8crf7"]
-[ext_resource type="Script" uid="uid://d3rhf45xcvhoc" path="res://player_info.gd" id="1_hgwop"]
+[ext_resource type="Script" uid="uid://d3rhf45xcvhoc" path="res://scripts/player_info.gd" id="1_hgwop"]
 [ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_vos4d"]
 [ext_resource type="StyleBox" uid="uid://k5va6f32t4bb" path="res://asssets/ui/PlayerInfo.tres" id="2_t2v26"]
 [ext_resource type="Texture2D" uid="uid://bsw8wiipg7c8l" path="res://asssets/icons/ezgif-split/tile000.png" id="2_u24cy"]
