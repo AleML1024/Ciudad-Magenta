@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cb75f3nx5mlls"]
 
-[ext_resource type="Texture2D" uid="uid://dunv7ldh2k371" path="res://asssets/board/Avanza2.PNG" id="1_byaep"]
-[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://asssets/fonts/RulesText.tres" id="1_uacy3"]
+[ext_resource type="Texture2D" uid="uid://dunv7ldh2k371" path="res://assets/board/Avanza2.PNG" id="1_byaep"]
+[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://assets/fonts/RulesText.tres" id="1_uacy3"]
 
 [node name="RulesPage7" type="Control"]
 layout_mode = 3

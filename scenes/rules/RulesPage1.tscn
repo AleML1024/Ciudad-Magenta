@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqdq1j8lb46e0"]
 
-[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://asssets/fonts/RulesText.tres" id="1_xs5sj"]
+[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://assets/fonts/RulesText.tres" id="1_xs5sj"]
 
 [node name="RulesPage1" type="Control"]
 clip_contents = true

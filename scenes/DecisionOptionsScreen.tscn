@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnx6vffe807h7"]
+[gd_scene load_steps=11 format=3 uid="uid://bnx6vffe807h7"]
 
-[ext_resource type="Script" uid="uid://psy1r832r2fi" path="res://scripts/decision_options_screen.gd" id="1_g1q53"]
-[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="1_u6cu4"]
-[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="2_dcdkl"]
-[ext_resource type="StyleBox" uid="uid://df2y5562fkbgd" path="res://asssets/ui/decision_button.tres" id="3_x4nl8"]
-[ext_resource type="StyleBox" uid="uid://drbujgv3ivu41" path="res://asssets/ui/decision_button_hover.tres" id="4_g1q53"]
+[ext_resource type="Script" uid="uid://psy1r832r2fi" path="res://scripts/ui/decision_options_screen.gd" id="1_g1q53"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://assets/fonts/PublicPixel-rv0pA.ttf" id="1_u6cu4"]
+[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://assets/ui/button.tres" id="2_dcdkl"]
+[ext_resource type="StyleBox" uid="uid://df2y5562fkbgd" path="res://assets/ui/decision_button.tres" id="3_x4nl8"]
+[ext_resource type="StyleBox" uid="uid://drbujgv3ivu41" path="res://assets/ui/decision_button_hover.tres" id="4_g1q53"]
+[ext_resource type="Script" uid="uid://d4nxg84ka32gu" path="res://scripts/ui/sound_button.gd" id="6_paxvj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dcdkl"]
 font = ExtResource("1_u6cu4")
@@ -129,6 +130,7 @@ offset_right = 1.2221222
 offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
+script = ExtResource("6_paxvj")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/Panel/HBoxContainer/Option1/VBoxContainer"]
 custom_minimum_size = Vector2(10, 10)
@@ -182,6 +184,7 @@ offset_right = 1.2221222
 offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
+script = ExtResource("6_paxvj")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/Panel/HBoxContainer/Option2/VBoxContainer"]
 custom_minimum_size = Vector2(10, 10)
@@ -235,6 +238,7 @@ offset_right = 1.2221222
 offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
+script = ExtResource("6_paxvj")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/Panel/HBoxContainer/Option3/VBoxContainer"]
 custom_minimum_size = Vector2(10, 10)

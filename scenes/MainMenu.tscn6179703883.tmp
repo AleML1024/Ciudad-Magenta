@@ -1,0 +1,988 @@
+[gd_scene load_steps=42 format=3 uid="uid://be3vrlvwyyx8"]
+
+[ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://scripts/menu/main_menu.gd" id="1_tdapf"]
+[ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://assets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="2_v41fp"]
+[ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://assets/fonts/TitleText.tres" id="3_7shrw"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="4_viowm"]
+[ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://scripts/ui/button.gd" id="5_1n6yq"]
+[ext_resource type="AudioStream" uid="uid://c17pneudy0q5q" path="res://assets/audio/sfx/SFX_UI_MenuSelections.mp3" id="6_viowm"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://assets/fonts/PublicPixel-rv0pA.ttf" id="6_yovvs"]
+[ext_resource type="AudioStream" uid="uid://5qo7ivah6ipm" path="res://assets/audio/sfx/SFX_UI_Confirm.mp3" id="7_1n6yq"]
+[ext_resource type="Script" uid="uid://bkpf1thh75fb" path="res://scripts/menu/intro_screen.gd" id="7_2axsc"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://assets/ui/title.tres" id="8_wrgne"]
+[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://assets/characters/VioletaAvatar.PNG" id="9_hm0al"]
+[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://assets/characters/RubíAvatar.PNG" id="10_i7r3k"]
+[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://assets/characters/CelesteAvatar.PNG" id="11_os5dr"]
+[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://assets/characters/MarinoAvatar.PNG" id="12_duata"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://assets/ui/button_hover.tres" id="13_lw0hr"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://assets/ui/button_text.tres" id="14_gnvml"]
+[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://scripts/menu/rules_screen.gd" id="15_d3xvo"]
+[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://assets/ui/button.tres" id="16_ynb5t"]
+[ext_resource type="Script" uid="uid://dhwsjp15oma6m" path="res://scripts/menu/settings_screen.gd" id="17_ejntt"]
+[ext_resource type="Script" uid="uid://b6b7p8ckhltdh" path="res://scripts/settings/screen_options.gd" id="18_c3y1w"]
+[ext_resource type="Script" uid="uid://xit2wxq6mhqm" path="res://scripts/settings/sound_options.gd" id="21_viowm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7r1g0"]
+font = ExtResource("6_yovvs")
+font_size = 45
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_31qfy"]
+font = ExtResource("4_viowm")
+font_size = 70
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m04lp"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fimr5"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.2)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1thib"]
+bg_color = Color(0, 0, 0, 0.43137255)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fnrj"]
+font = ExtResource("6_yovvs")
+font_size = 45
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m04lp"]
+font = ExtResource("6_yovvs")
+font_size = 50
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iht1c"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_l1t4j"]
+font = ExtResource("6_yovvs")
+font_size = 45
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3wmj"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxvoy"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8cnk"]
+bg_color = Color(0, 0, 0, 0.60200006)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4010"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 17.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1t4j"]
+bg_color = Color(0, 0, 0, 0.768)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 17.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl1jy"]
+bg_color = Color(0, 0, 0, 0.60200006)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 17.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig1gi"]
+bg_color = Color(0.47397572, 0.47397572, 0.47397572, 0.76862746)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 17.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fnrj"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 5.0
+expand_margin_top = 8.0
+expand_margin_right = 5.0
+expand_margin_bottom = 8.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iht1c"]
+bg_color = Color(0.41580388, 0.32117268, 0.697882, 1)
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gjqv"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tdapf")
+metadata/_edit_vertical_guides_ = [1686.0]
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v41fp")
+
+[node name="StartScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.261
+anchor_top = 0.252
+anchor_right = 0.739
+anchor_bottom = 0.372
+offset_left = 0.37997437
+offset_top = 0.33999634
+offset_right = -0.38000488
+offset_bottom = -0.26000977
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ciudad Magenta"
+label_settings = ExtResource("3_7shrw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -23.0
+offset_right = 480.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("5_1n6yq")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Jugar"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rules" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("5_1n6yq")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Rules"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Reglas"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("5_1n6yq")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Ajustes"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("5_1n6yq")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Créditos"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="StartScreen/VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("5_1n6yq")
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Salir"
+label_settings = SubResource("LabelSettings_7r1g0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IntroScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_2axsc")
+
+[node name="Label" type="Label" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 330.0
+grow_horizontal = 2
+text = "Elige a tu personaje"
+label_settings = ExtResource("8_wrgne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Violeta" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Violeta"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_hm0al")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Violeta"]
+layout_mode = 2
+text = "Violeta"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ruby" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Ruby"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_i7r3k")
+expand_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Ruby"]
+layout_mode = 2
+text = "Ruby"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Celeste" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Celeste"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("11_os5dr")
+expand_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Celeste"]
+layout_mode = 2
+text = "Celeste"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Marino" type="VBoxContainer" parent="IntroScreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="IntroScreen/HBoxContainer/Marino"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("12_duata")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="IntroScreen/HBoxContainer/Marino"]
+layout_mode = 2
+text = "Marino"
+label_settings = SubResource("LabelSettings_31qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="IntroScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326
+anchor_top = 0.85200006
+anchor_right = 0.683
+anchor_bottom = 0.90700006
+offset_left = 0.08001709
+offset_top = -0.16003418
+offset_right = 0.6398926
+offset_bottom = 0.4399414
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_m04lp")
+theme_override_styles/hover = ExtResource("13_lw0hr")
+
+[node name="Label" type="Label" parent="IntroScreen/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -16.5
+offset_right = 71.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Comenzar"
+label_settings = ExtResource("14_gnvml")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RulesScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_d3xvo")
+
+[node name="Label" type="Label" parent="RulesScreen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 330.0
+grow_horizontal = 2
+text = "Reglas del juego"
+label_settings = ExtResource("8_wrgne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RulesScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.81500006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = -40.200073
+offset_right = -129.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 75
+
+[node name="Skip" type="Button" parent="RulesScreen/HBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("16_ynb5t")
+theme_override_styles/hover = ExtResource("13_lw0hr")
+
+[node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Skip"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Omitir"
+label_settings = ExtResource("14_gnvml")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="RulesScreen/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 0)
+
+[node name="Previous" type="Button" parent="RulesScreen/HBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("16_ynb5t")
+theme_override_styles/hover = ExtResource("13_lw0hr")
+
+[node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Previous"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Anterior"
+label_settings = ExtResource("14_gnvml")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="Button" parent="RulesScreen/HBoxContainer"]
+custom_minimum_size = Vector2(256, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("16_ynb5t")
+theme_override_styles/hover = ExtResource("13_lw0hr")
+
+[node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Next"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Siguiente"
+label_settings = ExtResource("14_gnvml")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="RulesScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.4
+anchor_right = 0.933
+anchor_bottom = 0.558
+offset_left = 4.9599915
+offset_top = -167.0
+offset_right = 0.6398926
+offset_bottom = 263.36
+theme_override_styles/panel = SubResource("StyleBoxFlat_fimr5")
+
+[node name="Content" type="Control" parent="RulesScreen/PanelContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="SettingsScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_ejntt")
+
+[node name="Label" type="Label" parent="SettingsScreen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 240.0
+grow_horizontal = 2
+text = "Ajustes"
+label_settings = ExtResource("8_wrgne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.4
+anchor_right = 0.933
+anchor_bottom = 0.558
+offset_left = -42.04001
+offset_top = -210.0
+offset_right = -46.360107
+offset_bottom = 328.36
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fimr5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/PanelContainer"]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="SettingsScreen/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1thib")
+
+[node name="Options" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 55
+
+[node name="Screen" type="Button" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("5_1n6yq")
+hover_sound = ExtResource("6_viowm")
+click_sound = ExtResource("7_1n6yq")
+
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Pantalla"
+label_settings = SubResource("LabelSettings_3fnrj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="Button" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwfq2")
+flat = true
+script = ExtResource("5_1n6yq")
+hover_sound = ExtResource("6_viowm")
+click_sound = ExtResource("7_1n6yq")
+
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Sonido"
+label_settings = SubResource("LabelSettings_m04lp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Content" type="PanelContainer" parent="SettingsScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iht1c")
+
+[node name="ScreenOptions" type="VBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content"]
+layout_mode = 2
+theme_override_constants/separation = 50
+script = ExtResource("18_c3y1w")
+
+[node name="ScreenMode" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 110
+
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
+layout_mode = 2
+text = "Modo de pantalla:"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenModeSelector" type="OptionButton" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("6_yovvs")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3wmj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xxvoy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t8cnk")
+theme_override_constants/arrow_margin = 12
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "Completa"
+popup/item_0/id = 0
+popup/item_1/text = "Ventana"
+popup/item_1/id = 1
+
+[node name="ScreenResolution" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 380
+
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
+layout_mode = 2
+text = "Resolución:"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenResSelector" type="OptionButton" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution"]
+custom_minimum_size = Vector2(556.885, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/h_separation = 4
+theme_override_fonts/font = ExtResource("6_yovvs")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_y4010")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l1t4j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dl1jy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ig1gi")
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="SoundOptions" type="VBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 50
+script = ExtResource("21_viowm")
+
+[node name="Master Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume"]
+layout_mode = 2
+text = "General"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="SFX Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume"]
+layout_mode = 2
+text = "Efectos"
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Music Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="Label" type="Label" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume"]
+layout_mode = 2
+text = "Música "
+label_settings = SubResource("LabelSettings_l1t4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Confirm" type="Button" parent="SettingsScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79700005
+anchor_top = 0.90000004
+anchor_right = 0.91
+anchor_bottom = 0.95600003
+offset_left = -41.240112
+offset_top = -6.1035156e-05
+offset_right = -2.2000732
+offset_bottom = -0.47998047
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_viowm")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gjqv")
+theme_override_styles/hover = ExtResource("13_lw0hr")
+
+[node name="Label" type="Label" parent="SettingsScreen/Confirm"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -16.5
+offset_right = 71.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirmar"
+label_settings = ExtResource("14_gnvml")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="StartScreen/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Rules" to="." method="_on_rules_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="StartScreen/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="IntroScreen/Button" to="IntroScreen" method="_on_button_pressed"]
+[connection signal="pressed" from="RulesScreen/HBoxContainer/Skip" to="RulesScreen" method="_on_skip_pressed"]
+[connection signal="pressed" from="RulesScreen/HBoxContainer/Previous" to="RulesScreen" method="_on_previous_pressed"]
+[connection signal="pressed" from="RulesScreen/HBoxContainer/Next" to="RulesScreen" method="_on_next_pressed"]
+[connection signal="pressed" from="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Screen" to="SettingsScreen" method="_on_screen_pressed"]
+[connection signal="pressed" from="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Sound" to="SettingsScreen" method="_on_sound_pressed"]
+[connection signal="item_selected" from="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode/ScreenModeSelector" to="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions" method="_on_screen_mode_selected"]
+[connection signal="item_selected" from="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution/ScreenResSelector" to="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions" method="_on_resolution_selected"]
+[connection signal="value_changed" from="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume/MasterSlider" to="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions" method="_on_master_changed"]
+[connection signal="value_changed" from="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume/SFXSlider" to="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions" method="_on_sfx_changed"]
+[connection signal="value_changed" from="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume/MusicSlider" to="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions" method="_on_music_changed"]
+[connection signal="pressed" from="SettingsScreen/Confirm" to="SettingsScreen" method="_on_confirm_pressed"]

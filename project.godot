@@ -16,7 +16,8 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
-SettingsManager="*res://scripts/settings_manager.gd"
+SettingsManager="*res://scripts/managers/settings_manager.gd"
+AudioManager="*res://scripts/managers/audio_manager.gd"
 
 [display]
 

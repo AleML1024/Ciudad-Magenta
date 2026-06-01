@@ -1,23 +1,26 @@
-[gd_scene load_steps=39 format=3 uid="uid://be3vrlvwyyx8"]
+[gd_scene load_steps=42 format=3 uid="uid://be3vrlvwyyx8"]
 
-[ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://scripts/main_menu.gd" id="1_tdapf"]
-[ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://asssets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="2_v41fp"]
-[ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://asssets/fonts/TitleText.tres" id="3_7shrw"]
-[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="4_viowm"]
-[ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://scripts/button.gd" id="5_1n6yq"]
-[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://asssets/fonts/PublicPixel-rv0pA.ttf" id="6_yovvs"]
-[ext_resource type="Script" uid="uid://bkpf1thh75fb" path="res://scripts/intro_screen.gd" id="7_2axsc"]
-[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="8_wrgne"]
-[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="9_hm0al"]
-[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://asssets/characters/RubíAvatar.PNG" id="10_i7r3k"]
-[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="11_os5dr"]
-[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="12_duata"]
-[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="13_lw0hr"]
-[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="14_gnvml"]
-[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://scripts/rules_screen.gd" id="15_d3xvo"]
-[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://asssets/ui/button.tres" id="16_ynb5t"]
-[ext_resource type="Script" uid="uid://dhwsjp15oma6m" path="res://scripts/settings_screen.gd" id="17_ejntt"]
-[ext_resource type="Script" uid="uid://b6b7p8ckhltdh" path="res://scripts/screen_options.gd" id="18_c3y1w"]
+[ext_resource type="Script" uid="uid://biprb3laoosl8" path="res://scripts/menu/main_menu.gd" id="1_tdapf"]
+[ext_resource type="Texture2D" uid="uid://bfadki2or7nmt" path="res://assets/backgrounds/Videojuego Ciudad Magenta Fondo Pantalla de Inicio.png" id="2_v41fp"]
+[ext_resource type="LabelSettings" uid="uid://cnhbnuw21ddyc" path="res://assets/fonts/TitleText.tres" id="3_7shrw"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="4_viowm"]
+[ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://scripts/ui/button.gd" id="5_1n6yq"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://assets/fonts/PublicPixel-rv0pA.ttf" id="6_yovvs"]
+[ext_resource type="Script" uid="uid://bkpf1thh75fb" path="res://scripts/menu/intro_screen.gd" id="7_2axsc"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://assets/ui/title.tres" id="8_wrgne"]
+[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://assets/characters/VioletaAvatar.PNG" id="9_hm0al"]
+[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://assets/characters/RubíAvatar.PNG" id="10_i7r3k"]
+[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://assets/characters/CelesteAvatar.PNG" id="11_os5dr"]
+[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://assets/characters/MarinoAvatar.PNG" id="12_duata"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://assets/ui/button_hover.tres" id="13_lw0hr"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://assets/ui/button_text.tres" id="14_gnvml"]
+[ext_resource type="Script" uid="uid://rlgjaujeugsl" path="res://scripts/menu/rules_screen.gd" id="15_d3xvo"]
+[ext_resource type="StyleBox" uid="uid://cuu7lnxbaptpw" path="res://assets/ui/button.tres" id="16_ynb5t"]
+[ext_resource type="Script" uid="uid://d4nxg84ka32gu" path="res://scripts/ui/sound_button.gd" id="17_7shrw"]
+[ext_resource type="Script" uid="uid://dhwsjp15oma6m" path="res://scripts/menu/settings_screen.gd" id="17_ejntt"]
+[ext_resource type="Script" uid="uid://b6b7p8ckhltdh" path="res://scripts/settings/screen_options.gd" id="18_c3y1w"]
+[ext_resource type="AudioStream" uid="uid://c3ug3lci8n833" path="res://assets/audio/sfx/SFX_UI_CloseMenu.mp3" id="18_viowm"]
+[ext_resource type="Script" uid="uid://xit2wxq6mhqm" path="res://scripts/settings/sound_options.gd" id="21_viowm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfq2"]
 
@@ -517,6 +520,7 @@ theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_m04lp")
 theme_override_styles/hover = ExtResource("13_lw0hr")
+script = ExtResource("17_7shrw")
 
 [node name="Label" type="Label" parent="IntroScreen/Button"]
 layout_mode = 1
@@ -582,6 +586,8 @@ theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("16_ynb5t")
 theme_override_styles/hover = ExtResource("13_lw0hr")
+script = ExtResource("17_7shrw")
+click_sound = ExtResource("18_viowm")
 
 [node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Skip"]
 layout_mode = 1
@@ -612,6 +618,7 @@ theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("16_ynb5t")
 theme_override_styles/hover = ExtResource("13_lw0hr")
+script = ExtResource("17_7shrw")
 
 [node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Previous"]
 layout_mode = 1
@@ -637,6 +644,7 @@ theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("16_ynb5t")
 theme_override_styles/hover = ExtResource("13_lw0hr")
+script = ExtResource("17_7shrw")
 
 [node name="Label" type="Label" parent="RulesScreen/HBoxContainer/Next"]
 layout_mode = 1
@@ -849,6 +857,7 @@ popup/item_2/id = 2
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 50
+script = ExtResource("21_viowm")
 
 [node name="Master Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
 layout_mode = 2
@@ -861,7 +870,7 @@ label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume"]
+[node name="MasterSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -869,7 +878,9 @@ theme_override_constants/center_grabber = 1
 theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
-value = 50.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="SFX Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
 layout_mode = 2
@@ -882,7 +893,7 @@ label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume"]
+[node name="SFXSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -890,7 +901,9 @@ theme_override_constants/center_grabber = 1
 theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
-value = 50.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="Music Volume" type="HBoxContainer" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions"]
 layout_mode = 2
@@ -903,7 +916,7 @@ label_settings = SubResource("LabelSettings_l1t4j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume"]
+[node name="MusicSlider" type="HSlider" parent="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -911,7 +924,9 @@ theme_override_constants/center_grabber = 1
 theme_override_styles/slider = SubResource("StyleBoxFlat_3fnrj")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_iht1c")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_iht1c")
-value = 50.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="Confirm" type="Button" parent="SettingsScreen"]
 layout_mode = 1
@@ -930,6 +945,7 @@ theme_override_fonts/font = ExtResource("4_viowm")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gjqv")
 theme_override_styles/hover = ExtResource("13_lw0hr")
+script = ExtResource("17_7shrw")
 
 [node name="Label" type="Label" parent="SettingsScreen/Confirm"]
 layout_mode = 1
@@ -968,4 +984,7 @@ offset_bottom = 40.0
 [connection signal="pressed" from="SettingsScreen/PanelContainer/VBoxContainer/Header/Options/Sound" to="SettingsScreen" method="_on_sound_pressed"]
 [connection signal="item_selected" from="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenMode/ScreenModeSelector" to="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions" method="_on_screen_mode_selected"]
 [connection signal="item_selected" from="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions/ScreenResolution/ScreenResSelector" to="SettingsScreen/PanelContainer/VBoxContainer/Content/ScreenOptions" method="_on_resolution_selected"]
+[connection signal="value_changed" from="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Master Volume/MasterSlider" to="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions" method="_on_master_changed"]
+[connection signal="value_changed" from="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/SFX Volume/SFXSlider" to="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions" method="_on_sfx_changed"]
+[connection signal="value_changed" from="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions/Music Volume/MusicSlider" to="SettingsScreen/PanelContainer/VBoxContainer/Content/SoundOptions" method="_on_music_changed"]
 [connection signal="pressed" from="SettingsScreen/Confirm" to="SettingsScreen" method="_on_confirm_pressed"]

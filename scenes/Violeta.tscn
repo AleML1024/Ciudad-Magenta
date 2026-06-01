@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cy85phnfv01c6"]
 
-[ext_resource type="Script" uid="uid://defcm5xoftnk4" path="res://scripts/player.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://defcm5xoftnk4" path="res://scripts/players/player.gd" id="1_xhfnw"]
 
 [node name="Violeta" type="Node2D"]
 script = ExtResource("1_xhfnw")

@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl4ykiasnes6o"]
+[gd_scene load_steps=12 format=3 uid="uid://dl4ykiasnes6o"]
 
-[ext_resource type="Script" uid="uid://c5ayt570m05ti" path="res://scripts/selection_screen.gd" id="1_2nccq"]
-[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://asssets/ui/title.tres" id="1_wyhbp"]
-[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://asssets/characters/VioletaAvatar.PNG" id="2_obmbp"]
-[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://asssets/characters/RubíAvatar.PNG" id="3_vxeg3"]
-[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://asssets/characters/CelesteAvatar.PNG" id="4_h0vve"]
-[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://asssets/characters/MarinoAvatar.PNG" id="5_o3sea"]
-[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://asssets/fonts/GamepauseddemoRegular-RpmY6.otf" id="6_o3sea"]
-[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://asssets/ui/button_hover.tres" id="7_2nccq"]
-[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://asssets/ui/button_text.tres" id="8_jkv3u"]
+[ext_resource type="Script" uid="uid://c5ayt570m05ti" path="res://scripts/ui/selection_screen.gd" id="1_2nccq"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://assets/ui/title.tres" id="1_wyhbp"]
+[ext_resource type="Texture2D" uid="uid://xrsdpqwpqhw" path="res://assets/characters/VioletaAvatar.PNG" id="2_obmbp"]
+[ext_resource type="Texture2D" uid="uid://begg64y4b4tvq" path="res://assets/characters/RubíAvatar.PNG" id="3_vxeg3"]
+[ext_resource type="Texture2D" uid="uid://dyy6o156y3o4g" path="res://assets/characters/CelesteAvatar.PNG" id="4_h0vve"]
+[ext_resource type="Texture2D" uid="uid://cn2mlumv848sm" path="res://assets/characters/MarinoAvatar.PNG" id="5_o3sea"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="6_o3sea"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://assets/ui/button_hover.tres" id="7_2nccq"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://assets/ui/button_text.tres" id="8_jkv3u"]
+[ext_resource type="Script" uid="uid://d4nxg84ka32gu" path="res://scripts/ui/sound_button.gd" id="9_3u12n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsreh"]
 bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
@@ -127,6 +128,7 @@ theme_override_fonts/font = ExtResource("6_o3sea")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fsreh")
 theme_override_styles/hover = ExtResource("7_2nccq")
+script = ExtResource("9_3u12n")
 
 [node name="Label" type="Label" parent="Control/Panel/Button"]
 layout_mode = 1

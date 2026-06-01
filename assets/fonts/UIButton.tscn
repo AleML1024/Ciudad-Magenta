@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv10l2k86umm6"]
+
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_x0dek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xp7s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7nyuf"]
+font = ExtResource("1_x0dek")
+font_size = 64
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 3)
+
+[node name="UIButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3xp7s")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -66.5
+offset_right = 86.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jugar
+"
+label_settings = SubResource("LabelSettings_7nyuf")

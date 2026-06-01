@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cnhbnuw21ddyc"]
+
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_hiwtj"]
+
+[resource]
+font = ExtResource("1_hiwtj")
+font_size = 128
+font_color = Color(0.99215686, 0.23921569, 0.70980394, 1)
+outline_size = 50
+shadow_size = 30
+shadow_color = Color(1, 0.75686276, 0.23529412, 1)
+shadow_offset = Vector2(1, 15)

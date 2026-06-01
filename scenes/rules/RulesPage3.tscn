@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bti6iggt6i7j"]
 
-[ext_resource type="Texture2D" uid="uid://0isqb08mla2v" path="res://asssets/board/Decision.png" id="1_rusfu"]
-[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://asssets/fonts/RulesText.tres" id="1_x6pyu"]
+[ext_resource type="Texture2D" uid="uid://0isqb08mla2v" path="res://assets/board/Decision.png" id="1_rusfu"]
+[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://assets/fonts/RulesText.tres" id="1_x6pyu"]
 
 [node name="RulesPage3" type="Control"]
 layout_mode = 3

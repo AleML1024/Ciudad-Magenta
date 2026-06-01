@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhldbiom5qdvn"]
 
-[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://asssets/fonts/RulesText.tres" id="1_7yjjl"]
-[ext_resource type="Texture2D" uid="uid://c5o2dk73bjb50" path="res://asssets/board/Positiva.png" id="1_fct0g"]
+[ext_resource type="LabelSettings" uid="uid://dcqbtoin5amc4" path="res://assets/fonts/RulesText.tres" id="1_7yjjl"]
+[ext_resource type="Texture2D" uid="uid://c5o2dk73bjb50" path="res://assets/board/Positiva.png" id="1_fct0g"]
 
 [node name="RulesPage4" type="Control"]
 layout_mode = 3

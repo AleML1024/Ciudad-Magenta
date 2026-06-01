@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d01eai4h7bper"]
+
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="1_5cmlt"]
+
+[resource]
+font = ExtResource("1_5cmlt")
+font_size = 32
+shadow_color = Color(0, 0, 0, 1)
