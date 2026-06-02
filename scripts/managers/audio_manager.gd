@@ -5,7 +5,7 @@ var music_player: AudioStreamPlayer
 
 
 func _ready():
-
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	# Crear reproductor de SFX
 	sfx_player = AudioStreamPlayer.new()
 	add_child(sfx_player)

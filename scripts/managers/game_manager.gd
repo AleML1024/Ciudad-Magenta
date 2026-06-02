@@ -7,11 +7,14 @@ extends Node
 @onready var decision_options_ui = $DecisionOptionsScreen/Control
 @onready var text_screen = $TextScreen/Control
 @onready var selection_screen = $SelectionScreen/Control
+@onready var pause_menu = $PauseMenu
+@onready var settings_screen = $SettingsScreen
 
 @onready var ui_violeta = $PlayersUI/PlayerInfoVioleta
 @onready var ui_ruby = $PlayersUI/PlayerInfoRuby
 @onready var ui_celeste = $PlayersUI/PlayerInfoCeleste
 @onready var ui_marino = $PlayersUI/PlayerInfoMarino
+
 
 var turn_in_progress := false
 var ignore_decisions := true
@@ -43,6 +46,7 @@ func _ready():
 	decision_options_ui.option_selected.connect(_on_decision_resolved)
 	decision_options_ui.time_out.connect(_on_decision_timeout)
 	selection_screen.confirmed.connect(_on_confirm_pressed)
+	settings_screen.settings_confirmed.connect(_on_settings_confirmed)
 	
 	turn_screen.visible = false
 	turn_screen.connect("continue_pressed", Callable(self, "_on_turn_continue"))
@@ -246,3 +250,22 @@ func setup_player_ui():
 	for player in players:
 		if ui_map.has(player.name):
 			ui_map[player.name].set_player(player)
+			
+func _input(event):
+
+	if event.is_action_pressed("ui_cancel"):
+
+		if waiting_for_decision:
+			return
+
+		if $TextScreen.visible:
+			return
+
+		if $SelectionScreen.visible:
+			return
+
+		$PauseMenu.toggle_pause()
+		
+func _on_settings_confirmed():
+	$SettingsScreen.visible = false
+	$PauseMenu.visible = true

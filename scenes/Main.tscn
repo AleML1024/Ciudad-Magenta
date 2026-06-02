@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba44lsu0bbjfn"]
+[gd_scene load_steps=16 format=3 uid="uid://ba44lsu0bbjfn"]
 
 [ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://assets/board/Tablero.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cbd5udw3u88st" path="res://scripts/gameplay/board.gd" id="1_uu6xs"]
@@ -10,9 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://4k4772is40ma" path="res://scenes/Marino.tscn" id="5_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://dl4ykiasnes6o" path="res://scenes/SelectionScreen.tscn" id="8_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://i1h6aln7vtss" path="res://scenes/TurnScreen.tscn" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://b17otaleb48s2" path="res://scenes/PauseMenu.tscn" id="9_mwfav"]
 [ext_resource type="PackedScene" uid="uid://c4mtdhle5vpac" path="res://scenes/TextScreen.tscn" id="10_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://bnx6vffe807h7" path="res://scenes/DecisionOptionsScreen.tscn" id="11_20pc6"]
 [ext_resource type="PackedScene" uid="uid://dsmx0nmq5snu0" path="res://scenes/PlayerInfo.tscn" id="12_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://bc2yr7ayjhut1" path="res://scenes/SettingsScreen.tscn" id="15_3p2gp"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("5_3dxm6")
@@ -342,3 +344,10 @@ offset_left = 1.0
 offset_top = 902.0
 offset_right = 1.6399841
 offset_bottom = 901.76
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_mwfav")]
+visible = false
+
+[node name="SettingsScreen" parent="." instance=ExtResource("15_3p2gp")]
+process_mode = 2
+visible = false

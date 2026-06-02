@@ -40,6 +40,7 @@ font_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 3)
 
 [node name="CanvasLayer" type="CanvasLayer"]
+metadata/_edit_vertical_guides_ = [959.0]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -70,13 +71,13 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.093
+anchor_left = 0.078
 anchor_top = 0.054
-anchor_right = 0.93600005
+anchor_right = 0.92100006
 anchor_bottom = 0.17300001
-offset_left = -0.55999756
+offset_left = 0.23999023
 offset_top = -0.3199997
-offset_right = -0.12011719
+offset_right = 0.67993164
 offset_bottom = 0.1599884
 text = "Te has encontrado con un problema..."
 label_settings = ExtResource("1_c27dv")
@@ -96,7 +97,9 @@ offset_bottom = -0.08001709
 theme_override_fonts/font = ExtResource("2_vc7h8")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ykr1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ykr1f")
 theme_override_styles/hover = ExtResource("3_txni7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ykr1f")
 script = ExtResource("5_ataw4")
 
 [node name="Label" type="Label" parent="Control/Panel/Button"]
@@ -104,8 +107,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0500001
+offset_left = -3.0
 offset_top = -1.0
-offset_right = 1.0
+offset_right = -2.0
 offset_bottom = -1.0000038
 text = "Continuar"
 label_settings = ExtResource("4_4xosr")
@@ -119,8 +123,8 @@ anchor_left = 0.112
 anchor_top = 0.4
 anchor_right = 0.933
 anchor_bottom = 0.558
-offset_left = -0.040008545
-offset_right = 0.6398926
+offset_left = -43.04001
+offset_right = -42.360107
 offset_bottom = 0.35998535
 grow_horizontal = 2
 grow_vertical = 2

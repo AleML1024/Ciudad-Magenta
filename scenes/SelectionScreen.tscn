@@ -127,7 +127,9 @@ offset_bottom = -0.08001709
 theme_override_fonts/font = ExtResource("6_o3sea")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_fsreh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fsreh")
 theme_override_styles/hover = ExtResource("7_2nccq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fsreh")
 script = ExtResource("9_3u12n")
 
 [node name="Label" type="Label" parent="Control/Panel/Button"]

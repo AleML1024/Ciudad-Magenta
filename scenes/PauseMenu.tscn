@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=3 uid="uid://b17otaleb48s2"]
+
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://assets/ui/title.tres" id="1_5w6ei"]
+[ext_resource type="Script" uid="uid://bwdgo06dtxn5o" path="res://scripts/menu/pause_menu.gd" id="1_jiu6o"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="2_jiu6o"]
+[ext_resource type="AudioStream" uid="uid://br5d2fmctrbgm" path="res://assets/audio/sfx/SFX_UI_Pause.mp3" id="2_yx35g"]
+[ext_resource type="Script" uid="uid://d32i3gvi3j4yt" path="res://scripts/ui/button.gd" id="3_40atx"]
+[ext_resource type="AudioStream" uid="uid://c8iu608e4edxv" path="res://assets/audio/sfx/SFX_UI_Resume.mp3" id="3_vd2mf"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://assets/fonts/PublicPixel-rv0pA.ttf" id="4_yx35g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vd2mf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_abn1t"]
+font = ExtResource("4_yx35g")
+font_size = 45
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 5)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+layer = 10
+script = ExtResource("1_jiu6o")
+open_sound = ExtResource("2_yx35g")
+close_sound = ExtResource("3_vd2mf")
+
+[node name="Background" type="ColorRect" parent="."]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.080783255, 0.080783375, 0.080783345, 0.61960787)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.17300001
+anchor_top = 0.115
+anchor_right = 0.82800007
+anchor_bottom = 0.23400001
+offset_left = -0.16000366
+offset_top = -0.20000458
+offset_right = -0.76013184
+offset_bottom = 0.27998352
+text = "EN PAUSA"
+label_settings = ExtResource("1_5w6ei")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -138.5
+offset_right = 480.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_jiu6o")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vd2mf")
+flat = true
+script = ExtResource("3_40atx")
+click_sound = ExtResource("3_vd2mf")
+
+[node name="Label" type="Label" parent="VBoxContainer/Continue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Continuar"
+label_settings = SubResource("LabelSettings_abn1t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_jiu6o")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vd2mf")
+flat = true
+script = ExtResource("3_40atx")
+
+[node name="Label" type="Label" parent="VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Ajustes"
+label_settings = SubResource("LabelSettings_abn1t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(450, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_jiu6o")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vd2mf")
+flat = true
+script = ExtResource("3_40atx")
+
+[node name="Label" type="Label" parent="VBoxContainer/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 40)
+text = "Volver al menú"
+label_settings = SubResource("LabelSettings_abn1t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

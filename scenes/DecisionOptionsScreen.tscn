@@ -129,7 +129,9 @@ offset_top = 1.9560242
 offset_right = 1.2221222
 offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
+theme_override_styles/pressed = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
+theme_override_styles/focus = ExtResource("3_x4nl8")
 script = ExtResource("6_paxvj")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/Panel/HBoxContainer/Option1/VBoxContainer"]
@@ -183,7 +185,9 @@ offset_top = 1.9560242
 offset_right = 1.2221222
 offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
+theme_override_styles/pressed = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
+theme_override_styles/focus = ExtResource("3_x4nl8")
 script = ExtResource("6_paxvj")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/Panel/HBoxContainer/Option2/VBoxContainer"]
@@ -237,7 +241,9 @@ offset_top = 1.9560242
 offset_right = 1.2221222
 offset_bottom = 1.9409981
 theme_override_styles/normal = ExtResource("3_x4nl8")
+theme_override_styles/pressed = ExtResource("3_x4nl8")
 theme_override_styles/hover = ExtResource("4_g1q53")
+theme_override_styles/focus = ExtResource("3_x4nl8")
 script = ExtResource("6_paxvj")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/Panel/HBoxContainer/Option3/VBoxContainer"]

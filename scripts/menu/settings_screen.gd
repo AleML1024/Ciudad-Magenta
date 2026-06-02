@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var screen_settings = $PanelContainer/VBoxContainer/Content/ScreenOptions
 @onready var audio_settings = $PanelContainer/VBoxContainer/Content/SoundOptions
