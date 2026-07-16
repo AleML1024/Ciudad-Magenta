@@ -27,6 +27,9 @@ var pending_result : Dictionary = {}
 var pending_effect_player = null
 var pending_effect_data = null
 
+var finished_players := []
+var game_finished := false
+
 func _ready():
 	print("Game started")
 	
@@ -93,7 +96,15 @@ func _on_turn_continue():
 func end_turn():
 	print("FIN TURNO:", players[current_player_index].name)
 	turn_in_progress = false
-	current_player_index = (current_player_index + 1) % players.size()
+	while true:
+
+		current_player_index = (current_player_index + 1) % players.size()
+
+		if !players[current_player_index].finished:
+			break
+
+		if finished_players.size() == players.size():
+			return
 	start_turn()
 
 
@@ -269,3 +280,33 @@ func _input(event):
 func _on_settings_confirmed():
 	$SettingsScreen.visible = false
 	$PauseMenu.visible = true
+
+func player_reached_goal(player):
+
+	if player.finished:
+		return
+
+	player.finished = true
+
+	finished_players.append(player)
+
+	player.finish_order = finished_players.size()
+
+	print(
+		player.name,
+		" llegó en posición ",
+		player.finish_order
+	)
+
+	check_game_end()
+	
+func check_game_end():
+	if finished_players.size() == players.size():
+		end_game()
+
+func end_game():
+	game_finished = true
+	show_end_screen(finished_players)
+	
+func show_end_screen(ranking: Array):
+	$EndGameScreen.show_results(ranking)

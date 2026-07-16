@@ -1,0 +1,370 @@
+[gd_scene load_steps=31 format=3 uid="uid://bcosjdj55wa50"]
+
+[ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://assets/board/Tablero.png" id="1_edmws"]
+[ext_resource type="Script" uid="uid://cfx1qt3vlk5t8" path="res://scenes/end_game_screen.gd" id="1_x8h60"]
+[ext_resource type="LabelSettings" uid="uid://vplpdfjwwsx1" path="res://assets/ui/title.tres" id="2_8ajbr"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://assets/fonts/PublicPixel-rv0pA.ttf" id="3_8ajbr"]
+[ext_resource type="FontFile" uid="uid://cxnt1h6c1s8l3" path="res://assets/fonts/GamepauseddemoRegular-RpmY6.otf" id="5_lp4qm"]
+[ext_resource type="StyleBox" uid="uid://bquqrmby4do64" path="res://assets/ui/button_hover.tres" id="6_0c3j0"]
+[ext_resource type="Script" uid="uid://d4nxg84ka32gu" path="res://scripts/ui/sound_button.gd" id="7_cu170"]
+[ext_resource type="LabelSettings" uid="uid://d01eai4h7bper" path="res://assets/ui/button_text.tres" id="8_mfbm7"]
+[ext_resource type="Texture2D" uid="uid://bsw8wiipg7c8l" path="res://assets/icons/ezgif-split/tile000.png" id="9_23uoc"]
+[ext_resource type="Texture2D" uid="uid://cfov3qyur50jy" path="res://assets/icons/ezgif-split/tile001.png" id="10_70knp"]
+[ext_resource type="Texture2D" uid="uid://b1ide8xd1ervw" path="res://assets/icons/ezgif-split/tile010.png" id="11_5oxg5"]
+[ext_resource type="Texture2D" uid="uid://bjyno7use230" path="res://assets/icons/ezgif-split/tile011.png" id="12_s82g0"]
+[ext_resource type="Texture2D" uid="uid://vm1u13lx2kbx" path="res://assets/icons/ezgif-split/tile012.png" id="13_gpbu4"]
+[ext_resource type="Texture2D" uid="uid://bonsw7swtlw3l" path="res://assets/icons/ezgif-split/tile013.png" id="14_2cg6h"]
+[ext_resource type="Texture2D" uid="uid://cw4vygrievyjb" path="res://assets/icons/ezgif-split/tile002.png" id="15_v4ixh"]
+[ext_resource type="Texture2D" uid="uid://bqhewxa5v5f3" path="res://assets/icons/ezgif-split/tile003.png" id="16_k48kt"]
+[ext_resource type="Texture2D" uid="uid://3tywujlxagvc" path="res://assets/icons/ezgif-split/tile004.png" id="17_j73qy"]
+[ext_resource type="Texture2D" uid="uid://byebg4yrqq1y5" path="res://assets/icons/ezgif-split/tile005.png" id="18_ti1nl"]
+[ext_resource type="Texture2D" uid="uid://b5urefkex2xe2" path="res://assets/icons/ezgif-split/tile006.png" id="19_26h1j"]
+[ext_resource type="Texture2D" uid="uid://k6yq61wial4v" path="res://assets/icons/ezgif-split/tile007.png" id="20_4yuwk"]
+[ext_resource type="Texture2D" uid="uid://c048dl74oq12i" path="res://assets/icons/ezgif-split/tile008.png" id="21_35c3j"]
+[ext_resource type="Texture2D" uid="uid://c0xy5tpryr77v" path="res://assets/icons/ezgif-split/tile009.png" id="22_pgt6t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7peo"]
+font = ExtResource("3_8ajbr")
+font_size = 38
+font_color = Color(0.9372549, 0.7490196, 0.015686275, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8rbx"]
+font = ExtResource("3_8ajbr")
+font_size = 38
+font_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2e2yt"]
+font = ExtResource("3_8ajbr")
+font_size = 38
+font_color = Color(0.8039216, 0.49803922, 0.19607843, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fvhiw"]
+font = ExtResource("3_8ajbr")
+font_size = 38
+font_color = Color(0.43960953, 0.26317942, 0.09662435, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybcmb"]
+bg_color = Color(0.6431373, 0.58431375, 0.89411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_034p7"]
+font = ExtResource("3_8ajbr")
+font_size = 30
+font_color = Color(1, 1, 1, 0.8352941)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_w773j"]
+frames = 14
+speed_scale = 11.2
+frame_0/texture = ExtResource("9_23uoc")
+frame_1/texture = ExtResource("10_70knp")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("15_v4ixh")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("16_k48kt")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("17_j73qy")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("18_ti1nl")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("19_26h1j")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("20_4yuwk")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("21_35c3j")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("22_pgt6t")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("11_5oxg5")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("12_s82g0")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("13_gpbu4")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("14_2cg6h")
+frame_13/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_dj3ry"]
+font = ExtResource("3_8ajbr")
+font_size = 30
+font_color = Color(1, 1, 1, 0.8352941)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 3)
+
+[node name="EndGameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x8h60")
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="Tablero" type="Sprite2D" parent="."]
+position = Vector2(959.99994, 540.00006)
+scale = Vector2(0.769539, 0.9022556)
+texture = ExtResource("1_edmws")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06879827, 0.06879828, 0.06879828, 0.674)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.078
+anchor_top = 0.054
+anchor_right = 0.92100006
+anchor_bottom = 0.17300001
+offset_left = 0.23999023
+offset_top = -0.3199997
+offset_right = 0.67993164
+offset_bottom = 0.1599884
+text = "Resultados..."
+label_settings = ExtResource("2_8ajbr")
+horizontal_alignment = 1
+
+[node name="Ranking" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21900001
+anchor_top = 0.317
+anchor_right = 0.78000003
+anchor_bottom = 0.758
+offset_left = 156.51999
+offset_top = -95.360016
+offset_right = -152.6001
+offset_bottom = -94.640015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 59
+alignment = 1
+
+[node name="FirstPlace" type="HBoxContainer" parent="Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Number" type="Label" parent="Ranking/FirstPlace"]
+layout_mode = 2
+text = "1."
+label_settings = SubResource("LabelSettings_w7peo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName" type="Label" parent="Ranking/FirstPlace"]
+layout_mode = 2
+text = "Ruby"
+label_settings = SubResource("LabelSettings_w7peo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerCoins" type="Label" parent="Ranking/FirstPlace"]
+layout_mode = 2
+text = "01"
+label_settings = SubResource("LabelSettings_w7peo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="Ranking/FirstPlace"]
+layout_mode = 2
+text = "monedas"
+label_settings = SubResource("LabelSettings_w7peo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondPlace" type="HBoxContainer" parent="Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Number" type="Label" parent="Ranking/SecondPlace"]
+layout_mode = 2
+text = "2."
+label_settings = SubResource("LabelSettings_q8rbx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName" type="Label" parent="Ranking/SecondPlace"]
+layout_mode = 2
+text = "Violeta"
+label_settings = SubResource("LabelSettings_q8rbx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerCoins" type="Label" parent="Ranking/SecondPlace"]
+layout_mode = 2
+text = "02"
+label_settings = SubResource("LabelSettings_q8rbx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="Ranking/SecondPlace"]
+layout_mode = 2
+text = "monedas"
+label_settings = SubResource("LabelSettings_q8rbx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThirdPlace" type="HBoxContainer" parent="Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Number" type="Label" parent="Ranking/ThirdPlace"]
+layout_mode = 2
+text = "3."
+label_settings = SubResource("LabelSettings_2e2yt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName" type="Label" parent="Ranking/ThirdPlace"]
+layout_mode = 2
+text = "Marino"
+label_settings = SubResource("LabelSettings_2e2yt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerCoins" type="Label" parent="Ranking/ThirdPlace"]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_2e2yt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="Ranking/ThirdPlace"]
+layout_mode = 2
+text = "monedas"
+label_settings = SubResource("LabelSettings_2e2yt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FirstPlace4" type="HBoxContainer" parent="Ranking"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Number" type="Label" parent="Ranking/FirstPlace4"]
+layout_mode = 2
+text = "4."
+label_settings = SubResource("LabelSettings_fvhiw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number2" type="Label" parent="Ranking/FirstPlace4"]
+layout_mode = 2
+text = "Celeste"
+label_settings = SubResource("LabelSettings_fvhiw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number3" type="Label" parent="Ranking/FirstPlace4"]
+layout_mode = 2
+text = "02"
+label_settings = SubResource("LabelSettings_fvhiw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number4" type="Label" parent="Ranking/FirstPlace4"]
+layout_mode = 2
+text = "monedas"
+label_settings = SubResource("LabelSettings_fvhiw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_top = 0.845
+anchor_right = 0.568
+anchor_bottom = 0.901
+offset_left = -2.2800293
+offset_top = 3.3999634
+offset_right = -3.5600586
+offset_bottom = 2.919983
+theme_override_fonts/font = ExtResource("5_lp4qm")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ybcmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ybcmb")
+theme_override_styles/hover = ExtResource("6_0c3j0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ybcmb")
+script = ExtResource("7_cu170")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0500001
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0000038
+text = "Continuar"
+label_settings = ExtResource("8_mfbm7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48900002
+anchor_top = 0.72200006
+anchor_right = 0.51000005
+anchor_bottom = 0.75900006
+offset_left = -542.63007
+offset_top = -96.76007
+offset_right = 548.0499
+offset_bottom = 59.279907
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="CoinContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/CoinContainer"]
+layout_mode = 2
+text = "Mayor cantidad de monedas:"
+label_settings = SubResource("LabelSettings_034p7")
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="HBoxContainer/CoinContainer"]
+layout_mode = 2
+text = "Marino"
+label_settings = SubResource("LabelSettings_034p7")
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CoinContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+texture = SubResource("AnimatedTexture_w773j")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="CoinCounter" type="Label" parent="HBoxContainer/CoinContainer"]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_dj3ry")
+vertical_alignment = 1

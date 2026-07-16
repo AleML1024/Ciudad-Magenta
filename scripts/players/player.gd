@@ -7,6 +7,8 @@ var pending_decision_card: Dictionary = {}
 var situation_card: Dictionary = {}
 var is_first_turn := true
 var is_first_decision := true
+var finished := false
+var finish_order := -1
 
 var board: Node = null
 var game_manager: Node =null
@@ -47,6 +49,10 @@ func move_steps(steps: int):
 			0.7
 		)
 		await tween.finished
+		
+	if tile_index == board.tiles_positions.size() - 1:
+		game_manager.player_reached_goal(self)
+		return
 	resolve_tile()
 
 func resolve_tile():

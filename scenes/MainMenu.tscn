@@ -402,6 +402,7 @@ vertical_alignment = 1
 
 [node name="SettingsScreen" parent="." instance=ExtResource("16_v41fp")]
 visible = false
+layout_mode = 0
 
 [node name="RulesScreen" type="Control" parent="."]
 visible = false
