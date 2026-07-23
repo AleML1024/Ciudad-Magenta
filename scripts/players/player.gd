@@ -37,6 +37,9 @@ func set_game_manager(gm):
 	game_manager = gm
 	
 func move_steps(steps: int):
+	if finished:
+		return
+		
 	for i in range(steps):
 		tile_index += 1
 		tile_index = min(tile_index, board.tiles_positions.size() - 1)
@@ -50,9 +53,6 @@ func move_steps(steps: int):
 		)
 		await tween.finished
 		
-	if tile_index == board.tiles_positions.size() - 1:
-		game_manager.player_reached_goal(self)
-		return
 	resolve_tile()
 
 func resolve_tile():
@@ -93,9 +93,15 @@ func resolve_tile():
 				)
 				is_first_decision = true
 				game_manager.on_tile_resolved(self)
-
+				
 		board.tile_type.ADVANCE:
-			move_steps(tile["value"])
+			await move_steps(tile["value"])
+			
+		board.tile_type.GOAL:
+			print("META")
+			game_manager.player_reached_goal(self)
+			return
+				
 
 func add_coins(amount: int):
 	coins += amount

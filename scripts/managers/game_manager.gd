@@ -9,6 +9,7 @@ extends Node
 @onready var selection_screen = $SelectionScreen/Control
 @onready var pause_menu = $PauseMenu
 @onready var settings_screen = $SettingsScreen
+@onready var end_game_screen = $EndGameScreen
 
 @onready var ui_violeta = $PlayersUI/PlayerInfoVioleta
 @onready var ui_ruby = $PlayersUI/PlayerInfoRuby
@@ -50,6 +51,8 @@ func _ready():
 	decision_options_ui.time_out.connect(_on_decision_timeout)
 	selection_screen.confirmed.connect(_on_confirm_pressed)
 	settings_screen.settings_confirmed.connect(_on_settings_confirmed)
+	end_game_screen.continue_pressed.connect(_on_continue_button_pressed)
+	
 	
 	turn_screen.visible = false
 	turn_screen.connect("continue_pressed", Callable(self, "_on_turn_continue"))
@@ -70,6 +73,9 @@ func _ready():
 	start_turn()
 
 func start_turn():
+	if game_finished:
+		return
+		
 	if turn_in_progress or waiting_for_decision:
 		return
 
@@ -300,6 +306,9 @@ func player_reached_goal(player):
 
 	check_game_end()
 	
+	if !game_finished:
+		end_turn()
+		
 func check_game_end():
 	if finished_players.size() == players.size():
 		end_game()
@@ -310,3 +319,8 @@ func end_game():
 	
 func show_end_screen(ranking: Array):
 	$EndGameScreen.show_results(ranking)
+
+func _on_continue_button_pressed ():
+		get_tree().change_scene_to_file(
+		"res://scenes/MainMenu.tscn"
+	)

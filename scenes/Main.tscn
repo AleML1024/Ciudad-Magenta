@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ba44lsu0bbjfn"]
+[gd_scene load_steps=17 format=3 uid="uid://ba44lsu0bbjfn"]
 
 [ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://assets/board/Tablero.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cbd5udw3u88st" path="res://scripts/gameplay/board.gd" id="1_uu6xs"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bnx6vffe807h7" path="res://scenes/DecisionOptionsScreen.tscn" id="11_20pc6"]
 [ext_resource type="PackedScene" uid="uid://dsmx0nmq5snu0" path="res://scenes/PlayerInfo.tscn" id="12_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://bc2yr7ayjhut1" path="res://scenes/SettingsScreen.tscn" id="15_3p2gp"]
+[ext_resource type="PackedScene" uid="uid://bcosjdj55wa50" path="res://scenes/EndGameScreen.tscn" id="16_cvmbd"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("5_3dxm6")
@@ -350,4 +351,7 @@ visible = false
 
 [node name="SettingsScreen" parent="." instance=ExtResource("15_3p2gp")]
 process_mode = 2
+visible = false
+
+[node name="EndGameScreen" parent="." instance=ExtResource("16_cvmbd")]
 visible = false
