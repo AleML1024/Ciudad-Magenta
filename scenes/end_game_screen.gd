@@ -9,7 +9,7 @@ signal continue_pressed
 	$Ranking/FourthPlace
 ]
 
-@onready var coin_winner_label = $Panel/CoinContainer
+@onready var coin_winner_label = $HBoxContainer/CoinContainer
 
 
 func _ready():
@@ -50,9 +50,8 @@ func show_results(ranking: Array):
 		if player.coins > coin_winner.coins:
 			coin_winner = player
 
-	coin_winner_label.PlayerName = coin_winner.get_character_name()
-	coin_winner_label.CoinCounter = str(coin_winner.coins)
-	
-func _on_continue_button_pressed():
+	coin_winner_label.get_node("PlayerName").text = coin_winner.get_character_name()
+	coin_winner_label.get_node("CoinCounter").text = str(coin_winner.coins)
 
+func _on_button_pressed() -> void:
 	emit_signal("continue_pressed")

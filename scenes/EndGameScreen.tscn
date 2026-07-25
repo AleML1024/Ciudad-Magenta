@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bcosjdj55wa50"]
+[gd_scene load_steps=35 format=3 uid="uid://bcosjdj55wa50"]
 
 [ext_resource type="Texture2D" uid="uid://oiuslfxf7t3a" path="res://assets/board/Tablero.png" id="1_edmws"]
 [ext_resource type="Script" uid="uid://cfx1qt3vlk5t8" path="res://scenes/end_game_screen.gd" id="1_x8h60"]
@@ -30,10 +30,22 @@ font_color = Color(0.9372549, 0.7490196, 0.015686275, 1)
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_x8h60"]
+font = ExtResource("3_8ajbr")
+font_size = 38
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_q8rbx"]
 font = ExtResource("3_8ajbr")
 font_size = 38
 font_color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lp4qm"]
+font = ExtResource("3_8ajbr")
+font_size = 38
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
@@ -44,10 +56,22 @@ font_color = Color(0.8039216, 0.49803922, 0.19607843, 1)
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_0c3j0"]
+font = ExtResource("3_8ajbr")
+font_size = 38
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_fvhiw"]
 font = ExtResource("3_8ajbr")
 font_size = 38
 font_color = Color(0.43960953, 0.26317942, 0.09662435, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cu170"]
+font = ExtResource("3_8ajbr")
+font_size = 38
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
@@ -166,7 +190,7 @@ vertical_alignment = 1
 [node name="PlayerName" type="Label" parent="Ranking/FirstPlace"]
 layout_mode = 2
 text = "Ruby"
-label_settings = SubResource("LabelSettings_w7peo")
+label_settings = SubResource("LabelSettings_x8h60")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -198,7 +222,7 @@ vertical_alignment = 1
 [node name="PlayerName" type="Label" parent="Ranking/SecondPlace"]
 layout_mode = 2
 text = "Violeta"
-label_settings = SubResource("LabelSettings_q8rbx")
+label_settings = SubResource("LabelSettings_lp4qm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -230,7 +254,7 @@ vertical_alignment = 1
 [node name="PlayerName" type="Label" parent="Ranking/ThirdPlace"]
 layout_mode = 2
 text = "Marino"
-label_settings = SubResource("LabelSettings_2e2yt")
+label_settings = SubResource("LabelSettings_0c3j0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -262,7 +286,7 @@ vertical_alignment = 1
 [node name="PlayerName" type="Label" parent="Ranking/FourthPlace"]
 layout_mode = 2
 text = "Celeste"
-label_settings = SubResource("LabelSettings_fvhiw")
+label_settings = SubResource("LabelSettings_cu170")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -354,6 +378,8 @@ flip_h = true
 
 [node name="CoinCounter" type="Label" parent="HBoxContainer/CoinContainer"]
 layout_mode = 2
-text = "20"
+text = "00"
 label_settings = SubResource("LabelSettings_dj3ry")
 vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
