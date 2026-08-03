@@ -223,8 +223,14 @@ func _on_confirm_pressed(player_name):
 	var target = players.filter(func(p): return p.name == player_name)[0]
 
 	for effect in source.situation_card["effects"]:
-		if effect["target"] == "other_choice":
-			target.add_coins(effect["value"])
+		if effect["target"] != "other_choice":
+			continue
+			
+		match effect["type"]:
+			"coins":
+				target.add_coins(effect["value"])
+			"swap_position":
+				swap_players(source, target)
 
 	pending_effect_player = null
 	pending_effect_data = null
@@ -233,6 +239,16 @@ func _on_confirm_pressed(player_name):
 	$SelectionScreen.visible = false
 	selection_in_progress = false
 	await source.move_steps(1)
+
+func swap_players(player_a, player_b):
+	var progress_a = player_a.tile_index - player_a.start_tile_index
+	var progress_b = player_b.tile_index - player_b.start_tile_index
+
+	player_a.tile_index = player_a.start_tile_index + progress_b
+	player_b.tile_index = player_b.start_tile_index + progress_a
+
+	player_a.global_position = board.tiles_positions[player_a.tile_index]
+	player_b.global_position = board.tiles_positions[player_b.tile_index]
 	
 func resolve_card(player, card):
 	if card.has("effects"):

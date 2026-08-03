@@ -292,8 +292,7 @@ var card_banks = {
 				"id": "C_P_2",
 				"text": "Celeste se pierde en el camino al concierto y puede intercambiar la posición en el tablero con otro jugador que elija, que puede estar más cerca de la meta.",
 				"effects": [
-					{ "type": "move", "target": "self", "value": 0 }, # Tienen que intercambiar las posiciones en el tablero
-					{ "type": "move", "target": "other_choice", "value": 0 }
+					{ "type": "swap_position", "target": "other_choice"}
 				]
 			}
 		],
