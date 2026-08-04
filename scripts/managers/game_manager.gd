@@ -10,11 +10,14 @@ extends Node
 @onready var pause_menu = $PauseMenu
 @onready var settings_screen = $SettingsScreen
 @onready var end_game_screen = $EndGameScreen
+@onready var illustrated_decision = $IllustratedDecisionScreen
 
 @onready var ui_violeta = $PlayersUI/PlayerInfoVioleta
 @onready var ui_ruby = $PlayersUI/PlayerInfoRuby
 @onready var ui_celeste = $PlayersUI/PlayerInfoCeleste
 @onready var ui_marino = $PlayersUI/PlayerInfoMarino
+
+
 
 
 var turn_in_progress := false
@@ -52,6 +55,8 @@ func _ready():
 	selection_screen.confirmed.connect(_on_confirm_pressed)
 	settings_screen.settings_confirmed.connect(_on_settings_confirmed)
 	end_game_screen.continue_pressed.connect(_on_continue_button_pressed)
+	illustrated_decision.option_selected.connect(_on_decision_resolved)
+	illustrated_decision.time_out.connect(_on_decision_timeout)
 	
 	
 	turn_screen.visible = false
@@ -170,8 +175,16 @@ func _on_problem_continue():
 	$DecisionOptionsScreen.visible = true
 	
 	var player = players[current_player_index]
-	decision_options_ui.show_decision(player.pending_decision_card)
+	var card = player.pending_decision_card
+	if card.has("image"):
+		show_illustrated_decision(card)
+	else:
+		decision_options_ui.show_decision(card)
 
+func show_illustrated_decision(card):
+	$IllustratedDecisionScreen.visible = true
+	illustrated_decision.show_decision(card)
+	
 func _on_situation_continue():
 	$TextScreen.visible = false
 	var player = players[current_player_index]

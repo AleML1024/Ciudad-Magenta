@@ -57,6 +57,7 @@ var card_banks = {
 				"id": "V_D_1",
 				"text": "Violeta va a pasar por un callejón, para tomar un atajo y ganar tiempo, pero está oscuro, porque el alumbrado no funciona.
 							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"image": "res://assets/backgrounds/V_D_1.png",
 				"options" : [
 					{  
 						"text": "Seguir por ese camino aunque esté oscuro.",
@@ -70,76 +71,44 @@ var card_banks = {
 						"text": "Reportar el fallo en el tendido eléctrico y la municipalidad lo soluciona.",
 						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": 3, "move": 1}
 					}
+				],
+				"hotspots": [
+					{
+						"polygon": [
+							Vector2(2755.099, 856.0),
+							Vector2(1051.099, 707.0),
+							Vector2(750.099, 258.0),
+						]
+					},
+					{
+						"polygon": [
+							Vector2(1807.099, 480.0),
+							Vector2(1652.099, 358.0),
+							Vector2(1921.099, 0.0),
+							Vector2(1919.099, 415.0),
+						]
+					},
+					{
+						"polygon": [
+							Vector2(1201.099, 614.0),
+							Vector2(1201.099, 620.0),
+							Vector2(1255.099, 652.0),
+							Vector2(1348.099, 599.0),
+							Vector2(1348.099, 593.0),
+							Vector2(1321.099,577.0),
+							Vector2(1321.099,452.0),
+							Vector2(1340.099,441.0),
+							Vector2(1349.099,277.0),
+							Vector2(1293.099,244.0),
+							Vector2(1199.099,298.0),
+							Vector2(1201.099,470.0),
+							Vector2(1233.099,488.0),
+							Vector2(1233.099,596.0)
+						]
+					},
 				]
 			},
-			{
-				"id": "V_D_2",
-				"text": "Violeta pasa por una calle en la cual están arreglando la acera y es más rápido pasar por la calle.  Hay otra acera en mejor estado, pero hay que desviarse. 
-							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
-				"options" : [
-					{  
-						"text": "pasar por la calle de la construcción.",
-						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
-					},
-					{  
-						"text": "Pasar por la acera en buen estado.",
-						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
-					}
-				]
-			},
-			{
-				"id": "V_D_3",
-				"text": "Para llegar al concierto Violeta debe cruzar una intersección de 3 carriles por cada sentido. El paso peatonal más próximo está a 500 metros.
-							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
-				"options" : [
-					{  
-						"text": "Cruzar primero un sentido y luego el otro.",
-						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
-					},
-					{  
-						"text": "Ir hasta la zona en donde hay paso peatonal.",
-						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
-					}
-				]
-			},
-			{
-				"id": "V_D_4",
-				"text": "Violeta debe cruzar al otro lado de la calle, pero el semáforo está dañado.
-							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
-				"options" : [
-					{  
-						"text": "pasar por la zona donde no hay semáforo.",
-						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
-					},
-					{  
-						"text": "Caminar hasta encontrar el semáforo más pronto.",
-						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
-					},
-					{  
-						"text": "Solicitar a la municipalidad que repare el semáforo dañado.",
-						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": 3, "move": 1}
-					}
-				]
-			},
-			{
-				"id": "V_D_5",
-				"text": "Violeta debe pasar por un puente sobre un río. El puente está falseado porque existe un deslizamiento provocado por el exceso de agua y las crecidas del río.
-							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
-				"options" : [
-					{  
-						"text": "Pasar por el puente.",
-						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
-					},
-					{  
-						"text": "Evitar la ruta alterna y dar la vuelta por la calle principal que va al centro.",
-						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
-					},
-					{  
-						"text": "Reportar a la municipalidad para que clausuren el puente.",
-						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": 3, "move": 1}
-					}
-				]
-			},
+			
 		]
 	},
 	

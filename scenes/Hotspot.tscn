@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvx5tf421w44r"]
+
+[ext_resource type="Script" uid="uid://iagumhxcwm2s" path="res://scripts/ui/hotspot.gd" id="1_3vkc2"]
+
+[node name="Hotspot" type="Area2D"]
+script = ExtResource("1_3vkc2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(755.09894, 856, 1051.0989, 707, 750.09894, 258)
+
+[node name="Highlight" type="Polygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(755.09894, 856, 1051.0989, 707, 750.09894, 258)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
