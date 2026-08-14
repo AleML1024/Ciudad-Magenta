@@ -7,6 +7,8 @@ enum Character_type {
 	MARINO 
 }
 
+var used_cards := {}
+
 var card_banks = {
 	Character_type.VIOLETA: {
 		"positive": [
@@ -73,7 +75,74 @@ var card_banks = {
 					}
 				],
 			},
-			
+			{
+				"id": "V_D_2",
+				"text": "Violeta pasa por una calle en la cual están arreglando la acera y es más rápido pasar por la calle.  Hay otra acera en mejor estado, pero hay que desviarse. 
+							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "Pasar por la calle de la construcción.",
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Pasar por la acera en buen estado.",
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
+					}
+				]
+			},
+			{
+				"id": "V_D_3",
+				"text": "Para llegar al concierto Violeta debe cruzar una intersección de 3 carriles por cada sentido. El paso peatonal más próximo está a 500 metros.
+							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "Cruzar primero un sentido y luego el otro.",
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Ir hasta la zona en donde hay paso peatonal.",
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
+					}
+				]
+			},
+			{
+				"id": "V_D_4",
+				"text": "Violeta debe cruzar al otro lado de la calle, pero el semáforo está dañado.
+							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "pasar por la zona donde no hay semáforo.",
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Caminar hasta encontrar el semáforo más pronto.",
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
+					},
+					{  
+						"text": "Solicitar a la municipalidad que repare el semáforo dañado.",
+						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": 3, "move": 1}
+					}
+				]
+			},
+			{
+				"id": "V_D_5",
+				"text": "Violeta debe pasar por un puente sobre un río. El puente está falseado porque existe un deslizamiento provocado por el exceso de agua y las crecidas del río.
+							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
+				"options" : [
+					{  
+						"text": "Pasar por el puente.",
+						"result": { "text": "Avanzas 2 casillas y pierdes 3 monedas", "coins": -3, "move": 2}
+					},
+					{  
+						"text": "Evitar la ruta alterna y dar la vuelta por la calle principal que va al centro.",
+						"result": { "text": "Avanzas 1 casilla y no pierdes monedas", "coins": 0, "move": 1}
+					},
+					{  
+						"text": "Reportar a la municipalidad para que clausuren el puente.",
+						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": 3, "move": 1}
+					}
+				]
+			},		
 		]
 	},
 	
@@ -473,7 +542,32 @@ var card_banks = {
 }
 
 func draw_card(character_type, card_kind: String) -> Dictionary:
-	return card_banks[character_type][card_kind].pick_random()
+	var bank = card_banks[character_type][card_kind]
+
+	var key = str(character_type) + "_" + card_kind
+
+	if not used_cards.has(key):
+		used_cards[key] = []
+
+	var available_cards = bank.filter(
+		func(card):
+			return not used_cards[key].has(card["id"])
+	)
+
+	# Si ya se utilizaron todas las cartas del banco,
+	# se reinicia el banco.
+	if available_cards.is_empty():
+		print("Banco agotado: ", key, " → reiniciando")
+		
+		used_cards[key].clear()
+		
+		available_cards = bank
+
+	var card = available_cards.pick_random()
+
+	used_cards[key].append(card["id"])
+
+	return card
 	
 func apply_card(card: Dictionary, current_player, players: Array):
 	print("Carta:", card["text"])

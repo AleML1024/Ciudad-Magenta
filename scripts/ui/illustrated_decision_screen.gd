@@ -16,9 +16,9 @@ func show_decision(card: Dictionary):
 	decision_data = card
 	time_left = 60.0
 	active = true
-
+	
 	timer_label.visible = true
-
+	
 	decision_scene = load(card["illustrated_scene"]).instantiate()
 	decision_container.add_child(decision_scene)
 
@@ -28,11 +28,18 @@ func show_decision(card: Dictionary):
 func _on_option_clicked(index: int):
 	if not active:
 		return
-
+	
+	print("IllustratedDecisionScreen visible antes: ", visible)
+	
 	active = false
 	timer_label.visible = false
+	
+	decision_scene.queue_free()
+	decision_scene = null
 	visible = false
 
+	print("IllustratedDecisionScreen visible después: ", visible)
+	
 	var result = decision_data["options"][index]["result"]
 	option_selected.emit(result)
 
@@ -47,5 +54,7 @@ func _process(delta):
 	if time_left <= 0:
 		active = false
 		timer_label.visible = false
+		decision_scene.queue_free()
+		decision_scene = null
 		visible = false
 		time_out.emit()

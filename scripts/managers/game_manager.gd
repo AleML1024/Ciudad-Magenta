@@ -133,11 +133,11 @@ func start_decision(player):
 	
 func _on_decision_resolved(result: Dictionary):
 	$DecisionOptionsScreen.visible = false
+	$IllustratedDecisionScreen.visible = false
 	waiting_for_decision = false
 
 	pending_result = result
 
-	# mostrar pantalla de resultado
 	text_screen.show_screen(result["text"], "result")
 	$TextScreen.visible = true
 	

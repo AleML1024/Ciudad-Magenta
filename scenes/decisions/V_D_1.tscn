@@ -84,6 +84,7 @@ autowrap_mode = 3
 
 [node name="Hotspot2" type="Area2D" parent="Control/Hotspots"]
 script = ExtResource("2_sdvyk")
+option_index = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/Hotspots/Hotspot2"]
 polygon = PackedVector2Array(1920, 417, 1776, 500, 1608, 387, 1705, 1, 1920, 0)
@@ -115,6 +116,7 @@ autowrap_mode = 3
 
 [node name="Hotspot3" type="Area2D" parent="Control/Hotspots"]
 script = ExtResource("2_sdvyk")
+option_index = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/Hotspots/Hotspot3"]
 polygon = PackedVector2Array(1256, 652, 1349, 598, 1349, 592, 1321, 578, 1321, 452, 1339, 442, 1349, 277, 1293, 245, 1199, 297, 1200, 470, 1233, 489, 1234, 596, 1201, 615, 1201, 621)
@@ -161,13 +163,3 @@ offset_right = 3.3598633
 offset_bottom = 8.799995
 text = "60"
 label_settings = SubResource("LabelSettings_lsugr")
-
-[connection signal="input_event" from="Control/Hotspots/Hotspot1" to="Control/Hotspots/Hotspot1" method="_on_input_event"]
-[connection signal="mouse_entered" from="Control/Hotspots/Hotspot1" to="Control/Hotspots/Hotspot1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Hotspots/Hotspot1" to="Control/Hotspots/Hotspot1" method="_on_mouse_exited"]
-[connection signal="input_event" from="Control/Hotspots/Hotspot2" to="Control/Hotspots/Hotspot2" method="_on_input_event"]
-[connection signal="mouse_entered" from="Control/Hotspots/Hotspot2" to="Control/Hotspots/Hotspot2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Hotspots/Hotspot2" to="Control/Hotspots/Hotspot2" method="_on_mouse_exited"]
-[connection signal="input_event" from="Control/Hotspots/Hotspot3" to="Control/Hotspots/Hotspot3" method="_on_input_event"]
-[connection signal="mouse_entered" from="Control/Hotspots/Hotspot3" to="Control/Hotspots/Hotspot3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Hotspots/Hotspot3" to="Control/Hotspots/Hotspot3" method="_on_mouse_exited"]
