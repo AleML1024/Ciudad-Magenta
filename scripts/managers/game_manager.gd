@@ -172,13 +172,14 @@ func _on_timeout_continue():
 	
 func _on_problem_continue():
 	$TextScreen.visible = false
-	$DecisionOptionsScreen.visible = true
-	
+
 	var player = players[current_player_index]
 	var card = player.pending_decision_card
-	if card.has("image"):
+
+	if card.has("illustrated_scene"):
 		show_illustrated_decision(card)
 	else:
+		$DecisionOptionsScreen.visible = true
 		decision_options_ui.show_decision(card)
 
 func show_illustrated_decision(card):

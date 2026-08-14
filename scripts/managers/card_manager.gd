@@ -57,7 +57,7 @@ var card_banks = {
 				"id": "V_D_1",
 				"text": "Violeta va a pasar por un callejón, para tomar un atajo y ganar tiempo, pero está oscuro, porque el alumbrado no funciona.
 							A continuación deberás de tomar una decisión en un máximo de 60 segundos.",
-				"image": "res://assets/backgrounds/V_D_1.png",
+				"illustrated_scene": "res://scenes/decisions/V_D_1.tscn",
 				"options" : [
 					{  
 						"text": "Seguir por ese camino aunque esté oscuro.",
@@ -72,41 +72,6 @@ var card_banks = {
 						"result": { "text": "Avanzas 1 casilla y ganas 3 monedas", "coins": 3, "move": 1}
 					}
 				],
-				"hotspots": [
-					{
-						"polygon": [
-							Vector2(2755.099, 856.0),
-							Vector2(1051.099, 707.0),
-							Vector2(750.099, 258.0),
-						]
-					},
-					{
-						"polygon": [
-							Vector2(1807.099, 480.0),
-							Vector2(1652.099, 358.0),
-							Vector2(1921.099, 0.0),
-							Vector2(1919.099, 415.0),
-						]
-					},
-					{
-						"polygon": [
-							Vector2(1201.099, 614.0),
-							Vector2(1201.099, 620.0),
-							Vector2(1255.099, 652.0),
-							Vector2(1348.099, 599.0),
-							Vector2(1348.099, 593.0),
-							Vector2(1321.099,577.0),
-							Vector2(1321.099,452.0),
-							Vector2(1340.099,441.0),
-							Vector2(1349.099,277.0),
-							Vector2(1293.099,244.0),
-							Vector2(1199.099,298.0),
-							Vector2(1201.099,470.0),
-							Vector2(1233.099,488.0),
-							Vector2(1233.099,596.0)
-						]
-					},
-				]
 			},
 			
 		]

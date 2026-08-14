@@ -1,0 +1,173 @@
+[gd_scene load_steps=8 format=3 uid="uid://cubes54w6e1c3"]
+
+[ext_resource type="Script" uid="uid://csxvn7j1ojcg1" path="res://scripts/ui/illustrated_decision.gd" id="1_gmeyq"]
+[ext_resource type="Texture2D" uid="uid://dtjs1vhf76iob" path="res://assets/backgrounds/decisions/V_D_1.png" id="1_sdvyk"]
+[ext_resource type="Script" uid="uid://iagumhxcwm2s" path="res://scripts/ui/hotspot.gd" id="2_sdvyk"]
+[ext_resource type="FontFile" uid="uid://bquy73w767mk1" path="res://assets/fonts/PublicPixel-rv0pA.ttf" id="3_n5k2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_miypx"]
+bg_color = Color(0.33004424, 0.35801113, 0.39911515, 0.43529412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_miypx"]
+font = ExtResource("3_n5k2h")
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_lsugr"]
+font = ExtResource("3_n5k2h")
+font_size = 64
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 9.225)
+
+[node name="V_D_1" type="CanvasLayer"]
+script = ExtResource("1_gmeyq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.09893799
+offset_right = 0.09887695
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_sdvyk")
+expand_mode = 3
+
+[node name="Hotspots" type="Node" parent="Control"]
+
+[node name="Hotspot1" type="Area2D" parent="Control/Hotspots"]
+script = ExtResource("2_sdvyk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/Hotspots/Hotspot1"]
+position = Vector2(1, 2)
+polygon = PackedVector2Array(754, 855, 1051, 705, 749, 120, 749, 766, 754, 768)
+
+[node name="Highlight" type="Polygon2D" parent="Control/Hotspots/Hotspot1"]
+visible = false
+
+[node name="InfoPanel" type="Panel" parent="Control/Hotspots/Hotspot1"]
+visible = false
+offset_left = 781.0
+offset_top = 431.0
+offset_right = 959.0
+offset_bottom = 526.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_miypx")
+
+[node name="Label" type="Label" parent="Control/Hotspots/Hotspot1/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Seguir por ese camino aunque esté oscuro"
+label_settings = SubResource("LabelSettings_miypx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Hotspot2" type="Area2D" parent="Control/Hotspots"]
+script = ExtResource("2_sdvyk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/Hotspots/Hotspot2"]
+polygon = PackedVector2Array(1920, 417, 1776, 500, 1608, 387, 1705, 1, 1920, 0)
+
+[node name="Highlight" type="Polygon2D" parent="Control/Hotspots/Hotspot2"]
+visible = false
+
+[node name="InfoPanel" type="Panel" parent="Control/Hotspots/Hotspot2"]
+visible = false
+offset_left = 1709.0
+offset_top = 173.0
+offset_right = 1887.0
+offset_bottom = 268.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_miypx")
+
+[node name="Label" type="Label" parent="Control/Hotspots/Hotspot2/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Irse por el camino más largo"
+label_settings = SubResource("LabelSettings_miypx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Hotspot3" type="Area2D" parent="Control/Hotspots"]
+script = ExtResource("2_sdvyk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/Hotspots/Hotspot3"]
+polygon = PackedVector2Array(1256, 652, 1349, 598, 1349, 592, 1321, 578, 1321, 452, 1339, 442, 1349, 277, 1293, 245, 1199, 297, 1200, 470, 1233, 489, 1234, 596, 1201, 615, 1201, 621)
+
+[node name="Highlight" type="Polygon2D" parent="Control/Hotspots/Hotspot3"]
+visible = false
+polygon = PackedVector2Array(1256, 652, 1349, 598, 1349, 592, 1321, 578, 1321, 452, 1339, 442, 1349, 277, 1293, 245, 1199, 297, 1200, 470, 1233, 489, 1234, 596, 1201, 615, 1201, 621)
+
+[node name="InfoPanel" type="Panel" parent="Control/Hotspots/Hotspot3"]
+visible = false
+offset_left = 1185.0
+offset_top = 334.0
+offset_right = 1363.0
+offset_bottom = 429.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_miypx")
+
+[node name="Label" type="Label" parent="Control/Hotspots/Hotspot3/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reportar el fallo en el tendido eléctrico y la municipalidad lo soluciona"
+label_settings = SubResource("LabelSettings_miypx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="Label" type="Label" parent="Timer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.47500002
+anchor_top = 0.041
+anchor_right = 0.54200006
+anchor_bottom = 0.115
+offset_left = -6.1035156e-05
+offset_top = -0.2800026
+offset_right = 3.3598633
+offset_bottom = 8.799995
+text = "60"
+label_settings = SubResource("LabelSettings_lsugr")
+
+[connection signal="input_event" from="Control/Hotspots/Hotspot1" to="Control/Hotspots/Hotspot1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Control/Hotspots/Hotspot1" to="Control/Hotspots/Hotspot1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Hotspots/Hotspot1" to="Control/Hotspots/Hotspot1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Control/Hotspots/Hotspot2" to="Control/Hotspots/Hotspot2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Control/Hotspots/Hotspot2" to="Control/Hotspots/Hotspot2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Hotspots/Hotspot2" to="Control/Hotspots/Hotspot2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Control/Hotspots/Hotspot3" to="Control/Hotspots/Hotspot3" method="_on_input_event"]
+[connection signal="mouse_entered" from="Control/Hotspots/Hotspot3" to="Control/Hotspots/Hotspot3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Hotspots/Hotspot3" to="Control/Hotspots/Hotspot3" method="_on_mouse_exited"]

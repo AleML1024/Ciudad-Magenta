@@ -20,19 +20,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="Background" type="TextureRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DecisionContainer" type="Control" parent="Control"]
+anchors_preset = 0
 mouse_filter = 2
-expand_mode = 3
-
-[node name="Hotspots" type="Node" parent="Control"]
 
 [node name="Timer" type="Timer" parent="Control"]
 wait_time = 60.0
